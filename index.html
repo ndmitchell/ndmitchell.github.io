@@ -1,0 +1,730 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Neil Mitchell's home page</title>
+        <link type="image/png" rel="icon" href="elements/favicon.png" />
+<style type="text/css">
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 20pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    background-color: #ddd;
+}
+
+h2 {
+    font-size: 16pt;
+}
+
+li {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+h3 {
+    margin-bottom: 5px;
+}
+.text, .info, .abstract, .citation {
+    margin-left: 15px;
+}
+.info {
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.text {
+    margin-top: 8px;
+}
+.info, .text {
+    font-size: 90%;
+    color: #777;
+}
+.citation, .abstract {
+    display: none;
+}
+.citation {
+    border: 1px solid gray;
+    padding: 1px;
+    padding-left: 5px;
+    background-color: #eee;
+    font-family: monospace;
+    overflow-x: auto;
+    white-space: pre;
+    font-size: 90%;
+}
+
+#body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+</style>
+<script type="text/javascript">
+function showAbstract(i){showItem("abstract" + i);}
+function showCitation(i){showItem("citation" + i);}
+function showAbstracts(){showItems("abstract");}
+function showCitations(){showItems("citation");}
+
+function showItem(id)
+{
+    var e = document.getElementById(id);
+    e.style.display = e.style.display === "block" ? "none" : "block";
+}
+
+function showItems(x)
+{
+    var items = [];
+    var hidden = false;
+    for (var i = 0; i < 250; i++)
+    {
+        var e = document.getElementById(x + i);
+        if (e)
+        {
+            items.push(e);
+            hidden = hidden || e.style.display !== "block";
+        }
+    }
+    for (var i = 0; i < items.length; i++)
+        items[i].style.display = hidden ? "block" : "none";
+}
+</script>
+    </head>
+    <body>
+
+<h1>Neil Mitchell's home page</h1>
+
+<div id="body">
+
+<p>
+    <a href="elements/henry-photo-big.jpg"><img style="float:right;margin-left:6px;" src="elements/henry-photo.jpg" alt="Henry Mitchell photo" /></a>
+    <a href="elements/neil-photo-big.jpg"><img style="float:right;margin-left:6px;" src="elements/neil-photo.jpg" alt="Neil Mitchell photo" /></a>
+    I'm a Haskell programmer who lives in Cambridge with my wife <a href="https://www.esc.cam.ac.uk/people/research-students/emily-mitchell">Emily</a> and son Henry (who has grown up a little since the photo on the right was taken). I have a PhD in Computer Science from <a href="http://www.cs.york.ac.uk/">York University</a>, working on making functional programs shorter, faster and safer. Since then I've worked with F# at <a href="https://www.credit-suisse.com/">Credit Suisse</a> and Haskell/F#/C++ at <a href="http://www.standardchartered.com/">Standard Chartered</a>, taking the lessons of functional programming and applying them in finance. I'm a strong believer in the functional approach, finding the combination of conciseness, static-typing and testability to offer significant advantages. I've got <a href="http://neilmitchell.blogspot.com/">a blog</a> mostly about Haskell, and I'm also on <a href="https://twitter.com/ndm_haskell">Twitter</a>, <a href="https://www.linkedin.com/profile/view?id=5786309">LinkedIn</a> and <a href="https://github.com/ndmitchell/">GitHub</a>. To get in touch email me at <a href="mailto:&#x6e;&#x64;&#x6d;&#x69;&#x74;&#x63;&#x68;&#x65;&#x6c;&#x6c;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x6e;&#x64;&#x6d;&#x69;&#x74;&#x63;&#x68;&#x65;&#x6c;&#x6c;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a><!-- same encoding as github, no point doing better than that -->.
+</p>
+
+<h2>Open Source Projects</h2>
+
+<p>
+    I develop a number of open source Haskell projects, all of which can be found at <a href="https://github.com/ndmitchell">my Github page</a> or <a href="http://hoogle.haskell.org/?scope=author%3ANeil-Mitchell">on Hackage</a>. I welcome both contributions via pull requests and bug reports via the GitHub issue trackers. Some of my more popular projects include:
+</p>
+<ul>
+    <li><b><a href="http://shakebuild.com/">Shake</a></b> - a library for writing build systems, an alternative to <code>make</code>.</li>
+    <li><b><a href="http://hoogle.haskell.org/">Hoogle</a></b> - a Haskell API search engine, searching the standard Haskell libraries by function name and type signature.</li>
+    <li><b><a href="https://github.com/ndmitchell/hlint">HLint</a></b> - a tool that suggests stylistic improvements to Haskell code.</li>
+</ul>
+
+<h2>Papers and talks</h2>
+
+<p>All papers and talks are listed below, most recent first. Show all <a href="javascript:showAbstracts()">abstracts</a> or <a href="javascript:showCitations()">citations</a>.</p>
+
+<h3>Paper: Shake Before Building - Replacing Make with Haskell</h3>
+<p class="info"><a href="downloads/paper-shake_before_building-10_sep_2012.pdf">Paper</a>, <a href="downloads/slides-shake_before_building-10_sep_2012.pdf">slides</a>, <a href="http://www.youtube.com/watch?v=xYCPpXVlqFM">video</a>, <a href="javascript:showCitation(1)">citation</a>, <a href="javascript:showAbstract(1)">abstract</a> from <a href="http://www.icfpconference.org/icfp2012/">ICFP 2012</a>, 10 Sep 2012.</p>
+<p id="citation1" class="citation">@inproceedings{mitchell:shake_10_sep_2012
+    ,title          = {Shake Before Building - Replacing Make with {Haskell}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2012}
+    ,month          = {September}
+    ,day            = {10}
+    ,location       = {Copenhagen, Denmark}
+    ,booktitle      = {ICFP '12: Proceedings of the 17th ACM SIGPLAN International Conference on Functional Programming}
+    ,publisher      = {ACM}
+    ,isbn           = {978-1-4503-1054-3}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-shake_before_building-10_sep_2012.pdf'}
+}
+</p>
+<p id="abstract1" class="abstract"><b>Abstract:</b> Most complex software projects are compiled using a build tool (e.g. make), which runs commands in an order satisfying user-defined dependencies. Unfortunately, most build tools require all dependencies to be specified before the build starts. This restriction makes many dependency patterns difficult to express, especially those involving files generated at build time. We show how to eliminate this restriction, allowing additional dependencies to be specified while building. We have implemented our ideas in the Haskell library Shake, and have used Shake to write a complex build system which compiles millions of lines of code.</p>
+<p class="text">An introduction to <a href="http://shakebuild.com/">Shake</a>, focusing on the theoretical side.</p>
+
+<h3>Talk: Hoogle: Finding Functions from Types</h3>
+<p class="info"><a href="downloads/slides-hoogle_finding_functions_from_types-16_may_2011.pdf">Slides</a>, <a href="javascript:showCitation(2)">citation</a> from <a href="http://dalila.sip.ucm.es/tfp11/">TFP 2011</a>, 16 May 2011.</p>
+<p id="citation2" class="citation">@misc{mitchell:hoogle_16_may_2011
+    ,title          = {Hoogle: Finding Functions from Types}
+    ,author         = {Neil Mitchell}
+    ,year           = {2011}
+    ,month          = {May}
+    ,day            = {16}
+    ,note           = {Presentation from TFP 2011}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-hoogle_finding_functions_from_types-16_may_2011.pdf'}
+}
+</p>
+<p class="text">An overview of how type-search works in <a href="http://hoogle.haskell.org/">Hoogle</a> v1 to v4.</p>
+
+<h3>Talk: Shake: A Better Make</h3>
+<p class="info"><a href="downloads/slides-shake_a_better_make-01_oct_2010.pdf">Slides</a>, <a href="http://vimeo.com/15465133">video</a>, <a href="javascript:showCitation(3)">citation</a> from <a href="http://haskell.org/haskellwiki/HaskellImplementorsWorkshop/2010">Haskell Implementors Workshop 2010</a>, 01 Oct 2010.</p>
+<p id="citation3" class="citation">@misc{mitchell:shake_01_oct_2010
+    ,title          = {Shake: A Better Make}
+    ,author         = {Neil Mitchell}
+    ,year           = {2010}
+    ,month          = {October}
+    ,day            = {1}
+    ,note           = {Presentation from Haskell Implementors Workshop 2010}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-shake_a_better_make-01_oct_2010.pdf'}
+}
+</p>
+<p class="text">Early details about the design of <a href="http://shakebuild.com/">Shake</a>.</p>
+
+<h3>Paper: Rethinking Supercompilation</h3>
+<p class="info"><a href="downloads/paper-rethinking_supercompilation-29_sep_2010.pdf">Paper</a>, <a href="downloads/slides-rethinking_supercompilation_29_sep_2010.pdf">slides</a>, <a href="http://vimeo.com/15833948">video</a>, <a href="javascript:showCitation(4)">citation</a>, <a href="javascript:showAbstract(4)">abstract</a> from <a href="http://www.icfpconference.org/icfp2010/">ICFP 2010</a>, 29 Sep 2010.</p>
+<p id="citation4" class="citation">@inproceedings{mitchell:supercompilation_29_sep_2010
+    ,title          = {Rethinking Supercompilation}
+    ,author         = {Neil Mitchell}
+    ,year           = {2010}
+    ,month          = {September}
+    ,day            = {29}
+    ,location       = {Baltimore, Maryland, USA}
+    ,pages          = {309--320}
+    ,booktitle      = {ICFP '10: Proceedings of the 15th ACM SIGPLAN International Conference on Functional Programming}
+    ,doi            = {http://doi.acm.org/10.1145/1863543.1863588}
+    ,publisher      = {ACM}
+    ,isbn           = {978-1-60558-794-3}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-rethinking_supercompilation-29_sep_2010.pdf'}
+}
+</p>
+<p id="abstract4" class="abstract"><b>Abstract:</b> Supercompilation is a program optimisation technique that is particularly effective at eliminating unnecessary overheads. We have designed a new supercompiler, making many novel choices, including different termination criteria and handling of let bindings. The result is a supercompiler that focuses on simplicity, compiles programs quickly and optimises programs well. We have benchmarked our supercompiler, with some programs running more than twice as fast than when compiled with GHC.</p>
+<p class="text">Thoughts about making supercompilation faster, based on my experiments with <a href="https://github.com/ndmitchell/supero">Supero</a>.</p>
+
+<h3>Paper: Deriving a Relationship from a Single Example</h3>
+<p class="info"><a href="downloads/paper-deriving_a_relationship_from_a_single_example-04_sep_2009.pdf">Paper</a>, <a href="downloads/slides-deriving_a_relationship_from_a_single_example-04_sep_2009.pdf">slides</a>, <a href="javascript:showCitation(5)">citation</a>, <a href="javascript:showAbstract(5)">abstract</a> from <a href="http://www.cogsys.wiai.uni-bamberg.de/aaip09/">Approaches and Applications of Inductive Programming 2009</a>, 04 Sep 2009.</p>
+<p id="citation5" class="citation">@inproceedings{mitchell:derive_04_sep_2009
+    ,title          = {Deriving a Relationship from a Single Example}
+    ,author         = {Neil Mitchell}
+    ,year           = {2009}
+    ,month          = {September}
+    ,day            = {4}
+    ,location       = {Edinburgh, Scotland, UK}
+    ,series         = {Lecture Notes in Computer Science, Vol. 5812}
+    ,editors        = {Ute Schmid, Emanuel Kitzelmann, Rinus Plasmeijer}
+    ,isbn           = {978-3-642-11930-9}
+    ,pages          = {1--24}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-deriving_a_relationship_from_a_single_example-04_sep_2009.pdf'}
+}
+</p>
+<p id="abstract5" class="abstract"><b>Abstract:</b> Given an appropriate domain specific language (DSL), it is possible to describe the relationship between Haskell data types and many generic functions, typically type-class instances. While describing the relationship is possible, it is not always an easy task. There is an alternative - simply give one example output for a carefully chosen input, and have the relationship derived.<br/><br/>When deriving a relationship from only one example, it is important that the derived relationship is the intended one. We identify general restrictions on the DSL, and on the provided example, to ensure a level of predictability. We then apply these restrictions in practice, to derive the relationship between Haskell data types and generic functions. We have used our scheme in the Derive tool, where over 60% of type classes are derived from a single example.</p>
+<p class="text">Assuming you have a single example of a type class, what should the data type be, and what range of instances can be described. Implemented in the <a href="https://github.com/ndmitchell/derive">Derive</a> tool.</p>
+
+<h3>Paper: Losing Functions without Gaining Data</h3>
+<p class="info"><a href="downloads/paper-losing_functions_without_gaining_data-03_sep_2009.pdf">Paper</a>, <a href="downloads/slides-losing_functions_without_gaining_data-03_sep_2009.pdf">slides</a>, <a href="http://www.vimeo.com/6687266">video</a>, <a href="javascript:showCitation(6)">citation</a>, <a href="javascript:showAbstract(6)">abstract</a> from <a href="http://www.haskell.org/haskell-symposium/2009/">Haskell Symposium 2009</a>, 03 Sep 2009.</p>
+<p id="citation6" class="citation">@inproceedings{mitchell:defunctionalisation_03_sep_2009
+    ,title          = {Losing Functions without Gaining Data}
+    ,author         = {Neil Mitchell and Colin Runciman}
+    ,year           = {2009}
+    ,month          = {September}
+    ,day            = {3}
+    ,booktitle      = {Haskell '09: Proceedings of the second ACM SIGPLAN symposium on Haskell}
+    ,pages          = {49--60}
+    ,location       = {Edinburgh, Scotland, UK}
+    ,doi            = {http://doi.acm.org/10.1145/1411286.1411293}
+    ,publisher      = {ACM}
+    ,isbn           = {978-1-60558-508-6}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-losing_functions_without_gaining_data-03_sep_2009.pdf'}
+}
+</p>
+<p id="abstract6" class="abstract"><b>Abstract:</b> We describe a transformation which takes a higher-order program, and produces an equivalent first-order program. Unlike Reynolds-style defunctionalisation, it does not introduce any new data types, and the results are more amenable to subsequent analysis operations. We can use our method to improve the results of existing analysis operations, including strictness analysis, pattern-match safety and termination checking. Our transformation is implemented, and works on a Core language to which Haskell programs can be reduced. Our method cannot always succeed in removing all functional values, but in practice is remarkably successful.</p>
+<p class="text">An algorithm for making higher-order programs first-order without introducing new data types (e.g. without doing Reynold's style defunctionalisation). The resulting program may have worse time complexity, but that's fine for certain types of analysis. Implemented as <a href="https://github.com/ndmitchell/firstify">Firstify</a> and used in <a href="https://github.com/ndmitchell/catch">Catch</a>.</p>
+
+<h3>Talk: Supercompilation for Haskell</h3>
+<p class="info"><a href="downloads/slides-supercompilation_for_haskell-03_mar_2009.pdf">Slides</a>, <a href="javascript:showCitation(7)">citation</a> from <a href="http://sneezy.cs.nott.ac.uk/fun/">Fun in the Afternoon</a> Spring 2009, 03 Mar 2009.</p>
+<p id="citation7" class="citation">@misc{mitchell:supercompilation_03_mar_2009
+    ,title          = {Supercompilation for {Haskell}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2009}
+    ,month          = {March}
+    ,day            = {3}
+    ,note           = {Presentation from Fun in the Afternoon Spring 2009}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-supercompilation_for_haskell-03_mar_2009.pdf'}
+}
+</p>
+<p class="text">Details of how to apply supercompilation to Haskell.</p>
+
+<h3>Paper: Hoogle Overview</h3>
+<p class="info"><a href="downloads/paper-hoogle_overview-19_nov_2008.pdf">Paper</a>, <a href="javascript:showCitation(8)">citation</a>, <a href="javascript:showAbstract(8)">abstract</a> from The <a href="http://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>, 19 Nov 2008.</p>
+<p id="citation8" class="citation">@article{mitchell:hoogle_19_nov_2008
+    ,title          = {Hoogle Overview}
+    ,author         = {Neil Mitchell}
+    ,year           = {2008}
+    ,month          = {November}
+    ,day            = {19}
+    ,journal        = {The Monad.Reader}
+    ,number         = {12}
+    ,pages          = {27--35}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-hoogle_overview-19_nov_2008.pdf'}
+}
+</p>
+<p id="abstract8" class="abstract"><b>Abstract:</b> This article gives an overview of the Hoogle tool. We describe the history of Hoogle, the improvements that have been made this summer, and plans for future features. Finally, we discuss the design guidelines of Hoogle 4 - which may be of interest both to budding Hoogle developers and other Haskell projects. This article does not cover the theoretical background of Hoogle.</p>
+<p class="text">An overview of <a href="http://hoogle.haskell.org/">Hoogle</a>, including both the algorithms and code structure.</p>
+
+<h3>Paper: Not All Patterns, But Enough - an automatic verifier for partial but sufficient pattern matching</h3>
+<p class="info"><a href="downloads/paper-not_all_patterns_but_enough-25_sep_2008.pdf">Paper</a>, <a href="downloads/slides-not_all_patterns_but_enough-25_sep_2008.pdf">slides</a>, <a href="http://video.google.com/videoplay?docid=8250544235079789504">video</a>, <a href="javascript:showCitation(9)">citation</a>, <a href="javascript:showAbstract(9)">abstract</a> from <a href="http://www.haskell.org/haskell-symposium/2008/">Haskell Symposium 2008</a>, 25 Sep 2008.</p>
+<p id="citation9" class="citation">@inproceedings{mitchell:catch_25_sep_2008
+    ,title          = {Not All Patterns, But Enough - an automatic verifier for partial but sufficient pattern matching}
+    ,author         = {Neil Mitchell and Colin Runciman}
+    ,year           = {2008}
+    ,month          = {September}
+    ,day            = {25}
+    ,booktitle      = {Haskell '08: Proceedings of the first ACM SIGPLAN symposium on Haskell}
+    ,pages          = {49--60}
+    ,location       = {Victoria, BC, Canada}
+    ,doi            = {http://doi.acm.org/10.1145/1411286.1411293}
+    ,publisher      = {ACM}
+    ,isbn           = {978-1-60558-064-7}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-not_all_patterns_but_enough-25_sep_2008.pdf'}
+}
+</p>
+<p id="abstract9" class="abstract"><b>Abstract:</b> We describe an automated analysis of Haskell 98 programs to check statically that, despite the possible use of partial (or nonexhaustive) pattern matching, no pattern-match failure can occur. Our method is an iterative backward analysis using a novel form of pattern-constraint to represent sets of data values. The analysis is defined for a core first-order language to which Haskell 98 programs are reduced. Our analysis tool has been successfully applied to a range of programs, and our techniques seem to scale well. Throughout the paper, methods are represented much as we have implemented them in practice, again in Haskell.</p>
+<p class="text">A static analysis for automatically proving a program will not raise an error at runtime, implemented as <a href="https://github.com/ndmitchell/catch">Catch</a>. The analysis was able to detect 3 bugs in the <a href="https://hackage.haskell.org/package/hscolour">HsColour</a> program.</p>
+
+<h3>Talk: Hoogle: Fast Type Searching</h3>
+<p class="info"><a href="downloads/slides-hoogle_fast_type_searching-09_aug_2008.pdf">Slides</a>, <a href="http://www.wellquite.org/non-blog/AngloHaskell2008/neil%20mitchell.ogg">audio</a>, <a href="javascript:showCitation(10)">citation</a> from <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2008">AngloHaskell 2008</a>, 09 Aug 2008.</p>
+<p id="citation10" class="citation">@misc{mitchell:hoogle_09_aug_2008
+    ,title          = {Hoogle: Fast Type Searching}
+    ,author         = {Neil Mitchell}
+    ,year           = {2008}
+    ,month          = {August}
+    ,day            = {9}
+    ,note           = {Presentation from AngloHaskell 2008}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-hoogle_fast_type_searching-09_aug_2008.pdf'}
+}
+</p>
+<p class="text">An early overview of how both type and text search works in <a href="http://hoogle.haskell.org/">Hoogle</a>.</p>
+
+<h3>Thesis: Transformation and Analysis of Functional Programs</h3>
+<p class="info"><a href="downloads/paper-transformation_and_analysis_of_functional_programs-4_jun_2008.pdf">Paper</a>, <a href="downloads/slides-transformation_and_analysis_of_functional_programs-14_jul_2008.pdf">slides</a>, <a href="javascript:showCitation(11)">citation</a>, <a href="javascript:showAbstract(11)">abstract</a>, 04 Jun 2008.</p>
+<p id="citation11" class="citation">@phdthesis{mitchell:thesis_04_jun_2008
+    ,title          = {Transformation and Analysis of Functional Programs}
+    ,author         = {Neil Mitchell}
+    ,year           = {2008}
+    ,month          = {June}
+    ,day            = {4}
+    ,school         = {University of York}
+    ,pages          = {225}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-transformation_and_analysis_of_functional_programs-4_jun_2008.pdf'}
+}
+</p>
+<p id="abstract11" class="abstract"><b>Abstract:</b> This thesis describes techniques for transforming and analysing functional programs. We operate on a core language, to which Haskell programs can be reduced. We present a range of techniques, all of which have been implemented and evaluated.<br/><br/>We make programs shorter by defining a library which abstracts over common data traversal patterns, removing boilerplate code. This library only supports traversals having value-specific behaviour for one type, allowing a simpler programming model. Our library allows concise expression of traversals with competitive performance.<br/><br/>We make programs faster by applying a variant of supercompilation. As a result of practical experiments, we have identified modifications to the standard supercompilation techniques -- particularly with respect to let bindings and the generalisation technique.<br/><br/>We make programs safer by automatically checking for potential pattern-match errors. We define a transformation that takes a higher-order program and produces an equivalent program with fewer functional values, typically a first-order program. We then define an analysis on a first-order language which checks statically that, despite the possible use of partial (or non-exhaustive) pattern matching, no pattern-match failure can occur.</p>
+<p class="text">My PhD thesis, covering a generics library (<a href="https://github.com/ndmitchell/uniplate">Uniplate</a>), a supercompiler (<a href="https://github.com/ndmitchell/supero">Supero</a>), a defunctionalisation algorithm (<a href="https://github.com/ndmitchell/firstify">Firstify</a>) and a pattern-match safety verifier (<a href="https://github.com/ndmitchell/catch">Catch</a>).</p>
+
+<h3>Talk: Instances for Free</h3>
+<p class="info"><a href="downloads/slides-instances_for_free-22_may_2008.pdf">Slides</a>, <a href="javascript:showCitation(12)">citation</a> from <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>, 22 May 2008.</p>
+<p id="citation12" class="citation">@misc{mitchell:deriving_22_may_2008
+    ,title          = {Instances for Free}
+    ,author         = {Neil Mitchell}
+    ,year           = {2008}
+    ,month          = {May}
+    ,day            = {22}
+    ,note           = {Presentation from PLASMA}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-instances_for_free-22_may_2008.pdf'}
+}
+</p>
+<p class="text">Generating Haskell instances from examples, as found in the <a href="https://github.com/ndmitchell/derive">Derive</a> tool.</p>
+
+<h3>Paper: A Supercompiler for Core Haskell</h3>
+<p class="info"><a href="downloads/paper-a_supercompiler_for_core_haskell-01_may_2008.pdf">Paper</a>, <a href="javascript:showCitation(13)">citation</a>, <a href="javascript:showAbstract(13)">abstract</a> from <a href="http://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a> post proceedings, 01 May 2008.</p>
+<p id="citation13" class="citation">@inproceedings{mitchell:supero_01_may_2008
+    ,title          = {A Supercompiler for Core {Haskell}}
+    ,author         = {Neil Mitchell and Colin Runciman}
+    ,year           = {2008}
+    ,month          = {May}
+    ,day            = {1}
+    ,pages          = {147--164}
+    ,booktitle      = {IFL 2007}
+    ,editor         = {Olaf Chitil et al.}
+    ,series         = {LNCS}
+    ,volume         = {5083}
+    ,publisher      = {Springer-Verlag}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-a_supercompiler_for_core_haskell-01_may_2008.pdf'}
+}
+</p>
+<p id="abstract13" class="abstract"><b>Abstract:</b> Haskell is a functional language, with features such as higher order functions and lazy evaluation, which allow succinct programs. These high-level features present many challenges for optimising compilers. We report practical experiments using novel variants of supercompilation, with special attention to let bindings and the generalisation technique.</p>
+<p class="text">An early design of the <a href="https://github.com/ndmitchell/supero">Supero</a> supercompiler.</p>
+
+<h3>Talk: Detecting Pattern-Match Failures in Haskell</h3>
+<p class="info"><a href="downloads/slides-detecting_pattern_match_failures_in_haskell-26_nov_2007.pdf">Slides</a>, <a href="javascript:showCitation(14)">citation</a> from <a href="http://metacomp.comlab.ox.ac.uk/">The Oxford Centre for Metacomputation</a>, 26 Nov 2007.</p>
+<p id="citation14" class="citation">@misc{mitchell:catch_26_nov_2007
+    ,title          = {Detecting Pattern-Match Failures in {Haskell}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {November}
+    ,day            = {26}
+    ,note           = {Presentation from The Oxford Centre for Metacomputation}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-detecting_pattern_match_failures_in_haskell-26_nov_2007.pdf'}
+}
+</p>
+<p class="text">Details about <a href="https://github.com/ndmitchell/catch">Catch</a>, including worked examples.</p>
+
+<h3>Paper: Deriving Generic Functions by Example</h3>
+<p class="info"><a href="downloads/paper-deriving_generic_functions_by_example-26_oct_2007.pdf">Paper</a>, <a href="downloads/slides-deriving_generic_functions_by_example-26_oct_2007.pdf">slides</a>, <a href="javascript:showCitation(15)">citation</a>, <a href="javascript:showAbstract(15)">abstract</a> from <a href="http://www.cs.york.ac.uk/yds/">York Doctoral Symposium 2007</a>, 26 Oct 2007.</p>
+<p id="citation15" class="citation">@inproceedings{mitchell:deriving_26_oct_2007
+    ,title          = {Deriving Generic Functions by Example}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {October}
+    ,day            = {26}
+    ,pages          = {55--62}
+    ,publisher      = {Tech. Report YCS-2007-421, Dept. of Computer Science, University of York, UK}
+    ,editor         = {Jan Tobias M\"{u}hlberg and Juan Ignacio Perna}
+    ,booktitle      = {Proceedings of the First York Doctoral Syposium 2007}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-deriving_generic_functions_by_example-26_oct_2007.pdf'}
+}
+</p>
+<p id="abstract15" class="abstract"><b>Abstract:</b> A function is said to be generic if it operates over values of any data type. For example, a generic equality function can test pairs of booleans, integers, lists, trees etc. In most languages programmers must define generic functions multiple times, specialised for each data type. Alternatively, a tool could be used to specify the relationship between the data type and the implementation, but this relationship may be complex. This paper describes a solution: given a single example of the generic function on one data type, we can infer the relationship between a data type and the implementation. We have used our method in the Derive tool, allowing the implementation of 60% of the generic functions to be inferred.</p>
+<p class="text">An early version of the generic deriving work from <a href="https://github.com/ndmitchell/derive">Derive</a>.</p>
+
+<h3>Paper: Uniform Boilerplate and List Processing</h3>
+<p class="info"><a href="downloads/paper-uniform_boilerplate_and_list_processing-30_sep_2007.pdf">Paper</a>, <a href="downloads/slides-uniform_boilerplate_and_list_processing-30_sep_2007.pdf">slides</a>, <a href="http://www.ludd.ltu.se/~pj/hw2007/uniplate.mov">video</a>, <a href="javascript:showCitation(16)">citation</a>, <a href="javascript:showAbstract(16)">abstract</a> from <a href="http://www.cse.unsw.edu.au/~keller/haskellws/HaskellWorkshop.html">Haskell Workshop 2007</a>, 30 Sep 2007.</p>
+<p id="citation16" class="citation">@inproceedings{mitchell:uniplate_30_sep_2007
+    ,title          = {Uniform Boilerplate and List Processing}
+    ,author         = {Neil Mitchell and Colin Runciman}
+    ,year           = {2007}
+    ,month          = {September}
+    ,day            = {30}
+    ,booktitle      = {Haskell '07: Proceedings of the ACM SIGPLAN workshop on Haskell}
+    ,pages          = {49--60}
+    ,location       = {Freiburg, Germany}
+    ,doi            = {http://doi.acm.org/10.1145/1291201.1291208}
+    ,publisher      = {ACM}
+    ,isbn           = {978-1-59593-674-5}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-uniform_boilerplate_and_list_processing-30_sep_2007.pdf'}
+}
+</p>
+<p id="abstract16" class="abstract"><b>Abstract:</b> Generic traversals over recursive data structures are often referred to as boilerplate code. The definitions of functions involving such traversals may repeat very similar patterns, but with variations for different data types and different functionality. Libraries of operations abstracting away boilerplate code typically rely on elaborate types to make operations generic. The motivating observation for this paper is that most traversals have value-specific behaviour for just one type. We present the design of a new library exploiting this assumption. Our library allows concise expression of traversals with competitive performance.</p>
+<p class="text">Details of the <a href="https://github.com/ndmitchell/uniplate">Uniplate</a> generics library, including information on how to use the Uniplate operations.</p>
+
+<h3>Paper: Supero: Making Haskell Faster</h3>
+<p class="info"><a href="downloads/paper-supero_making_haskell_faster-27_sep_2007.pdf">Paper</a>, <a href="downloads/slides-supero_making_haskell_faster-27_sep_2007.pdf">slides</a>, <a href="javascript:showCitation(17)">citation</a>, <a href="javascript:showAbstract(17)">abstract</a> from <a href="http://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a>, 27 Sep 2007.</p>
+<p id="citation17" class="citation">@inproceedings{mitchell:supercompilation_27_sep_2007
+    ,title          = {Supero: Making {Haskell} Faster}
+    ,author         = {Neil Mitchell and Colin Runciman}
+    ,year           = {2007}
+    ,month          = {September}
+    ,day            = {27}
+    ,booktitle      = {IFL 2007: Draft Proceedings of the 19th International Symposium on Implementation and Application of Functional Languages}
+    ,location       = {Freiburg, Germany}
+    ,publisher      = {Tech. Report No. 12-07 of the Computing Laboratory, University of Kent, UK}
+    ,editor         = {Olaf Chitil}
+    ,pages          = {334--349}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-supero_making_haskell_faster-27_sep_2007.pdf'}
+}
+</p>
+<p id="abstract17" class="abstract"><b>Abstract:</b> Haskell is a functional language, with features such as higher order functions and lazy evaluation, which allow succinct programs. These high-level features are difficult for fast execution, but GHC is a mature and widely used optimising compiler. This paper presents a whole-program approach to optimisation, which produces speed improvements of between 10% and 60% when used with GHC, on eight benchmarks.</p>
+<p class="text">A very early version of <a href="https://github.com/ndmitchell/supero">Supero</a>, before it was an actual supercompiler.</p>
+
+<h3>Talk: Yhc: Past, Present, Future</h3>
+<p class="info"><a href="downloads/slides-yhc_past_present_future-10_aug_2007.pdf">Slides</a>, <a href="javascript:showCitation(18)">citation</a> from <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>, 10 Aug 2007.</p>
+<p id="citation18" class="citation">@misc{mitchell:yhc_10_aug_2007
+    ,title          = {Yhc: Past, Present, Future}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {August}
+    ,day            = {10}
+    ,note           = {Presentation from Anglo Haskell 2007}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-yhc_past_present_future-10_aug_2007.pdf'}
+}
+</p>
+<p class="text">The history behind <a href="https://wiki.haskell.org/Yhc">Yhc</a>, along with future plans and intentions.</p>
+
+<h3>Talk: Faster Haskell</h3>
+<p class="info"><a href="downloads/slides-faster_haskell-10_aug_2007.pdf">Slides</a>, <a href="javascript:showCitation(19)">citation</a> from <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>, 10 Aug 2007.</p>
+<p id="citation19" class="citation">@misc{mitchell:supercompilation_10_aug_2007
+    ,title          = {Faster {Haskell}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {August}
+    ,day            = {10}
+    ,note           = {Presentation from Anglo Haskell 2007}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-faster_haskell-10_aug_2007.pdf'}
+}
+</p>
+<p class="text">Early work on Supercompilation.</p>
+
+<h3>Talk: Transformation and Analysis of Haskell Source Code</h3>
+<p class="info"><a href="downloads/slides-transformation_and_analysis_of_haskell_source_code-02_jul_2007.pdf">Slides</a>, <a href="javascript:showCitation(20)">citation</a> from my thesis seminar, 02 Jul 2007.</p>
+<p id="citation20" class="citation">@misc{mitchell:thesis_02_jul_2007
+    ,title          = {Transformation and Analysis of {Haskell} Source Code}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {July}
+    ,day            = {2}
+    ,note           = {Presentation from my thesis seminar}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-transformation_and_analysis_of_haskell_source_code-02_jul_2007.pdf'}
+}
+</p>
+<p class="text">Slides giving a very quick overview of my thesis.</p>
+
+<h3>Talk: Fastest Lambda First</h3>
+<p class="info"><a href="downloads/slides-fastest_lambda_first-30_may_2007.pdf">Slides</a>, <a href="javascript:showCitation(21)">citation</a> from <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>, 30 May 2007.</p>
+<p id="citation21" class="citation">@misc{mitchell:supercompilation_30_may_2007
+    ,title          = {Fastest Lambda First}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {May}
+    ,day            = {30}
+    ,note           = {Presentation from PLASMA}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-fastest_lambda_first-30_may_2007.pdf'}
+}
+</p>
+<p class="text">Details of a whole-program optimiser for Haskell, early work on <a href="https://github.com/ndmitchell/supero">Supero</a>.</p>
+
+<h3>Paper: Yhc.Core - from Haskell to Core</h3>
+<p class="info"><a href="downloads/paper-yhc_core-30_apr_2007.pdf">Paper</a>, <a href="javascript:showCitation(22)">citation</a>, <a href="javascript:showAbstract(22)">abstract</a> from The <a href="http://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>, 30 Apr 2007.</p>
+<p id="citation22" class="citation">@article{mitchell:yhc_30_apr_2007
+    ,title          = {{Yhc.Core} - from {Haskell} to Core}
+    ,author         = {Dimitry Golubovsky and Neil Mitchell and Matthew Naylor}
+    ,year           = {2007}
+    ,month          = {April}
+    ,day            = {30}
+    ,journal        = {The Monad.Reader}
+    ,number         = {7}
+    ,pages          = {45--61}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-yhc_core-30_apr_2007.pdf'}
+}
+</p>
+<p id="abstract22" class="abstract"><b>Abstract:</b> The Yhc compiler is a hot-bed of new and interesting ideas. We present Yhc.Core - one of the most popular libraries from Yhc. We describe what we think makes Yhc.Core special, and how people have used it in various projects including an evaluator, and a Javascript code generator.</p>
+<p class="text">Information about the <a href="https://wiki.haskell.org/Yhc">Yhc</a> core language, its constructors and semantics.</p>
+
+<h3>Talk: First Order Haskell</h3>
+<p class="info"><a href="downloads/slides-first_order_haskell-06_apr_2007.pdf">Slides</a>, <a href="javascript:showCitation(23)">citation</a> from <a href="http://www.bctcs.ac.uk/">BCTCS 2007</a>, 06 Apr 2007.</p>
+<p id="citation23" class="citation">@misc{mitchell:defunctionalisation_06_apr_2007
+    ,title          = {First Order {Haskell}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {April}
+    ,day            = {6}
+    ,note           = {Presentation from BCTCS 2007}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-first_order_haskell-06_apr_2007.pdf'}
+}
+</p>
+<p class="text">An early version of a mechanism for defunctionalising Haskell programs, which later became <a href="https://github.com/ndmitchell/firstify">Firstify</a>.</p>
+
+<h3>Talk: Ada: Generics</h3>
+<p class="info"><a href="downloads/slides-ada_generics-07_mar_2007.pdf">Slides</a>, <a href="javascript:showCitation(24)">citation</a> from the Algorithms and Data Structures course, 07 Mar 2007.</p>
+<p id="citation24" class="citation">@misc{mitchell:ada_07_mar_2007
+    ,title          = {Ada: Generics}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {March}
+    ,day            = {7}
+    ,note           = {Presentation from the Algorithms and Data Structures course}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-ada_generics-07_mar_2007.pdf'}
+}
+</p>
+<p class="text">First-year lecture notes on generics in Ada.</p>
+
+<h3>Paper: A Static Checker for Safe Pattern Matching in Haskell</h3>
+<p class="info"><a href="downloads/paper-a_static_checker_for_safe_pattern_matching_in_haskell-01_feb_2007.pdf">Paper</a>, <a href="javascript:showCitation(25)">citation</a>, <a href="javascript:showAbstract(25)">abstract</a> from <a href="http://www.niii.ru.nl/~marko/tfp05/">TFP 2005</a> post proceedings, 01 Feb 2007.</p>
+<p id="citation25" class="citation">@inproceedings{mitchell:catch_01_feb_2007
+    ,title          = {A Static Checker for Safe Pattern Matching in {Haskell}}
+    ,author         = {Neil Mitchell and Colin Runciman}
+    ,year           = {2007}
+    ,month          = {February}
+    ,day            = {1}
+    ,publisher      = {Intellect}
+    ,booktitle      = {Trends in Functional Programming}
+    ,volume         = {6}
+    ,isbn           = {978-1-84150-176-5}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-a_static_checker_for_safe_pattern_matching_in_haskell-01_feb_2007.pdf'}
+}
+</p>
+<p id="abstract25" class="abstract"><b>Abstract:</b> A Haskell program may fail at runtime with a pattern-match error if the program has any incomplete (non-exhaustive) patterns in definitions or case alternatives. This paper describes a static checker that allows non-exhaustive patterns to exist, yet ensures that a pattern-match error does not occur. It describes a constraint language that can be used to reason about pattern matches, along with mechanisms to propagate these constraints between program components.</p>
+<p class="text">An early version of <a href="https://github.com/ndmitchell/catch">Catch</a>.</p>
+
+<h3>Talk: Playing with Haskell Data</h3>
+<p class="info"><a href="downloads/slides-playing_with_haskell_data-18_jan_2007.pdf">Slides</a>, <a href="javascript:showCitation(26)">citation</a> from <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>, 18 Jan 2007.</p>
+<p id="citation26" class="citation">@misc{mitchell:uniplate_18_jan_2007
+    ,title          = {Playing with {Haskell} Data}
+    ,author         = {Neil Mitchell}
+    ,year           = {2007}
+    ,month          = {January}
+    ,day            = {18}
+    ,note           = {Presentation from PLASMA}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-playing_with_haskell_data-18_jan_2007.pdf'}
+}
+</p>
+<p class="text">Generic traversals and transformations over Haskell data types, what would later become <a href="https://github.com/ndmitchell/uniplate">Uniplate</a>.</p>
+
+<h3>Talk: Haskell With Go Faster Stripes</h3>
+<p class="info"><a href="downloads/slides-haskell_with_go_faster_stripes-30_nov_2006.pdf">Slides</a>, <a href="javascript:showCitation(27)">citation</a> from <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>, 30 Nov 2006.</p>
+<p id="citation27" class="citation">@misc{mitchell:supercompilation_30_nov_2006
+    ,title          = {Haskell With Go Faster Stripes}
+    ,author         = {Neil Mitchell}
+    ,year           = {2006}
+    ,month          = {November}
+    ,day            = {30}
+    ,note           = {Presentation from PLASMA}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-haskell_with_go_faster_stripes-30_nov_2006.pdf'}
+}
+</p>
+<p class="text">How to make Haskell faster.</p>
+
+<h3>Talk: Hat: Windows and WIMP</h3>
+<p class="info"><a href="downloads/slides-hat_windows_and_wimp-05_oct_2006.pdf">Slides</a>, <a href="javascript:showCitation(28)">citation</a> from <a href="http://www.haskell.org/hat/">Hat</a> Day 2006 (Kent), 05 Oct 2006.</p>
+<p id="citation28" class="citation">@misc{mitchell:hat_05_oct_2006
+    ,title          = {Hat: {Windows} and {WIMP}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2006}
+    ,month          = {October}
+    ,day            = {5}
+    ,note           = {Presentation from Hat Day 2006 (Kent)}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-hat_windows_and_wimp-05_oct_2006.pdf'}
+}
+</p>
+<p class="text">Thoughts about how the <a href="http://www.haskell.org/hat/">Hat</a> tools could benefit from GUI elements.</p>
+
+<h3>Talk: Catch, A Practical Tool</h3>
+<p class="info"><a href="downloads/slides-catch-06_apr_2006.pdf">Slides</a>, <a href="javascript:showCitation(29)">citation</a> from <a href="http://www.bctcs.ac.uk/">BCTCS 2006</a>, 06 Apr 2006.</p>
+<p id="citation29" class="citation">@misc{mitchell:catch_06_apr_2006
+    ,title          = {Catch, A Practical Tool}
+    ,author         = {Neil Mitchell}
+    ,year           = {2006}
+    ,month          = {April}
+    ,day            = {6}
+    ,note           = {Presentation from BCTCS 2006}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-catch-06_apr_2006.pdf'}
+}
+</p>
+<p class="text">Very early notes on <a href="https://github.com/ndmitchell/catch">Catch</a>.</p>
+
+<h3>Talk: Catch, Lazy Termination</h3>
+<p class="info"><a href="downloads/slides-catch-16_mar_2006.pdf">Slides</a>, <a href="javascript:showCitation(30)">citation</a> from <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>, 16 Mar 2006.</p>
+<p id="citation30" class="citation">@misc{mitchell:catch_16_mar_2006
+    ,title          = {Catch, Lazy Termination}
+    ,author         = {Neil Mitchell}
+    ,year           = {2006}
+    ,month          = {March}
+    ,day            = {16}
+    ,note           = {Presentation from PLASMA}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-catch-16_mar_2006.pdf'}
+}
+</p>
+<p class="text">Discussions about what termination means in a lazy language, and how to detect it.</p>
+
+<h3>Talk: Hoogle</h3>
+<p class="info"><a href="downloads/slides-hoogle-08_dec_2005.pdf">Slides</a>, <a href="javascript:showCitation(31)">citation</a> from <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>, 08 Dec 2005.</p>
+<p id="citation31" class="citation">@misc{mitchell:hoogle_08_dec_2005
+    ,title          = {Hoogle}
+    ,author         = {Neil Mitchell}
+    ,year           = {2005}
+    ,month          = {December}
+    ,day            = {8}
+    ,note           = {Presentation from PLASMA}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-hoogle-08_dec_2005.pdf'}
+}
+</p>
+<p class="text">An early introduction to <a href="http://hoogle.haskell.org/">Hoogle</a>.</p>
+
+<h3>Paper: Visual Hat</h3>
+<p class="info"><a href="downloads/paper-hatday-28_oct_2005.pdf">Paper</a>, <a href="downloads/slides-hat_visual-27_may_2005.pdf">slides</a>, <a href="javascript:showCitation(32)">citation</a>, <a href="javascript:showAbstract(32)">abstract</a> from <a href="http://www.haskell.org/hat/">Hat</a> Day 2005 (York), 28 Oct 2005.</p>
+<p id="citation32" class="citation">@inproceedings{mitchell:hat_28_oct_2005
+    ,title          = {Visual {Hat}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2005}
+    ,month          = {October}
+    ,day            = {28}
+    ,booktitle      = {Hat Day 2005: work in progress on the Hat tracing system for Haskell}
+    ,pages          = {23--26}
+    ,publisher      = {Tech. Report YCS-2005-395, Dept. of Computer Science, University of York, UK}
+    ,editor         = {Colin Runciman}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-hatday-28_oct_2005.pdf'}
+}
+</p>
+<p id="abstract32" class="abstract"><b>Abstract:</b> This paper describes a new approach to visualizing the data contained in Hat traces. The aim is to cater for Windows users who are more familiar with graphical debugging tools.</p>
+<p class="text">Thoughts on how to make the <a href="http://www.haskell.org/hat/">Hat</a> tools work in a GUI.</p>
+
+<h3>Paper: Unfailing Haskell: A Static Checker for Pattern Matching</h3>
+<p class="info"><a href="downloads/paper-unfailing_haskell_a_static_checker_for_pattern_matching-24_sep_2005.pdf">Paper</a>, <a href="downloads/slides-unfailing_haskell_a_static_checker_for_pattern_matching-24_sep_2005.pdf">slides</a>, <a href="javascript:showCitation(33)">citation</a>, <a href="javascript:showAbstract(33)">abstract</a> from <a href="http://www.niii.ru.nl/~marko/tfp05/">TFP 2005</a>, 24 Sep 2005.</p>
+<p id="citation33" class="citation">@inproceedings{mitchell:catch_24_sep_2005
+    ,title          = {Unfailing {Haskell}: A Static Checker for Pattern Matching}
+    ,author         = {Neil Mitchell and Colin Runciman}
+    ,year           = {2005}
+    ,month          = {September}
+    ,day            = {24}
+    ,booktitle      = {Proceedings of the Sixth Symposium on Trends in Functional Programming}
+    ,pages          = {313--328}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-unfailing_haskell_a_static_checker_for_pattern_matching-24_sep_2005.pdf'}
+}
+</p>
+<p id="abstract33" class="abstract"><b>Abstract:</b> A Haskell program may fail at runtime with a pattern-match error if the program has any incomplete (non-exhaustive) patterns in definitions or case alternatives. This paper describes a static checker that allows non-exhaustive patterns to exist, yet ensures that a pattern-match error does not occur. It describes a constraint language that can be used to reason about pattern matches, along with mechanisms to propagate these constraints between program components.</p>
+<p class="text">A very early version of <a href="https://github.com/ndmitchell/catch">Catch</a>.</p>
+
+<h3>Paper: Qualifying Dissertation: Unfailing Haskell</h3>
+<p class="info"><a href="downloads/paper-qualifying_dissertation-30_jun_2005.pdf">Paper</a>, <a href="javascript:showCitation(34)">citation</a>, <a href="javascript:showAbstract(34)">abstract</a>, 30 Jun 2005.</p>
+<p id="citation34" class="citation">@misc{mitchell:thesis_30_jun_2005
+    ,title          = {Qualifying Dissertation: Unfailing {Haskell}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2005}
+    ,month          = {June}
+    ,day            = {30}
+    ,institution    = {University of York}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/paper-qualifying_dissertation-30_jun_2005.pdf'}
+}
+</p>
+<p id="abstract34" class="abstract"><b>Abstract:</b> Programs written in Haskell may fail at runtime with either a pattern match error, or with non-termination. Both of these can be thought of as giving the value $\bot$ as a result. Other forms of failure, for example heap exhaustion, are not considered.<br/><br/>The first section of this document reviews previous work, including total functional programming and sized types. Attention is paid to termination checkers for both Prolog and various functional languages.<br/><br/>The main result from work so far is a static checker for pattern match errors that allows non-exhaustive patterns to exist, yet ensures that a pattern match error does not occur. It includes a constraint language that can be used to reason about pattern matches, along with mechanisms to propagate these constraints between program components.<br/><br/>The proposal deals with future work to be done. It gives an approximate timetable for the design and implementation of a static checker for termination and pattern match errors.</p>
+<p class="text">Discussions of total functional programming, an an early prototype of <a href="https://github.com/ndmitchell/catch">Catch</a>.</p>
+
+<h3>Talk: Total Pasta</h3>
+<p class="info"><a href="downloads/slides-total_pasta-23_mar_2005.pdf">Slides</a>, <a href="javascript:showCitation(35)">citation</a> from <a href="http://www.bctcs.ac.uk/">BCTCS 2005</a>, 23 Mar 2005.</p>
+<p id="citation35" class="citation">@misc{mitchell:total_23_mar_2005
+    ,title          = {Total {Pasta}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2005}
+    ,month          = {March}
+    ,day            = {23}
+    ,note           = {Presentation from BCTCS 2005}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-total_pasta-23_mar_2005.pdf'}
+}
+</p>
+<p class="text">An algorithm for automatically proving totality of a simple pointer-based programming language.</p>
+
+<h3>Talk: Termination checking for a lazy functional language</h3>
+<p class="info"><a href="downloads/slides-termination_checking_for_a_lazy_functional_language-21_dec_2004.pdf">Slides</a>, <a href="javascript:showCitation(36)">citation</a> from my first year literature review seminar, 21 Dec 2004.</p>
+<p id="citation36" class="citation">@misc{mitchell:termination_21_dec_2004
+    ,title          = {Termination checking for a lazy functional language}
+    ,author         = {Neil Mitchell}
+    ,year           = {2004}
+    ,month          = {December}
+    ,day            = {21}
+    ,note           = {Presentation from my first year literature review seminar}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-termination_checking_for_a_lazy_functional_language-21_dec_2004.pdf'}
+}
+</p>
+<p class="text">A review of the literature around termination checking, particular in lazy languages.</p>
+
+<h3>Talk: A New Parser</h3>
+<p class="info"><a href="downloads/slides-a_new_parser-17_nov_2004.pdf">Slides</a>, <a href="javascript:showCitation(37)">citation</a> from <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>, 17 Nov 2004.</p>
+<p id="citation37" class="citation">@misc{mitchell:parser_17_nov_2004
+    ,title          = {A New Parser}
+    ,author         = {Neil Mitchell}
+    ,year           = {2004}
+    ,month          = {November}
+    ,day            = {17}
+    ,note           = {Presentation from PLASMA}
+    ,url            = {\verb'http://community.haskell.org/~ndm/downloads/slides-a_new_parser-17_nov_2004.pdf'}
+}
+</p>
+<p class="text">Thoughts about an alternative way to do parsing.</p>
+
+
+<!-- Google Analytics -->
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript"><!--
+_uacct = "UA-286191-1";
+urchinTracker();
+// -->
+</script>
+
+</div>
+    </body>
+</html>
+
