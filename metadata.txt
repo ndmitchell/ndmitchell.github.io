@@ -1,0 +1,523 @@
+
+paper:   paper-shake_before_building-10_sep_2012.pdf
+slides:  slides-shake_before_building-10_sep_2012.pdf
+video:   http://www.youtube.com/watch?v=xYCPpXVlqFM
+title:   Shake Before Building - Replacing Make with Haskell
+date:    10 Sep 2012
+where:   <a href="http://www.icfpconference.org/icfp2012/">ICFP 2012</a>
+text:    An introduction to #{shake}, focusing on the theoretical side.
+author:  Neil Mitchell
+key:     shake
+@location: Copenhagen, Denmark
+@booktitle: ICFP '12: Proceedings of the 17th ACM SIGPLAN International Conference on Functional Programming
+@publisher: ACM
+@isbn: 978-1-4503-1054-3
+abstract:
+    Most complex software projects are compiled using a build tool (e.g. make), which runs commands in an
+    order satisfying user-defined dependencies. Unfortunately, most build tools require all dependencies to
+    be specified before the build starts. This restriction makes many dependency patterns difficult to express,
+    especially those involving files generated at build time. We show how to eliminate this restriction,
+    allowing additional dependencies to be specified while building. We have implemented our ideas in the
+    Haskell library Shake, and have used Shake to write a complex build system which compiles millions of lines of code.
+
+paper:   paper-rethinking_supercompilation-29_sep_2010.pdf
+slides:  slides-rethinking_supercompilation_29_sep_2010.pdf
+video:   http://vimeo.com/15833948
+title:   Rethinking Supercompilation
+text:    Thoughts about making supercompilation faster, based on my experiments with #{supero}.
+date:    29 Sep 2010
+where:   <a href="http://www.icfpconference.org/icfp2010/">ICFP 2010</a>
+author:  Neil Mitchell
+key:     supercompilation
+@location: Baltimore, Maryland, USA
+@pages: 309-320
+@booktitle: ICFP '10: Proceedings of the 15th ACM SIGPLAN International Conference on Functional Programming
+@doi: http://doi.acm.org/10.1145/1863543.1863588
+@publisher: ACM
+@isbn: 978-1-60558-794-3
+abstract:
+    Supercompilation is a program optimisation technique that is particularly
+    effective at eliminating unnecessary overheads. We have designed a new supercompiler,
+    making many novel choices, including different termination criteria and handling of
+    let bindings. The result is a supercompiler that focuses on simplicity, compiles
+    programs quickly and optimises programs well. We have benchmarked our supercompiler,
+    with some programs running more than twice as fast than when compiled with GHC.
+
+slides: slides-shake_a_better_make-01_oct_2010.pdf
+video:  http://vimeo.com/15465133
+title:  Shake: A Better Make
+text:   Early details about the design of #{shake}.
+where:  <a href="http://haskell.org/haskellwiki/HaskellImplementorsWorkshop/2010">Haskell Implementors Workshop 2010</a>
+key:    shake
+date:   01 Oct 2010
+
+paper: paper-deriving_a_relationship_from_a_single_example-04_sep_2009.pdf
+slides:    slides-deriving_a_relationship_from_a_single_example-04_sep_2009.pdf
+title:  Deriving a Relationship from a Single Example
+text:   Assuming you have a single example of a type class, what should the data type be, and what range of instances can be described. Implemented in the #{derive} tool.
+date:  04 Sep 2009
+where:  <a href="http://www.cogsys.wiai.uni-bamberg.de/aaip09/">Approaches and Applications of Inductive Programming 2009</a>
+author: Neil Mitchell
+key:    derive
+@location: Edinburgh, Scotland, UK
+@series: Lecture Notes in Computer Science, Vol. 5812
+@editors: Ute Schmid, Emanuel Kitzelmann, Rinus Plasmeijer
+@isbn: 978-3-642-11930-9
+@pages: 1-24
+abstract:
+    Given an appropriate domain specific language (DSL), it is possible
+    to describe the relationship between Haskell data types and many
+    generic functions, typically type-class instances. While describing
+    the relationship is possible, it is not always an easy task. There is an
+    alternative - simply give one example output for a carefully chosen
+    input, and have the relationship derived.
+
+    When deriving a relationship from only one example, it is important
+    that the derived relationship is the intended one. We identify
+    general restrictions on the DSL, and on the provided example, to
+    ensure a level of predictability. We then apply these restrictions in
+    practice, to derive the relationship between Haskell data types and
+    generic functions. We have used our scheme in the Derive tool,
+    where over 60% of type classes are derived from a single example.
+
+paper:     paper-losing_functions_without_gaining_data-03_sep_2009.pdf
+slides:    slides-losing_functions_without_gaining_data-03_sep_2009.pdf
+video:    http://www.vimeo.com/6687266
+title:   Losing Functions without Gaining Data
+text:    An algorithm for making higher-order programs first-order without introducing new data types (e.g. without doing Reynold's style defunctionalisation). The resulting program may have worse time complexity, but that's fine for certain types of analysis. Implemented as #{firstify} and used in #{catch}.
+date:    03 Sep 2009
+where:   <a href="http://www.haskell.org/haskell-symposium/2009/">Haskell Symposium 2009</a>
+author:  Neil Mitchell and Colin Runciman
+key:     defunctionalisation
+@booktitle: Haskell '09: Proceedings of the second ACM SIGPLAN symposium on Haskell
+@pages: 49-60
+@location: Edinburgh, Scotland, UK
+@doi: http://doi.acm.org/10.1145/1411286.1411293
+@publisher:ACM
+@isbn:978-1-60558-508-6
+abstract:
+    We describe a transformation which takes a higher-order program,
+    and produces an equivalent first-order program. Unlike Reynolds-style
+    defunctionalisation, it does not introduce any new data types,
+    and the results are more amenable to subsequent analysis operations.
+    We can use our method to improve the results of existing
+    analysis operations, including strictness analysis, pattern-match
+    safety and termination checking. Our transformation is implemented,
+    and works on a Core language to which Haskell programs
+    can be reduced. Our method cannot always succeed in removing
+    all functional values, but in practice is remarkably successful.
+
+paper:   paper-transformation_and_analysis_of_functional_programs-4_jun_2008.pdf
+slides:    slides-transformation_and_analysis_of_functional_programs-14_jul_2008.pdf
+title:   Transformation and Analysis of Functional Programs
+date:    04 Jun 2008
+key:     thesis
+text:    My PhD thesis, covering a generics library (#{uniplate}), a supercompiler (#{supero}), a defunctionalisation algorithm (#{firstify}) and a pattern-match safety verifier (#{catch}).
+@school: University of York
+@pages:  225
+@at:     phdthesis
+abstract:
+    This thesis describes techniques for transforming and analysing functional programs. We operate on a core language, to which Haskell programs can be reduced. We present a range of techniques, all of which have been implemented and evaluated.
+
+    We make programs shorter by defining a library which abstracts over common data traversal patterns, removing boilerplate code. This library only supports traversals having value-specific behaviour for one type, allowing a simpler programming model. Our library allows concise expression of traversals with competitive performance.
+
+    We make programs faster by applying a variant of supercompilation. As a result of practical experiments, we have identified modifications to the standard supercompilation techniques -- particularly with respect to let bindings and the generalisation technique.
+    
+    We make programs safer by automatically checking for potential pattern-match errors. We define a transformation that takes a higher-order program and produces an equivalent program with fewer functional values, typically a first-order program. We then define an analysis on a first-order language which checks statically that, despite the possible use of partial (or non-exhaustive) pattern matching, no pattern-match failure can occur.
+
+
+paper:   paper-not_all_patterns_but_enough-25_sep_2008.pdf
+slides:    slides-not_all_patterns_but_enough-25_sep_2008.pdf
+video:    http://video.google.com/videoplay?docid=8250544235079789504
+title:   Not All Patterns, But Enough - an automatic verifier for partial but sufficient pattern matching
+text:    A static analysis for automatically proving a program will not raise an error at runtime, implemented as #{catch}. The analysis was able to detect 3 bugs in the <a href="https://hackage.haskell.org/package/hscolour">HsColour</a> program.
+date:    25 Sep 2008
+where:   <a href="http://www.haskell.org/haskell-symposium/2008/">Haskell Symposium 2008</a>
+author:  Neil Mitchell and Colin Runciman
+key:     catch
+@booktitle: Haskell '08: Proceedings of the first ACM SIGPLAN symposium on Haskell
+@pages: 49-60
+@location: Victoria, BC, Canada
+@doi: http://doi.acm.org/10.1145/1411286.1411293
+@publisher: ACM
+@isbn: 978-1-60558-064-7
+abstract:
+    We describe an automated analysis of Haskell 98 programs to
+    check statically that, despite the possible use of partial (or nonexhaustive)
+    pattern matching, no pattern-match failure can occur.
+    Our method is an iterative backward analysis using a novel form
+    of pattern-constraint to represent sets of data values. The analysis
+    is defined for a core first-order language to which Haskell 98
+    programs are reduced. Our analysis tool has been successfully
+    applied to a range of programs, and our techniques seem to scale
+    well. Throughout the paper, methods are represented much as we
+    have implemented them in practice, again in Haskell.
+
+
+paper:   paper-hoogle_overview-19_nov_2008.pdf
+title:  Hoogle Overview
+date:   19 Nov 2008
+where:  The <a href="http://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>
+author: Neil Mitchell
+key:    hoogle
+text: An overview of #{hoogle}, including both the algorithms and code structure.
+@at:article
+@journal:The Monad.Reader
+@number:12
+@pages:27-35
+abstract:
+    This article gives an overview of the Hoogle tool. We describe the history of Hoogle,
+    the improvements that have been made this summer, and plans for future features.
+    Finally, we discuss the design guidelines of Hoogle 4 - which may be of interest
+    both to budding Hoogle developers and other Haskell projects. This article does not
+    cover the theoretical background of Hoogle.
+
+
+paper:    paper-a_supercompiler_for_core_haskell-01_may_2008.pdf
+title:  A Supercompiler for Core Haskell
+date:   01 May 2008
+where:  <a href="http://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a> post proceedings
+author: Neil Mitchell and Colin Runciman
+key:    supero
+text: An early design of the #{supero} supercompiler.
+@pages:147-164
+@booktitle: IFL 2007
+@editor:Olaf Chitil et al.
+@series:LNCS
+@volume:5083
+@publisher:Springer-Verlag
+abstract:
+    Haskell is a functional language, with features such as higher
+    order functions and lazy evaluation, which allow succinct programs. These
+    high-level features present many challenges for optimising compilers. We
+    report practical experiments using novel variants of supercompilation,
+    with special attention to let bindings and the generalisation technique.
+
+
+paper:    paper-deriving_generic_functions_by_example-26_oct_2007.pdf
+slides:    slides-deriving_generic_functions_by_example-26_oct_2007.pdf
+title:  Deriving Generic Functions by Example
+text: An early version of the generic deriving work from #{derive}.
+date:   26 Oct 2007
+where:  <a href="http://www.cs.york.ac.uk/yds/">York Doctoral Symposium 2007</a>
+key:    deriving
+@pages:55-62
+@publisher:Tech. Report YCS-2007-421, Dept. of Computer Science, University of York, UK
+@editor:Jan Tobias M\"{u}hlberg and Juan Ignacio Perna
+@booktitle: Proceedings of the First York Doctoral Syposium 2007
+abstract:
+    A function is said to be generic if it operates over values of
+    any data type. For example, a generic equality function can test pairs of
+    booleans, integers, lists, trees etc. In most languages programmers must
+    define generic functions multiple times, specialised for each data type.
+    Alternatively, a tool could be used to specify the relationship between the
+    data type and the implementation, but this relationship may be complex.
+    This paper describes a solution: given a single example of the generic
+    function on one data type, we can infer the relationship between a data
+    type and the implementation. We have used our method in the Derive
+    tool, allowing the implementation of 60% of the generic functions to be
+    inferred.
+
+
+paper:    paper-uniform_boilerplate_and_list_processing-30_sep_2007.pdf
+slides:    slides-uniform_boilerplate_and_list_processing-30_sep_2007.pdf
+video:    http://www.ludd.ltu.se/~pj/hw2007/uniplate.mov
+title:  Uniform Boilerplate and List Processing
+key:    uniplate
+text: Details of the #{uniplate} generics library, including information on how to use the Uniplate operations.
+date:   30 Sep 2007
+where:  <a href="http://www.cse.unsw.edu.au/~keller/haskellws/HaskellWorkshop.html">Haskell Workshop 2007</a>
+author: Neil Mitchell and Colin Runciman
+@booktitle: Haskell '07: Proceedings of the ACM SIGPLAN workshop on Haskell
+@pages:49-60
+@location:Freiburg, Germany
+@doi:http://doi.acm.org/10.1145/1291201.1291208
+@publisher:ACM
+@isbn:978-1-59593-674-5
+abstract:
+    Generic traversals over recursive data structures are often referred
+    to as boilerplate code. The definitions of functions involving such
+    traversals may repeat very similar patterns, but with variations for
+    different data types and different functionality. Libraries of operations
+    abstracting away boilerplate code typically rely on elaborate
+    types to make operations generic. The motivating observation for
+    this paper is that most traversals have value-specific behaviour for
+    just one type. We present the design of a new library exploiting
+    this assumption. Our library allows concise expression of traversals
+    with competitive performance.
+
+
+paper:    paper-supero_making_haskell_faster-27_sep_2007.pdf
+slides:    slides-supero_making_haskell_faster-27_sep_2007.pdf
+title:  Supero: Making Haskell Faster
+text: A very early version of #{supero}, before it was an actual supercompiler.
+date:   27 Sep 2007
+key:    supercompilation
+where:  <a href="http://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a>
+author: Neil Mitchell and Colin Runciman
+@booktitle: IFL 2007: Draft Proceedings of the 19th International Symposium on Implementation and Application of Functional Languages
+@location:Freiburg, Germany
+@publisher:Tech. Report No. 12-07 of the Computing Laboratory, University of Kent, UK
+@editor:Olaf Chitil
+@pages:334-349
+abstract:
+    Haskell is a functional language, with features such as higher
+    order functions and lazy evaluation, which allow succinct programs. These
+    high-level features are difficult for fast execution, but GHC is a mature
+    and widely used optimising compiler. This paper presents a whole-program
+    approach to optimisation, which produces speed improvements
+    of between 10% and 60% when used with GHC, on eight benchmarks.
+
+
+paper:    paper-yhc_core-30_apr_2007.pdf
+title:  Yhc.Core - from Haskell to Core
+text: Information about the #{yhc} core language, its constructors and semantics.
+key:    yhc
+date:   30 Apr 2007
+where:  The <a href="http://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>
+author: Dimitry Golubovsky and Neil Mitchell and Matthew Naylor
+@at:article
+@journal:The Monad.Reader
+@number:7
+@pages:45-61
+abstract:
+    The Yhc compiler is a hot-bed of new and interesting ideas. We present Yhc.Core
+    - one of the most popular libraries from Yhc. We describe what we think makes
+    Yhc.Core special, and how people have used it in various projects including an
+    evaluator, and a Javascript code generator.
+
+
+paper:    paper-a_static_checker_for_safe_pattern_matching_in_haskell-01_feb_2007.pdf
+title:  A Static Checker for Safe Pattern Matching in Haskell
+text: An early version of #{catch}.
+date:   01 Feb 2007
+where:  <a href="http://www.niii.ru.nl/~marko/tfp05/">TFP 2005</a> post proceedings
+author: Neil Mitchell and Colin Runciman
+key:    catch
+@publisher:Intellect
+@booktitle: Trends in Functional Programming
+@volume:6
+@isbn:978-1-84150-176-5
+abstract:
+    A Haskell program may fail at runtime with a pattern-match error if
+    the program has any incomplete (non-exhaustive) patterns in definitions or case
+    alternatives. This paper describes a static checker that allows non-exhaustive patterns
+    to exist, yet ensures that a pattern-match error does not occur. It describes a
+    constraint language that can be used to reason about pattern matches, along with
+    mechanisms to propagate these constraints between program components.
+
+
+paper:    paper-unfailing_haskell_a_static_checker_for_pattern_matching-24_sep_2005.pdf
+slides:    slides-unfailing_haskell_a_static_checker_for_pattern_matching-24_sep_2005.pdf
+title:  Unfailing Haskell: A Static Checker for Pattern Matching
+text: A very early version of #{catch}.
+key:    catch
+date:   24 Sep 2005
+where:  <a href="http://www.niii.ru.nl/~marko/tfp05/">TFP 2005</a>
+author: Neil Mitchell and Colin Runciman
+@booktitle: Proceedings of the Sixth Symposium on Trends in Functional Programming
+@pages:313-328
+abstract:
+    A Haskell program may fail at runtime with a pattern-match error if the program has
+    any incomplete (non-exhaustive) patterns in definitions or case alternatives. This paper
+    describes a static checker that allows non-exhaustive patterns to exist, yet ensures
+    that a pattern-match error does not occur. It describes a constraint language that can
+    be used to reason about pattern matches, along with mechanisms to propagate these
+    constraints between program components.
+
+
+paper:    paper-hatday-28_oct_2005.pdf
+slides:    slides-hat_visual-27_may_2005.pdf
+where:  <a href="http://www.haskell.org/hat/">Hat</a> Day 2005 (York)
+title:  Visual Hat
+key:    hat
+text: Thoughts on how to make the #{hat} tools work in a GUI.
+date:   28 Oct 2005
+@booktitle: Hat Day 2005: work in progress on the Hat tracing system for Haskell
+@pages:23-26
+@publisher:Tech. Report YCS-2005-395, Dept. of Computer Science, University of York, UK
+@editor:Colin Runciman
+abstract:
+    This paper describes a new approach to visualizing
+    the data contained in Hat traces. The aim is to cater for Windows
+    users who are more familiar with graphical debugging tools.
+
+
+paper:    paper-qualifying_dissertation-30_jun_2005.pdf
+title:  Qualifying Dissertation: Unfailing Haskell
+text: Discussions of total functional programming, an an early prototype of #{catch}.
+date:   30 Jun 2005
+key:   thesis
+@at:misc
+@institution:University of York
+abstract:
+    Programs written in Haskell may fail at runtime with either a
+    pattern match error, or with non-termination. Both of these can be
+    thought of as giving the value $\bot$ as a result. Other forms of
+    failure, for example heap exhaustion, are not considered.
+
+    The first section of this document reviews previous work, including
+    total functional programming and sized types. Attention is paid to
+    termination checkers for both Prolog and various functional
+    languages.
+
+    The main result from work so far is a static checker for pattern
+    match errors that allows non-exhaustive patterns to exist, yet
+    ensures that a pattern match error does not occur. It includes a
+    constraint language that can be used to reason about pattern
+    matches, along with mechanisms to propagate these constraints
+    between program components.
+
+    The proposal deals with future work to be done. It gives an
+    approximate timetable for the design and implementation of a static
+    checker for termination and pattern match errors.
+
+
+
+slides:    slides-detecting_pattern_match_failures_in_haskell-26_nov_2007.pdf
+title:  Detecting Pattern-Match Failures in Haskell
+text: Details about #{catch}, including worked examples.
+key:  catch
+date:   26 Nov 2007
+where:  <a href="http://metacomp.comlab.ox.ac.uk/">The Oxford Centre for Metacomputation</a>
+
+slides:    slides-catch-06_apr_2006.pdf
+title:  Catch, A Practical Tool
+text: Very early notes on #{catch}.
+key:   catch
+date:   06 Apr 2006
+where:  <a href="http://www.bctcs.ac.uk/">BCTCS 2006</a>
+
+
+slides:    slides-transformation_and_analysis_of_haskell_source_code-02_jul_2007.pdf
+title:  Transformation and Analysis of Haskell Source Code
+text: Slides giving a very quick overview of my thesis.
+key:    thesis
+date:   02 Jul 2007
+where:  my thesis seminar
+
+slides:    slides-catch-16_mar_2006.pdf
+title:  Catch, Lazy Termination
+text: Discussions about what termination means in a lazy language, and how to detect it. 
+key:    catch
+date:   16 Mar 2006
+where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+
+slides:    slides-termination_checking_for_a_lazy_functional_language-21_dec_2004.pdf
+title:  Termination checking for a lazy functional language
+text: A review of the literature around termination checking, particular in lazy languages.
+key:    termination
+date:   21 Dec 2004
+where:  my first year literature review seminar
+
+
+slides:    slides-ada_generics-07_mar_2007.pdf
+title:  Ada: Generics
+key:   ada
+text: First-year lecture notes on generics in Ada.
+date:   07 Mar 2007
+where:  the Algorithms and Data Structures course
+
+
+slides:    slides-a_new_parser-17_nov_2004.pdf
+title:  A New Parser
+text: Thoughts about an alternative way to do parsing.
+key:  parser
+date:   17 Nov 2004
+where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+
+
+slides:    slides-instances_for_free-22_may_2008.pdf
+title:  Instances for Free
+text: Generating Haskell instances from examples, as found in the #{derive} tool.
+key:    deriving
+date:   22 May 2008
+where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+
+
+slides:    slides-first_order_haskell-06_apr_2007.pdf
+title:  First Order Haskell
+text: An early version of a mechanism for defunctionalising Haskell programs, which later became #{firstify}.
+key:   defunctionalisation
+date:   06 Apr 2007
+where:  <a href="http://www.bctcs.ac.uk/">BCTCS 2007</a>
+
+
+slides:    slides-hat_windows_and_wimp-05_oct_2006.pdf
+title:  Hat: Windows and WIMP
+text: Thoughts about how the #{hat} tools could benefit from GUI elements.
+key: hat
+date:   05 Oct 2006
+where:  <a href="http://www.haskell.org/hat/">Hat</a> Day 2006 (Kent)
+
+
+slides:    slides-hoogle_finding_functions_from_types-16_may_2011.pdf
+title:  Hoogle: Finding Functions from Types
+text:   An overview of how type-search works in #{hoogle} v1 to v4.
+date:   16 May 2011
+key:    hoogle
+where:  <a href="http://dalila.sip.ucm.es/tfp11/">TFP 2011</a>
+
+slides:    slides-hoogle_fast_type_searching-09_aug_2008.pdf
+audio:    http://www.wellquite.org/non-blog/AngloHaskell2008/neil%20mitchell.ogg
+title:  Hoogle: Fast Type Searching
+text: An early overview of how both type and text search works in #{hoogle}.
+key:    hoogle
+date:   09 Aug 2008
+where:  <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2008">AngloHaskell 2008</a>
+
+slides:    slides-supercompilation_for_haskell-03_mar_2009.pdf
+title:  Supercompilation for Haskell
+text: Details of how to apply supercompilation to Haskell.
+key:    supercompilation
+date:   03 Mar 2009
+where:  <a href="http://sneezy.cs.nott.ac.uk/fun/">Fun in the Afternoon</a> Spring 2009
+
+slides:    slides-faster_haskell-10_aug_2007.pdf
+title:  Faster Haskell
+text: Early work on Supercompilation.
+key:    supercompilation
+date:   10 Aug 2007
+where:  <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>
+
+slides:    slides-yhc_past_present_future-10_aug_2007.pdf
+title:  Yhc: Past, Present, Future
+text: The history behind #{yhc}, along with future plans and intentions.
+key:    yhc
+date:   10 Aug 2007
+where:  <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>
+
+slides:    slides-fastest_lambda_first-30_may_2007.pdf
+title:  Fastest Lambda First
+text: Details of a whole-program optimiser for Haskell, early work on #{supero}.
+key:    supercompilation
+date:   30 May 2007
+where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+
+slides:    slides-playing_with_haskell_data-18_jan_2007.pdf
+title:  Playing with Haskell Data
+text: Generic traversals and transformations over Haskell data types, what would later become #{uniplate}.
+key:    uniplate
+date:   18 Jan 2007
+where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+
+slides:    slides-haskell_with_go_faster_stripes-30_nov_2006.pdf
+title:  Haskell With Go Faster Stripes
+text: How to make Haskell faster.
+key:    supercompilation
+date:   30 Nov 2006
+where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+
+slides:    slides-hoogle-08_dec_2005.pdf
+title:  Hoogle
+text: An early introduction to #{hoogle}.
+key:    hoogle
+date:   08 Dec 2005
+where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+
+slides:    slides-total_pasta-23_mar_2005.pdf
+title:  Total Pasta
+text: An algorithm for automatically proving totality of a simple pointer-based programming language.
+key:    total
+date:   23 Mar 2005
+where:  <a href="http://www.bctcs.ac.uk/">BCTCS 2005</a>
