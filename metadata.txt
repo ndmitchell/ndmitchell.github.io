@@ -128,7 +128,7 @@ abstract:
 
 paper:   paper-not_all_patterns_but_enough-25_sep_2008.pdf
 slides:    slides-not_all_patterns_but_enough-25_sep_2008.pdf
-video:    http://video.google.com/videoplay?docid=8250544235079789504
+video:    http://www.youtube.com/watch?v=DFVIzwg1rvs
 title:   Not All Patterns, But Enough - an automatic verifier for partial but sufficient pattern matching
 text:    A static analysis for automatically proving a program will not raise an error at runtime, implemented as #{catch}. The analysis was able to detect 3 bugs in the <a href="https://hackage.haskell.org/package/hscolour">HsColour</a> program.
 date:    25 Sep 2008
@@ -328,7 +328,7 @@ abstract:
 
 paper:    paper-hatday-28_oct_2005.pdf
 slides:    slides-hat_visual-27_may_2005.pdf
-where:  <a href="http://www.haskell.org/hat/">Hat</a> Day 2005 (York)
+where:  <a href="http://projects.haskell.org/hat/">Hat</a> Day 2005 (York)
 title:  Visual Hat
 key:    hat
 text: Thoughts on how to make the #{hat} tools work in a GUI.
@@ -448,7 +448,7 @@ title:  Hat: Windows and WIMP
 text: Thoughts about how the #{hat} tools could benefit from GUI elements.
 key: hat
 date:   05 Oct 2006
-where:  <a href="http://www.haskell.org/hat/">Hat</a> Day 2006 (Kent)
+where:  <a href="http://projects.haskell.org/hat/">Hat</a> Day 2006 (Kent)
 
 
 slides:    slides-hoogle_finding_functions_from_types-16_may_2011.pdf
