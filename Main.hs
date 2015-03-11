@@ -30,7 +30,7 @@ projects =
     [("Shake","http://shakebuild.com/")
     ,("Hoogle","http://hoogle.haskell.org/")
     ,("Yhc","https://wiki.haskell.org/Yhc")
-    ,("Hat","http://www.haskell.org/hat/")] ++
+    ,("Hat","http://projects.haskell.org/hat/")] ++
     [(x, "https://github.com/ndmitchell/" ++ lower x)
     | x <- words "HLint Supero Derive Firstify Catch Uniplate"]
 

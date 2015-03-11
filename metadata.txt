@@ -226,7 +226,7 @@ title:  Uniform Boilerplate and List Processing
 key:    uniplate
 text: Details of the #{uniplate} generics library, including information on how to use the Uniplate operations.
 date:   30 Sep 2007
-where:  <a href="http://www.cse.unsw.edu.au/~keller/haskellws/HaskellWorkshop.html">Haskell Workshop 2007</a>
+where:  <a href="https://www.haskell.org/haskell-symposium/">Haskell Workshop 2007</a>
 author: Neil Mitchell and Colin Runciman
 @booktitle: Haskell '07: Proceedings of the ACM SIGPLAN workshop on Haskell
 @pages:49-60
@@ -291,7 +291,7 @@ paper:    paper-a_static_checker_for_safe_pattern_matching_in_haskell-01_feb_200
 title:  A Static Checker for Safe Pattern Matching in Haskell
 text: An early version of #{catch}.
 date:   01 Feb 2007
-where:  <a href="http://www.niii.ru.nl/~marko/tfp05/">TFP 2005</a> post proceedings
+where:  <a href="http://www.tifp.org/">TFP 2005</a> post proceedings
 author: Neil Mitchell and Colin Runciman
 key:    catch
 @publisher:Intellect
@@ -379,7 +379,7 @@ title:  Detecting Pattern-Match Failures in Haskell
 text: Details about #{catch}, including worked examples.
 key:  catch
 date:   26 Nov 2007
-where:  <a href="http://metacomp.comlab.ox.ac.uk/">The Oxford Centre for Metacomputation</a>
+where:  <a href="http://www.cs.ox.ac.uk/activities/metacomputation/">The Oxford Centre for Metacomputation</a>
 
 slides:    slides-catch-06_apr_2006.pdf
 title:  Catch, A Practical Tool
