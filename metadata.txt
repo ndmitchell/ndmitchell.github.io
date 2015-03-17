@@ -179,7 +179,7 @@ date:   01 May 2008
 where:  <a href="http://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a> post proceedings
 author: Neil Mitchell and Colin Runciman
 key:    supero
-text: An early design of the #{supero} supercompiler.
+text: An early design of the #{supero} supercompiler. This paper won the <a href="http://www.ifl-workshops.org/">Peter Landin prize</a> for the best paper presented at the symposium that year, as selected by the programme committee.
 @pages:147-164
 @booktitle: IFL 2007
 @editor:Olaf Chitil et al.
@@ -521,3 +521,9 @@ text: An algorithm for automatically proving totality of a simple pointer-based 
 key:    total
 date:   23 Mar 2005
 where:  <a href="http://www.bctcs.ac.uk/">BCTCS 2005</a>
+abstract:
+    Most errors in computer programs are only found once they are run, which results in critical errors being missed due to inadequate testing. If additional static analysis is performed, then the possibility exists for detecting such errors, and correcting them. This helps to improve the quality of the resulting code, increasing reliability.
+
+    In this project the existing static analysis research is reviewed, along with implementations used both by normal programmers, and used in safety critical applications. A static analysis program is then designed and implemented for the experimental pointer based language Pasta.
+
+    The resulting program checks for totality, proving that a particular procedure cannot crash and will terminate. Where a procedure does not satisfy this, the preconditions for the procedure are generated.
