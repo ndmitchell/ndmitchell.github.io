@@ -1,4 +1,15 @@
 
+slides: slides-colins_industrial_influence-23_oct_2014.pdf
+title:  Colin's Industrial Influence
+date:   23 Oct 2014
+where:  <a href="https://www.cs.york.ac.uk/events/colin/">Runifest</a>
+author: Neil Mitchell
+key:    runcifest
+text:   A joint talk with <a href="http://www.haskellers.com/user/malcolm">Malcolm Wallace</a> covering some projects influenced by <a href="http://www-users.cs.york.ac.uk/colin/">Colin Runciman</a>. My slides cover #{uniplate} and #{hoogle}.
+abstract:
+    Colin has dabbled in many areas of functional programming, from XML processing to data visualisation, from type searching to generic transformations. While most of Colin's contributions have been made from inside a University, their impact has been felt in industry. In this talk we take a whirlwind tour through some of the projects that have influenced us and our work.
+
+
 slides: slides-building_stuff_with_shake-20_nov_2014.pdf
 title:  Building stuff with Shake
 date:   20 Nov 2014
