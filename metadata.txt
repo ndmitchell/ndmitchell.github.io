@@ -1,4 +1,14 @@
 
+slides: slides-gluing_things_together_with_haskell-5_nov_2014.pdf
+video: https://www.youtube.com/watch?v=iFZQyLMrkn4
+title: Gluing things together with Haskell
+date: 5 Nov 2014
+where: <a href="http://www.codemesh.io/codemesh2014">Code Mesh 2014</a>
+key: shake
+text: A tour of some of my projects designed to glue code together, replacing shell scripts and Makefiles. Covers #{shake}, #{nsis} and #{bake}.
+abstract:
+    A large software project is more than just the code that goes into a release, in particular you need lots of glue code to put everything together - including build systems, test harnesses, installer generators etc. While the choice of language for the project is often a carefully considered decision, more often than not the glue code consists of shell scripts and Makefiles. But just as functional programming provides a better way to write the project, it also provides a better way to write the glue code.  This talk covers some of the technologies and approaches we use at Standard Chartered to glue together the quant library. In particular, we'll focus on the build system where we replaced 10,000 lines of Makefiles with 1,000 lines of Haskell which builds the project twice as fast. We'll also look at how to test programs using Haskell, how to replace ancillary shell scripts with Haskell, and how to use Haskell to generate installers.  
+
 slides: slides-colins_industrial_influence-23_oct_2014.pdf
 title:  Colin's Industrial Influence
 date:   23 Oct 2014
