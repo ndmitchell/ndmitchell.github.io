@@ -104,7 +104,7 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- x, a /= "at"] ++
-                [("url", "\\verb'http://community.haskell.org/~ndm/downloads/" ++ (if x !? "paper" then x !# "paper" else x !# "slides") ++ "'")]
+                [("url", "\\verb'http://ndmitchell.com/downloads/" ++ (if x !? "paper" then x !# "paper" else x !# "slides") ++ "'")]
 
         date = parseDate $ x !# "date"
         key = (x !# "key") ++ "_" ++ replace " " "_" (lower $ x !# "date")
