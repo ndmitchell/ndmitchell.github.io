@@ -18,7 +18,7 @@ main = do
             ("<p>All papers and talks are listed below, most recent first. " ++
              "Show all <a href=\"javascript:showAbstracts()\">abstracts</a> or " ++
              "<a href=\"javascript:showCitations()\">citations</a>.</p>") :
-            concat (zipWith renderMetadata [1..] $ checkMetadata $ parseMetadata metadata)
+            concat (reverse $ zipWith renderMetadata [1..] $ reverse $ checkMetadata $ parseMetadata metadata)
     let reps = [("#{" ++ lower proj ++ "}", "<a href=\"" ++ url ++ "\">" ++ proj ++ "</a>") | (proj,url) <- projects]
     let res = replaces (("#{download}",download):reps) template
     when ("#{" `isInfixOf` res) $ error $ "Missed a replacement, " ++ take 20 (snd $ breakOn "#{" res) ++ "..."
