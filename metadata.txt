@@ -1,3 +1,12 @@
+slides: slides-defining_your_own_build_system_with_shake-09_oct_2015.pdf
+title: Defining your own build system with Shake
+date: 09 Oct 2015
+where: <a href="https://skillsmatter.com/conferences/7069-haskell-exchange-2015">Haskell eXchange 2015</a>
+key: shake
+text: How to define your own build system using #{shake}.
+abstract:
+    Shake, like Make, is a tool for writing build systems. However, unlike Make, Shake features monadic dependencies (your dependencies themselves can depend on the results of previous dependencies), polymorphic dependencies (your dependencies don't have to be files) and stable dependencies (if something rebuilds but doesn't change things that depend on it don't have to rebuild). These features make it much easier to define build systems that have accurate dependencies. Additionally, these features let you define your own custom build system, and then implement a Shake-based interpreter for it. It is often said that the easiest way to solve a problem is to define the perfect language for solving the problem, then write an interpreter. In this talk we'll see how to use Shake to apply that advice to build systems.
+
 slides: slides-shake_n_bake-13_aug_2015.pdf
 title: Shake 'n' Bake
 date: 13 Aug 2015
