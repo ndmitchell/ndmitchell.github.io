@@ -1,5 +1,6 @@
 slides: slides-defining_your_own_build_system_with_shake-09_oct_2015.pdf
 title: Defining your own build system with Shake
+video: https://skillsmatter.com/skillscasts/6548-defining-your-own-build-system-with-shake
 date: 09 Oct 2015
 where: <a href="https://skillsmatter.com/conferences/7069-haskell-exchange-2015">Haskell eXchange 2015</a>
 key: shake
