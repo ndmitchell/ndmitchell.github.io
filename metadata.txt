@@ -41,6 +41,7 @@ abstract:
 
 
 slides: slides-building_stuff_with_shake-20_nov_2014.pdf
+video:  http://www.infoq.com/presentations/shake
 title:  Building stuff with Shake
 date:   20 Nov 2014
 where:  <a href="http://fpdays.net/2014/">FP Days 2014</a>
