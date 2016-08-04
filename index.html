@@ -130,6 +130,21 @@ function showItems(x)
 
 <p>All papers and talks are listed below, most recent first. Show all <a href="javascript:showAbstracts()">abstracts</a> or <a href="javascript:showCitations()">citations</a>.</p>
 
+<h3>Paper: Non-recursive Make Considered Harmful - Build Systems at Scale</h3>
+<p class="info"><a href="downloads/paper-non_recursive_make_considered_harmful-22_sep_2016.pdf">Paper</a>, <a href="javascript:showCitation(43)">citation</a>, <a href="javascript:showAbstract(43)">abstract</a> from <a href="https://www.haskell.org/haskell-symposium/2016/">Haskell Symposium 2016</a>, 22 Sep 2016.</p>
+<p id="citation43" class="citation">@inproceedings{mitchell:shake-ghc_22_sep_2016
+    ,title          = {Non-recursive Make Considered Harmful - Build Systems at Scale}
+    ,author         = {Andrey Mokhov and Neil Mitchell and Simon Peyton Jones and Simon Marlow}
+    ,year           = {2016}
+    ,month          = {September}
+    ,day            = {22}
+    ,booktitle      = {Haskell 2016: Proceedings of the ACM SIGPLAN symposium on Haskell}
+    ,url            = {\verb'http://ndmitchell.com/downloads/paper-non_recursive_make_considered_harmful-22_sep_2016.pdf'}
+}
+</p>
+<p id="abstract43" class="abstract"><b>Abstract:</b> Most build systems start small and simple, but over time grow into hairy monsters that few dare to touch. As we demonstrate in this paper, there are a few issues that cause build systems major scalability challenges, and many pervasively used build systems (e.g. Make) do not scale well.<br/><br/>This paper presents a solution to the challenges we identify. We use functional programming to design abstractions for build systems, and implement them on top of the Shake library, which allows us to describe build rules and dependencies. To substantiate our claims, we engineer a new build system for the Glasgow Haskell Compiler. The result is more scalable, faster, and spectacularly more maintainable than its Make-based predecessor.</p>
+<p class="text">How to define large build systems using <a href="http://shakebuild.com/">Shake</a>, particularly a new GHC build system.</p>
+
 <h3>Talk: Defining your own build system with Shake</h3>
 <p class="info"><a href="downloads/slides-defining_your_own_build_system_with_shake-09_oct_2015.pdf">Slides</a>, <a href="https://skillsmatter.com/skillscasts/6548-defining-your-own-build-system-with-shake">video</a>, <a href="javascript:showCitation(42)">citation</a>, <a href="javascript:showAbstract(42)">abstract</a> from <a href="https://skillsmatter.com/conferences/7069-haskell-exchange-2015">Haskell eXchange 2015</a>, 09 Oct 2015.</p>
 <p id="citation42" class="citation">@misc{mitchell:shake_09_oct_2015
