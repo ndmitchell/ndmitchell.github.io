@@ -1,3 +1,12 @@
+slides: slides-writing_shake_rules-16_aug_2016.pdf
+title: Writing Shake Rules
+date: 16 Aug 2016
+where: <a href="http://www.meetup.com/London-Haskell-Hacking/events/233062421/">London Haskell Hacking Meetup</a>
+key: shake
+text: Designing general purpose custom rules for #{shake}, targeted towards building C.
+abstract:
+    Shake is a general purpose library for expressing build systems - forms of computation, with caching, dependencies and more besides. Like all the best stuff in Haskell, Shake is generic, with details such as "files" written on top of the generic library. Of course, the real world doesn't just have "files", but specifically has "C files that need to be compiled with gcc". In this hacking session we'll look at how to write Shake rules, what existing functions people have already layered on top of Shake for compiling with specific compilers, and consider which rules are missing. Hopefully by the end we'll have a rule that people can use out-of-the-box for compiling C++ and Haskell.
+
 paper: paper-non_recursive_make_considered_harmful-22_sep_2016.pdf
 title: Non-recursive Make Considered Harmful - Build Systems at Scale
 date: 22 Sep 2016
