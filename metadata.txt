@@ -1,3 +1,12 @@
+slides: slides-plugging_space_leaks_improving_performance-06_oct_2016.pdf
+title: Plugging Space Leaks, Improving Performance
+date: 06 Oct 2016
+where: <a href="https://skillsmatter.com/conferences/7276-haskell-exchange-2016">Haskell eXchange 2016</a>
+key: spaceleak
+text: How to detect and fix space leaks.
+abstract:
+    Confused by foldl' vs foldl? Unsure when you've got the strictness right? Programs taking too much memory and running too slow? You are not alone! Most Haskell programs suffer from "space leaks" - this talk covers examples (all only found and fixed in the last year) from the base library, QuickCheck, pretty, Happy, Alex and Shake. Some fixes saved over 1Gb of memory! Space leaks occur when a program uses more memory than necessary. Haskell, as a lazy language, is particularly vulnerable to a form of space leak where a small accumulator (e.g. an Int) is instead represented by a sequence of updates that grows on each iteration. In this talk, you will learn the gritty details of space leaks, then the session sets off on a quest to remove them from all Haskell programs. You will explore the relationship between space leaks and stack usage, then how to use the existing tools built in to GHC to detect and debug excessive stack usage. These techniques have already slain lots of space leaks, and hopefully in your hands they can destroy even more.
+
 slides: slides-writing_shake_rules-16_aug_2016.pdf
 title: Writing Shake Rules
 date: 16 Aug 2016
