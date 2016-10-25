@@ -1,3 +1,12 @@
+slides: slides-shake_past_present_future-26_oct_2016.pdf
+title: Shake: Past, Present, Future
+date: 26 Oct 2016
+where: <a href="http://www.meetup.com/London-Haskell/events/234831304/">London Haskell User Group</a>
+key: shake
+text: The history and future directions of Shake.
+abstract:
+    Shake is a Haskell library for implementing build systems, an alternative to Make, but with much more powerful and accurate dependencies. In this talk we trace the origins of Shake, from a small module to build a PhD thesis, to a production quality build system, figuring out the keys ideas along the way. As we look to the future we'll discuss the conversion of the GHC build system to Shake and how Shake can compete against tools like Bazel/Buck from Google/Facebook.
+
 slides: slides-plugging_space_leaks_improving_performance-06_oct_2016.pdf
 title: Plugging Space Leaks, Improving Performance
 date: 06 Oct 2016
