@@ -1,3 +1,10 @@
+slides: slides-drive-by_haskell_contributions-09_jun_2017.pdf
+title: Drive-by Haskell Contributions
+date: 09 Jun 2017
+where: <a href="https://zurihac.info/">ZuriHac 2017</a>
+key: hlint, weeder, profiterole
+text: How to start contributing to Haskell projects.
+
 slides: slides-shake_past_present_future-26_oct_2016.pdf
 title: Shake: Past, Present, Future
 date: 26 Oct 2016
