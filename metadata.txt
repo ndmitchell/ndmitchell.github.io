@@ -1,5 +1,6 @@
 slides: slides-drive-by_haskell_contributions-09_jun_2017.pdf
 title: Drive-by Haskell Contributions
+video: https://www.youtube.com/watch?v=6kGLHXsUQD4
 date: 09 Jun 2017
 where: <a href="https://zurihac.info/">ZuriHac 2017</a>
 key: hlint, weeder, profiterole
