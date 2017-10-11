@@ -131,6 +131,21 @@ function showItems(x)
 
 <p>All papers and talks are listed below, most recent first. Show all <a href="javascript:showAbstracts()">abstracts</a> or <a href="javascript:showCitations()">citations</a>.</p>
 
+<h3>Talk: Fast XML Parsing with Haskell</h3>
+<p class="info"><a href="downloads/slides-fast_xml_parsing_with_haskell-12_oct_2017.pdf">Slides</a>, <a href="javascript:showCitation(49)">citation</a>, <a href="javascript:showAbstract(49)">abstract</a> from <a href="https://skillsmatter.com/conferences/8522-haskell-exchange-2017">Haskell eXchange 2017</a>, 12 Oct 2017.</p>
+<p id="citation49" class="citation">@misc{mitchell:hexml_12_oct_2017
+    ,title          = {Fast {XML} Parsing with {Haskell}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2017}
+    ,month          = {October}
+    ,day            = {12}
+    ,note           = {Presentation from Haskell eXchange 2017}
+    ,url            = {\verb'http://ndmitchell.com/downloads/slides-fast_xml_parsing_with_haskell-12_oct_2017.pdf'}
+}
+</p>
+<p id="abstract49" class="abstract"><b>Abstract:</b> Haskell has lots of XML parsing libraries, implemented using different techniques, and offering different levels of performance. In this talk, you will learn why, until recently, even the fastest of these libraries was embarrassingly slow compared to state-of-the-art XML parsers. Neil will share how the issue was rectified, with the introduction of the Hexml and Xeno libraries. Hexml uses the Foreign Function Interface (FFI), pushing much of the actual work into C, showing how to move performance sensitive pieces into C and reintegrate them without excessive overhead. In contrast, Xeno is written in pure Haskell, using special development/testing techniques to ensure the optimised code performs comparably to Hexml. You will explore the comparison between these different approaches, and see how they apply beyond just XML parsing.</p>
+<p class="text">Comparing FFI with pure Haskell for performance.</p>
+
 <h3>Talk: Static Analysis of Haskell</h3>
 <p class="info"><a href="downloads/slides-static_analysis_of_haskell-11_jul_2017.pdf">Slides</a>, <a href="javascript:showCitation(48)">citation</a>, <a href="javascript:showAbstract(48)">abstract</a> from <a href="https://skillsmatter.com/meetups/9336-haskellx-bytes-with-neil-mitchell">HaskellX Bytes</a>, 11 Jul 2017.</p>
 <p id="citation48" class="citation">@misc{mitchell:catch, hlint, weeder_11_jul_2017
