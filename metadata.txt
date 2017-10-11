@@ -43,6 +43,7 @@ slides: slides-plugging_space_leaks_improving_performance-06_oct_2016.pdf
 title: Plugging Space Leaks, Improving Performance
 date: 06 Oct 2016
 where: <a href="https://skillsmatter.com/conferences/7276-haskell-exchange-2016">Haskell eXchange 2016</a>
+video: https://skillsmatter.com/skillscasts/8724-plugging-space-leaks-improving-performance
 key: spaceleak
 text: How to detect and fix space leaks.
 abstract:
