@@ -136,6 +136,17 @@ abstract:
 
     The Shake library provides powerful dependency features along with useful extras (profiling, debugging, command line handling). This tutorial aims to help you learn how to think about writing build systems, and how to make those thoughts concrete in Shake.
 
+slides: slides-everyone_should_use_a_generics_library-09_oct_2013
+video:  https://skillsmatter.com/skillscasts/4250-uniplate
+title:  Everyone should use a generics library!
+date:   09 Oct 2013
+where:  <a href="https://skillsmatter.com/conferences/1549-haskell-exchange">Haskell eXchange 2013</a>
+author: Neil Mitchell
+key:    uniplate
+text:   How #{hlint} was written using #{uniplate} and why generics libraries matter.
+abstract:
+    A generics library allows programmers to express only the interesting part of certain tasks, avoiding lots of boilerplate and making the code significantly shorter and more maintainable. Haskell is awash with excellent generics libraries, including Scrap Your Boilerplate, Generics for the Masses, Generic Deriving and Uniplate, yet many developers will never have used any of them. This talk explains how to use the Uniplate generics library, using examples derived from the Haskell Lint tool (HLint), which makes extensive use of Uniplate.
+
 paper:   paper-shake_before_building-10_sep_2012.pdf
 slides:  slides-shake_before_building-10_sep_2012.pdf
 video:   http://www.youtube.com/watch?v=xYCPpXVlqFM
