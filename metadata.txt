@@ -12,6 +12,7 @@ slides: slides-static_analysis_of_haskell-11_jul_2017.pdf
 title: Static Analysis of Haskell
 date: 11 Jul 2017
 where: <a href="https://skillsmatter.com/meetups/9336-haskellx-bytes-with-neil-mitchell">HaskellX Bytes</a>
+video: https://skillsmatter.com/skillscasts/10014-haskellx-bytes-with-neil-mitchell
 key: catch, hlint, weeder
 text: A tour of static analysis tools for Haskell, including #{hlint}, #{catch} and #{weeder}.
 abstract:
