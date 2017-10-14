@@ -32,7 +32,7 @@ projects =
     ,("Yhc","https://wiki.haskell.org/Yhc")
     ,("Hat","http://projects.haskell.org/hat/")] ++
     [(x, "https://github.com/ndmitchell/" ++ lower x)
-    | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake"]
+    | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder"]
 
 replaces :: Eq a => [([a], [a])] -> [a] -> [a]
 replaces reps x = foldl (\x (from,to) -> replace from to x) x reps

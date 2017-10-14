@@ -4,7 +4,7 @@ date: 12 Oct 2017
 video: https://skillsmatter.com/skillscasts/10627-fast-xml-parsing-with-haskell
 where: <a href="https://skillsmatter.com/conferences/8522-haskell-exchange-2017">Haskell eXchange 2017</a>
 key: hexml
-text: Comparing FFI with pure Haskell for performance.
+text: Comparing FFI with pure Haskell for performance, comparing #{hexml} to Xeno.
 abstract:
     Haskell has lots of XML parsing libraries, implemented using different techniques, and offering different levels of performance. In this talk, you will learn why, until recently, even the fastest of these libraries was embarrassingly slow compared to state-of-the-art XML parsers. Neil will share how the issue was rectified, with the introduction of the Hexml and Xeno libraries. Hexml uses the Foreign Function Interface (FFI), pushing much of the actual work into C, showing how to move performance sensitive pieces into C and reintegrate them without excessive overhead. In contrast, Xeno is written in pure Haskell, using special development/testing techniques to ensure the optimised code performs comparably to Hexml. You will explore the comparison between these different approaches, and see how they apply beyond just XML parsing.
 
@@ -13,7 +13,7 @@ title: Static Analysis of Haskell
 date: 11 Jul 2017
 where: <a href="https://skillsmatter.com/meetups/9336-haskellx-bytes-with-neil-mitchell">HaskellX Bytes</a>
 key: catch, hlint, weeder
-text: A tour of static analysis tools for Haskell.
+text: A tour of static analysis tools for Haskell, including #{hlint}, #{catch} and #{weeder}.
 abstract:
     Haskell is a strongly typed programming language, which should be well suited to
     static analysis - specifically any insights about the program which don't require
@@ -36,7 +36,7 @@ title: Shake: Past, Present, Future
 date: 26 Oct 2016
 where: <a href="http://www.meetup.com/London-Haskell/events/234831304/">London Haskell User Group</a>
 key: shake
-text: The history and future directions of Shake.
+text: The history and future directions of #{shake}.
 abstract:
     Shake is a Haskell library for implementing build systems, an alternative to Make, but with much more powerful and accurate dependencies. In this talk we trace the origins of Shake, from a small module to build a PhD thesis, to a production quality build system, figuring out the keys ideas along the way. As we look to the future we'll discuss the conversion of the GHC build system to Shake and how Shake can compete against tools like Bazel/Buck from Google/Facebook.
 
