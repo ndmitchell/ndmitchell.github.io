@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Henry's recognisers</title>
+<script>
+var wordBox = ["pen","pan","tip","ant","as","sit","nit","tin","sat","it","nip","pat"];
+
+var recognisers =
+    [["single digits", enumFromTo(1,9)]
+    ,["tens", enumFromTo(1,10).map(function (x){return x * 10;})]
+    ,["words", wordBox]
+    ];
+
+var fonts = ["serif","sans-serif","cursive","monospace"];
+
+var currentRecogniser = -1;
+
+function getRandomElem(xs)
+{
+    return xs[Math.floor(Math.random() * xs.length)];
+}
+
+var lastRandom = null;
+function getRandomElemDifferent(xs)
+{
+    if (xs.length === 1) return xs[0];
+    while (true)
+    {
+        var i = getRandomElem(xs);
+        if (i === lastRandom) continue;
+        lastRandom = i;
+        return i;
+    }
+}
+
+function enumFromTo(from, to)
+{
+    var xs = [];
+    for (var i = from; i <= to; i++)
+        xs.push(i);
+    return xs;
+}
+
+function next()
+{
+    document.getElementById("content").innerText = getRandomElemDifferent(recognisers[currentRecogniser][1]);
+    document.getElementById("content").style.fontFamily = getRandomElem(fonts);
+    document.getElementById("content").style.fontSize = getRandomElem([200,225,250,275,300]);
+}
+
+function setRecogniser(x)
+{
+    currentRecogniser = x;
+    var s = "";
+    for (var i = 0; i < recognisers.length; i++)
+    {
+        var ss = "<a href=\"javascript:setRecogniser(" + i + ")\">" + recognisers[i][0] + "</a>";
+        if (i === currentRecogniser)
+            ss = "<b>" + ss + "</b>";
+        s += ss + " &nbsp; ";
+    }
+    document.getElementById("recognisers").innerHTML = s;
+    next();
+}
+</script>
+    </head>
+    <body onload="setRecogniser(0)">
+        <div id="recognisers"></div><br/>
+        <button style="font-size:20pt;" onclick="next()">Next</button><br/>
+        <div id="content" style="font-size: 300pt; text-align: center;">Start</div>
+    </body>
+</html>
