@@ -5,9 +5,9 @@
 var wordBox = ["pen","pan","tip","ant","as","sit","nit","tin","sat","it","nip","pat"];
 
 var recognisers =
-    [["single digits", enumFromTo(1,9)]
+    [["words", wordBox]
+    ,["single digits", enumFromTo(1,9)]
     ,["tens", enumFromTo(1,10).map(function (x){return x * 10;})]
-    ,["words", wordBox]
     ];
 
 var fonts = ["serif","sans-serif","cursive","monospace"];
@@ -64,8 +64,8 @@ function setRecogniser(x)
 </script>
     </head>
     <body onload="setRecogniser(0)">
-        <div id="recognisers"></div><br/>
-        <button style="font-size:20pt;" onclick="next()">Next</button><br/>
+        <div style="float:right;" id="recognisers"></div>
+        <button style="font-size:40pt;font-weight:bold;padding:0 40 10 40" onclick="next()">&rarr;</button><br/>
         <div id="content" style="font-size: 300pt; text-align: center;">Start</div>
     </body>
 </html>
