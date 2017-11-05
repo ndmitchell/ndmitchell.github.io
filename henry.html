@@ -46,9 +46,10 @@ function enumFromTo(from, to)
 
 function next()
 {
-    document.getElementById("content").innerText = getRandomElemDifferent(recognisers[currentRecogniser][1]);
-    document.getElementById("content").style.fontFamily = getRandomElem(fonts);
-    document.getElementById("content").style.fontSize = getRandomElem([200,225,250,275,300]);
+    var content = document.getElementById("content");
+    content.innerText = getRandomElemDifferent(recognisers[currentRecogniser][1]);
+    content.style.fontFamily = getRandomElem(fonts);
+    content.style.fontSize = getRandomElem([200,225,250,275,300]);
 }
 
 function setRecogniser(x)
