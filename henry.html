@@ -3,10 +3,12 @@
         <title>Henry's recognisers</title>
 <script>
 var wordBox = ["pen","pan","tip","ant","as","sit","nit","tin","sat","it","nip","pat"];
+var colors = ["red","orange","yellow","green","blue","purple","black","gray","white","pink","silver","gold"];
 
 var recognisers =
     [["words", wordBox]
-    ,["single digits", enumFromTo(1,9)]
+    ,["colors", colors]
+    ,["digits", enumFromTo(1,9)]
     ,["tens", enumFromTo(1,10).map(function (x){return x * 10;})]
     ];
 
