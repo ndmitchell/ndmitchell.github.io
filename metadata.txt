@@ -1,3 +1,10 @@
+slides: slides-deriving_generic_functions_by_example-17_nov_2017.pdf
+title: Deriving Generic Functions by Example (+10 years)
+date: 17 Nov 2017
+where: <a href="https://www.cs.york.ac.uk/yds/yds2017/">York Doctoral Symposium 2017</a>
+key: derive, shake
+text: An update on #{derive} and me 10 years after the first YDS.
+
 slides: slides-fast_xml_parsing_with_haskell-12_oct_2017.pdf
 title: Fast XML Parsing with Haskell
 date: 12 Oct 2017
