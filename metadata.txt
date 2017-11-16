@@ -354,7 +354,7 @@ key:    deriving
 @pages:55-62
 @publisher:Tech. Report YCS-2007-421, Dept. of Computer Science, University of York, UK
 @editor:Jan Tobias M\"{u}hlberg and Juan Ignacio Perna
-@booktitle: Proceedings of the First York Doctoral Syposium 2007
+@booktitle: Proceedings of the First York Doctoral Symposium 2007
 abstract:
     A function is said to be generic if it operates over values of
     any data type. For example, a generic equality function can test pairs of
