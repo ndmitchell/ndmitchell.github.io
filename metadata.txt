@@ -36,8 +36,15 @@ title: Drive-by Haskell Contributions
 video: https://www.youtube.com/watch?v=6kGLHXsUQD4
 date: 09 Jun 2017
 where: <a href="https://zurihac.info/">ZuriHac 2017</a>
-key: hlint, weeder, profiterole
+key: zurihac
 text: How to start contributing to Haskell projects.
+
+audio: http://www.haskellcast.com/episode/012-neil-mitchell-on-development-tools
+title: Neil Mitchell on Development Tools
+date: 17 Apr 2017
+where: <a href="http://www.haskellcast.com/">HaskellCast</a>
+key: interview
+text: Me being interviewed by <a href="https://twitter.com/jekor">Chris Forno</a> and <a href="https://twitter.com/alpmestan">Alp Mestanogullari</a>.
 
 slides: slides-shake_past_present_future-26_oct_2016.pdf
 title: Shake: Past, Present, Future
