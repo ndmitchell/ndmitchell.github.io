@@ -48,8 +48,7 @@ renderMetadata unique xs =
     where
         typ = if ("@at","phdthesis") `elem` xs then "Thesis"
               else if "paper" `elem` keys then "Paper"
-              else if "slides" `elem` keys then "Talk"
-              else "Other"
+              else "Talk"
         parts = [ "<a href=\"" ++ download v ++ "\">" ++ (if i == 0 then toUpper (head k) : tail k else k) ++ "</a>"
                 | (i,(k,v)) <- zip [0..] $ filter (not . null . snd) $ map (id &&& at) $ words "paper slides video audio"] ++
                 [ "<a href=\"javascript:showCitation(" ++ show unique ++ ")\">citation</a>"] ++
@@ -104,7 +103,8 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- x, a /= "at"] ++
-                [("url", "\\verb'http://ndmitchell.com/downloads/" ++ (if x !? "paper" then x !# "paper" else x !# "slides") ++ "'")]
+                [("url", "\\verb'http://ndmitchell.com/downloads/" ++ url ++ "'")
+                    | url <- take 1 [x !# s | s <- ["paper", "slides"], x !? s]]
 
         date = parseDate $ x !# "date"
         key = (x !# "key") ++ "_" ++ replace " " "_" (lower $ x !# "date")
