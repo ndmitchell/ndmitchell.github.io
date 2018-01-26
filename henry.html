@@ -14,8 +14,32 @@ var wordBox =
 var colors = ["red","orange","yellow","green","blue","purple","black","gray","white","pink","silver","gold"];
 var animals = ["rhino","hippo","crocodile","armadillo","pangolin","person","tiger","lion","fish","tuna","hampster"];
 
+// From https://www.theguardian.com/education/2005/dec/09/research.highereducation
+var top100 =
+    ["a","about","after","all","am","an","and","are","as","at","away"
+    ,"back","be","because","big","but","by"
+    ,"call","came","can","come","could"
+    ,"did","do","down"
+    ,"for","from"
+    ,"get","go","got"
+    ,"had","has","have","he","her","here","him","his"
+    ,"in","into","is","it"
+    ,"last","like","little","live","look"
+    ,"made","make","me","my"
+    ,"new","next","not","now"
+    ,"of","off","old","on","once","one","other","our","out","over"
+    ,"put"
+    ,"saw","said","see","she","so","some"
+    ,"take","that","the","their","them","then","there","they","this","three","time","to","today","too","two"
+    ,"up","us"
+    ,"very"
+    ,"was","we","were","went","what","when","will","with"
+    ,"you"
+    ]
+
 var recognisers =
     [["words", wordBox]
+    ,["top100", top100]
     ,["colors", colors]
     ,["animals", animals]
     ,["digits", enumFromTo(1,9)]
