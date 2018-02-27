@@ -39,17 +39,17 @@ where: <a href="https://zurihac.info/">ZuriHac 2017</a>
 key: zurihac
 text: How to start contributing to Haskell projects.
 
-audio: http://www.haskellcast.com/episode/012-neil-mitchell-on-development-tools
+audio: https://www.haskellcast.com/episode/012-neil-mitchell-on-development-tools
 title: Neil Mitchell on Development Tools
 date: 17 Apr 2017
-where: <a href="http://www.haskellcast.com/">HaskellCast</a>
+where: <a href="https://www.haskellcast.com/">HaskellCast</a>
 key: interview
 text: Me being interviewed by <a href="https://twitter.com/jekor">Chris Forno</a> and <a href="https://twitter.com/alpmestan">Alp Mestanogullari</a>.
 
 slides: slides-shake_past_present_future-26_oct_2016.pdf
 title: Shake: Past, Present, Future
 date: 26 Oct 2016
-where: <a href="http://www.meetup.com/London-Haskell/events/234831304/">London Haskell User Group</a>
+where: <a href="https://www.meetup.com/London-Haskell/events/234831304/">London Haskell User Group</a>
 key: shake
 text: The history and future directions of #{shake}.
 abstract:
@@ -68,7 +68,7 @@ abstract:
 slides: slides-writing_shake_rules-16_aug_2016.pdf
 title: Writing Shake Rules
 date: 16 Aug 2016
-where: <a href="http://www.meetup.com/London-Haskell-Hacking/events/233062421/">London Haskell Hacking Meetup</a>
+where: <a href="https://www.meetup.com/London-Haskell-Hacking/events/233062421/">London Haskell Hacking Meetup</a>
 key: shake
 text: Designing general purpose custom rules for #{shake}, targeted towards building C.
 abstract:
@@ -108,7 +108,7 @@ abstract:
 slides: slides-shake_n_bake-13_aug_2015.pdf
 title: Shake 'n' Bake
 date: 13 Aug 2015
-where: <a href="http://www.meetup.com/Cambridge-NonDysFunctional-Programmers/">Cambridge NonDysFunctional Programmers</a>
+where: <a href="https://www.meetup.com/Cambridge-NonDysFunctional-Programmers/">Cambridge NonDysFunctional Programmers</a>
 key: shake
 text: An informal introduction to #{shake} and #{bake}.
 abstract:
@@ -120,7 +120,7 @@ slides: slides-gluing_things_together_with_haskell-5_nov_2014.pdf
 video: https://www.youtube.com/watch?v=iFZQyLMrkn4
 title: Gluing things together with Haskell
 date: 5 Nov 2014
-where: <a href="http://www.codemesh.io/codemesh2014">Code Mesh 2014</a>
+where: <a href="https://www.codemesh.io/codemesh2014">Code Mesh 2014</a>
 key: shake
 text: A tour of some of my projects designed to glue code together, replacing shell scripts and Makefiles. Covers #{shake}, #{nsis} and #{bake}.
 abstract:
@@ -132,13 +132,13 @@ date:   23 Oct 2014
 where:  <a href="https://www.cs.york.ac.uk/events/colin/">Runifest</a>
 author: Neil Mitchell
 key:    runcifest
-text:   A joint talk with <a href="http://www.haskellers.com/user/malcolm">Malcolm Wallace</a> covering some projects influenced by <a href="http://www-users.cs.york.ac.uk/colin/">Colin Runciman</a>. My slides cover #{uniplate} and #{hoogle}.
+text:   A joint talk with <a href="https://www.haskellers.com/user/malcolm">Malcolm Wallace</a> covering some projects influenced by <a href="https://www-users.cs.york.ac.uk/colin/">Colin Runciman</a>. My slides cover #{uniplate} and #{hoogle}.
 abstract:
     Colin has dabbled in many areas of functional programming, from XML processing to data visualisation, from type searching to generic transformations. While most of Colin's contributions have been made from inside a University, their impact has been felt in industry. In this talk we take a whirlwind tour through some of the projects that have influenced us and our work.
 
 
 slides: slides-building_stuff_with_shake-20_nov_2014.pdf
-video:  http://www.infoq.com/presentations/shake
+video:  https://www.infoq.com/presentations/shake
 title:  Building stuff with Shake
 date:   20 Nov 2014
 where:  <a href="http://fpdays.net/2014/">FP Days 2014</a>
@@ -165,10 +165,10 @@ abstract:
 
 paper:   paper-shake_before_building-10_sep_2012.pdf
 slides:  slides-shake_before_building-10_sep_2012.pdf
-video:   http://www.youtube.com/watch?v=xYCPpXVlqFM
+video:   https://www.youtube.com/watch?v=xYCPpXVlqFM
 title:   Shake Before Building - Replacing Make with Haskell
 date:    10 Sep 2012
-where:   <a href="http://www.icfpconference.org/icfp2012/">ICFP 2012</a>
+where:   <a href="https://www.icfpconference.org/icfp2012/">ICFP 2012</a>
 text:    An introduction to #{shake}, focusing on the theoretical side.
 author:  Neil Mitchell
 key:     shake
@@ -186,17 +186,17 @@ abstract:
 
 paper:   paper-rethinking_supercompilation-29_sep_2010.pdf
 slides:  slides-rethinking_supercompilation_29_sep_2010.pdf
-video:   http://vimeo.com/15833948
+video:   https://vimeo.com/15833948
 title:   Rethinking Supercompilation
 text:    Thoughts about making supercompilation faster, based on my experiments with #{supero}.
 date:    29 Sep 2010
-where:   <a href="http://www.icfpconference.org/icfp2010/">ICFP 2010</a>
+where:   <a href="https://www.icfpconference.org/icfp2010/">ICFP 2010</a>
 author:  Neil Mitchell
 key:     supercompilation
 @location: Baltimore, Maryland, USA
 @pages: 309-320
 @booktitle: ICFP '10: Proceedings of the 15th ACM SIGPLAN International Conference on Functional Programming
-@doi: http://doi.acm.org/10.1145/1863543.1863588
+@doi: https://doi.acm.org/10.1145/1863543.1863588
 @publisher: ACM
 @isbn: 978-1-60558-794-3
 abstract:
@@ -208,10 +208,10 @@ abstract:
     with some programs running more than twice as fast than when compiled with GHC.
 
 slides: slides-shake_a_better_make-01_oct_2010.pdf
-video:  http://vimeo.com/15465133
+video:  https://vimeo.com/15465133
 title:  Shake: A Better Make
 text:   Early details about the design of #{shake}.
-where:  <a href="http://haskell.org/haskellwiki/HaskellImplementorsWorkshop/2010">Haskell Implementors Workshop 2010</a>
+where:  <a href="https://haskell.org/haskellwiki/HaskellImplementorsWorkshop/2010">Haskell Implementors Workshop 2010</a>
 key:    shake
 date:   01 Oct 2010
 
@@ -220,7 +220,7 @@ slides:    slides-deriving_a_relationship_from_a_single_example-04_sep_2009.pdf
 title:  Deriving a Relationship from a Single Example
 text:   Assuming you have a single example of a type class, what should the data type be, and what range of instances can be described. Implemented in the #{derive} tool.
 date:  04 Sep 2009
-where:  <a href="http://www.cogsys.wiai.uni-bamberg.de/aaip09/">Approaches and Applications of Inductive Programming 2009</a>
+where:  <a href="https://www.cogsys.wiai.uni-bamberg.de/aaip09/">Approaches and Applications of Inductive Programming 2009</a>
 author: Neil Mitchell
 key:    derive
 @location: Edinburgh, Scotland, UK
@@ -246,17 +246,17 @@ abstract:
 
 paper:     paper-losing_functions_without_gaining_data-03_sep_2009.pdf
 slides:    slides-losing_functions_without_gaining_data-03_sep_2009.pdf
-video:    http://www.vimeo.com/6687266
+video:    https://www.vimeo.com/6687266
 title:   Losing Functions without Gaining Data
 text:    An algorithm for making higher-order programs first-order without introducing new data types (e.g. without doing Reynold's style defunctionalisation). The resulting program may have worse time complexity, but that's fine for certain types of analysis. Implemented as #{firstify} and used in #{catch}.
 date:    03 Sep 2009
-where:   <a href="http://www.haskell.org/haskell-symposium/2009/">Haskell Symposium 2009</a>
+where:   <a href="https://www.haskell.org/haskell-symposium/2009/">Haskell Symposium 2009</a>
 author:  Neil Mitchell and Colin Runciman
 key:     defunctionalisation
 @booktitle: Haskell '09: Proceedings of the second ACM SIGPLAN symposium on Haskell
 @pages: 49-60
 @location: Edinburgh, Scotland, UK
-@doi: http://doi.acm.org/10.1145/1411286.1411293
+@doi: https://doi.acm.org/10.1145/1411286.1411293
 @publisher:ACM
 @isbn:978-1-60558-508-6
 abstract:
@@ -292,17 +292,17 @@ abstract:
 
 paper:   paper-not_all_patterns_but_enough-25_sep_2008.pdf
 slides:    slides-not_all_patterns_but_enough-25_sep_2008.pdf
-video:    http://www.youtube.com/watch?v=DFVIzwg1rvs
+video:    https://www.youtube.com/watch?v=DFVIzwg1rvs
 title:   Not All Patterns, But Enough - an automatic verifier for partial but sufficient pattern matching
 text:    A static analysis for automatically proving a program will not raise an error at runtime, implemented as #{catch}. The analysis was able to detect 3 bugs in the <a href="https://hackage.haskell.org/package/hscolour">HsColour</a> program.
 date:    25 Sep 2008
-where:   <a href="http://www.haskell.org/haskell-symposium/2008/">Haskell Symposium 2008</a>
+where:   <a href="https://www.haskell.org/haskell-symposium/2008/">Haskell Symposium 2008</a>
 author:  Neil Mitchell and Colin Runciman
 key:     catch
 @booktitle: Haskell '08: Proceedings of the first ACM SIGPLAN symposium on Haskell
 @pages: 49-60
 @location: Victoria, BC, Canada
-@doi: http://doi.acm.org/10.1145/1411286.1411293
+@doi: https://doi.acm.org/10.1145/1411286.1411293
 @publisher: ACM
 @isbn: 978-1-60558-064-7
 abstract:
@@ -321,7 +321,7 @@ abstract:
 paper:   paper-hoogle_overview-19_nov_2008.pdf
 title:  Hoogle Overview
 date:   19 Nov 2008
-where:  The <a href="http://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>
+where:  The <a href="https://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>
 author: Neil Mitchell
 key:    hoogle
 text: An overview of #{hoogle}, including both the algorithms and code structure.
@@ -340,7 +340,7 @@ abstract:
 paper:    paper-a_supercompiler_for_core_haskell-01_may_2008.pdf
 title:  A Supercompiler for Core Haskell
 date:   01 May 2008
-where:  <a href="http://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a> post proceedings
+where:  <a href="https://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a> post proceedings
 author: Neil Mitchell and Colin Runciman
 key:    supero
 text: An early design of the #{supero} supercompiler. This paper won the <a href="http://www.ifl-workshops.org/">Peter Landin prize</a> for the best paper presented at the symposium that year, as selected by the programme committee.
@@ -363,7 +363,7 @@ slides:    slides-deriving_generic_functions_by_example-26_oct_2007.pdf
 title:  Deriving Generic Functions by Example
 text: An early version of the generic deriving work from #{derive}.
 date:   26 Oct 2007
-where:  <a href="http://www.cs.york.ac.uk/yds/">York Doctoral Symposium 2007</a>
+where:  <a href="https://www.cs.york.ac.uk/yds/">York Doctoral Symposium 2007</a>
 key:    deriving
 @pages:55-62
 @publisher:Tech. Report YCS-2007-421, Dept. of Computer Science, University of York, UK
@@ -385,7 +385,7 @@ abstract:
 
 paper:    paper-uniform_boilerplate_and_list_processing-30_sep_2007.pdf
 slides:    slides-uniform_boilerplate_and_list_processing-30_sep_2007.pdf
-video:    http://www.ludd.ltu.se/~pj/hw2007/uniplate.mov
+video:    https://www.ludd.ltu.se/~pj/hw2007/uniplate.mov
 title:  Uniform Boilerplate and List Processing
 key:    uniplate
 text: Details of the #{uniplate} generics library, including information on how to use the Uniplate operations.
@@ -395,7 +395,7 @@ author: Neil Mitchell and Colin Runciman
 @booktitle: Haskell '07: Proceedings of the ACM SIGPLAN workshop on Haskell
 @pages:49-60
 @location:Freiburg, Germany
-@doi:http://doi.acm.org/10.1145/1291201.1291208
+@doi:https://doi.acm.org/10.1145/1291201.1291208
 @publisher:ACM
 @isbn:978-1-59593-674-5
 abstract:
@@ -417,7 +417,7 @@ title:  Supero: Making Haskell Faster
 text: A very early version of #{supero}, before it was an actual supercompiler.
 date:   27 Sep 2007
 key:    supercompilation
-where:  <a href="http://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a>
+where:  <a href="https://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a>
 author: Neil Mitchell and Colin Runciman
 @booktitle: IFL 2007: Draft Proceedings of the 19th International Symposium on Implementation and Application of Functional Languages
 @location:Freiburg, Germany
@@ -438,7 +438,7 @@ title:  Yhc.Core - from Haskell to Core
 text: Information about the #{yhc} core language, its constructors and semantics.
 key:    yhc
 date:   30 Apr 2007
-where:  The <a href="http://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>
+where:  The <a href="https://www.haskell.org/haskellwiki/The_Monad.Reader">Monad.Reader</a>
 author: Dimitry Golubovsky and Neil Mitchell and Matthew Naylor
 @at:article
 @journal:The Monad.Reader
@@ -543,7 +543,7 @@ title:  Detecting Pattern-Match Failures in Haskell
 text: Details about #{catch}, including worked examples.
 key:  catch
 date:   26 Nov 2007
-where:  <a href="http://www.cs.ox.ac.uk/activities/metacomputation/">The Oxford Centre for Metacomputation</a>
+where:  <a href="https://www.cs.ox.ac.uk/activities/metacomputation/">The Oxford Centre for Metacomputation</a>
 
 slides:    slides-catch-06_apr_2006.pdf
 title:  Catch, A Practical Tool
@@ -565,7 +565,7 @@ title:  Catch, Lazy Termination
 text: Discussions about what termination means in a lazy language, and how to detect it. 
 key:    catch
 date:   16 Mar 2006
-where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+where:  <a href="https://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
 
 slides:    slides-termination_checking_for_a_lazy_functional_language-21_dec_2004.pdf
 title:  Termination checking for a lazy functional language
@@ -588,7 +588,7 @@ title:  A New Parser
 text: Thoughts about an alternative way to do parsing.
 key:  parser
 date:   17 Nov 2004
-where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+where:  <a href="https://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
 
 
 slides:    slides-instances_for_free-22_may_2008.pdf
@@ -596,7 +596,7 @@ title:  Instances for Free
 text: Generating Haskell instances from examples, as found in the #{derive} tool.
 key:    deriving
 date:   22 May 2008
-where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+where:  <a href="https://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
 
 
 slides:    slides-first_order_haskell-06_apr_2007.pdf
@@ -628,56 +628,56 @@ title:  Hoogle: Fast Type Searching
 text: An early overview of how both type and text search works in #{hoogle}.
 key:    hoogle
 date:   09 Aug 2008
-where:  <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2008">AngloHaskell 2008</a>
+where:  <a href="https://www.haskell.org/haskellwiki/AngloHaskell/2008">AngloHaskell 2008</a>
 
 slides:    slides-supercompilation_for_haskell-03_mar_2009.pdf
 title:  Supercompilation for Haskell
 text: Details of how to apply supercompilation to Haskell.
 key:    supercompilation
 date:   03 Mar 2009
-where:  <a href="http://sneezy.cs.nott.ac.uk/fun/">Fun in the Afternoon</a> Spring 2009
+where:  <a href="https://sneezy.cs.nott.ac.uk/fun/">Fun in the Afternoon</a> Spring 2009
 
 slides:    slides-faster_haskell-10_aug_2007.pdf
 title:  Faster Haskell
 text: Early work on Supercompilation.
 key:    supercompilation
 date:   10 Aug 2007
-where:  <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>
+where:  <a href="https://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>
 
 slides:    slides-yhc_past_present_future-10_aug_2007.pdf
 title:  Yhc: Past, Present, Future
 text: The history behind #{yhc}, along with future plans and intentions.
 key:    yhc
 date:   10 Aug 2007
-where:  <a href="http://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>
+where:  <a href="https://www.haskell.org/haskellwiki/AngloHaskell/2007">Anglo Haskell 2007</a>
 
 slides:    slides-fastest_lambda_first-30_may_2007.pdf
 title:  Fastest Lambda First
 text: Details of a whole-program optimiser for Haskell, early work on #{supero}.
 key:    supercompilation
 date:   30 May 2007
-where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+where:  <a href="https://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
 
 slides:    slides-playing_with_haskell_data-18_jan_2007.pdf
 title:  Playing with Haskell Data
 text: Generic traversals and transformations over Haskell data types, what would later become #{uniplate}.
 key:    uniplate
 date:   18 Jan 2007
-where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+where:  <a href="https://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
 
 slides:    slides-haskell_with_go_faster_stripes-30_nov_2006.pdf
 title:  Haskell With Go Faster Stripes
 text: How to make Haskell faster.
 key:    supercompilation
 date:   30 Nov 2006
-where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+where:  <a href="https://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
 
 slides:    slides-hoogle-08_dec_2005.pdf
 title:  Hoogle
 text: An early introduction to #{hoogle}.
 key:    hoogle
 date:   08 Dec 2005
-where:  <a href="http://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
+where:  <a href="https://www.cs.york.ac.uk/research/research-groups/plasma/">PLASMA</a>
 
 slides:    slides-total_pasta-23_mar_2005.pdf
 title:  Total Pasta

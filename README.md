@@ -1,2 +1,3 @@
 # ndmitchell.github.io
-http://ndmitchell.com
+
+https://ndmitchell.com

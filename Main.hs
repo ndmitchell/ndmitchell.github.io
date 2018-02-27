@@ -27,10 +27,10 @@ main = do
 
 projects :: [(String, String)]
 projects =
-    [("Shake","http://shakebuild.com/")
-    ,("Hoogle","http://hoogle.haskell.org/")
+    [("Shake","https://shakebuild.com/")
+    ,("Hoogle","https://hoogle.haskell.org/")
     ,("Yhc","https://wiki.haskell.org/Yhc")
-    ,("Hat","http://projects.haskell.org/hat/")] ++
+    ,("Hat","https://archives.haskell.org/projects.haskell.org/hat/")] ++
     [(x, "https://github.com/ndmitchell/" ++ lower x)
     | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder"]
 
@@ -103,7 +103,7 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- x, a /= "at"] ++
-                [("url", "\\verb'http://ndmitchell.com/downloads/" ++ url ++ "'")
+                [("url", "\\verb'https://ndmitchell.com/downloads/" ++ url ++ "'")
                     | url <- take 1 [x !# s | s <- ["paper", "slides"], x !? s]]
 
         date = parseDate $ x !# "date"
