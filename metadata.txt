@@ -1,5 +1,6 @@
 slides: slides-deriving_generic_functions_by_example-17_nov_2017.pdf
 title: Deriving Generic Functions by Example (+10 years)
+video: https://www.youtube.com/watch?v=Jrmt4dIVp7s&t=3811
 date: 17 Nov 2017
 where: <a href="https://www.cs.york.ac.uk/yds/yds2017/">York Doctoral Symposium 2017</a>
 key: derive, shake
