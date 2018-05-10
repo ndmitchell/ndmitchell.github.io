@@ -1,1 +1,1 @@
---test=:go --reload=metadata.txt --reload=template.html
+--test=:main --reload=metadata.txt --reload=template.html
