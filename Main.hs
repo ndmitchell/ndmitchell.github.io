@@ -80,7 +80,7 @@ renderMetadata unique e =
         [""
         ,"<h3>" ++ typ ++ ": " ++ e ! "title" ++ "</h3>"
         ,"<p class=\"info\">" ++ intercalate ", " parts ++ (maybe "" (" from " ++) $ e !? "where") ++ ", " ++ e ! "date" ++ ".</p>"
-        ,"<p id=\"citation" ++ show unique ++ "\" class=\"citation\">" ++ bibtex e ++ "</p>"] ++
+        ,"<p id=\"citation" ++ show unique ++ "\" class=\"citation\">" ++ renderBibtex e ++ "</p>"] ++
         ["<p id=\"abstract" ++ show unique ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
         ["<p class=\"text\">" ++ e ! "text" ++ "</p>"]
     where
@@ -96,8 +96,8 @@ renderMetadata unique e =
         abstract = fromMaybe "" $ e !? "abstract"
 
 
-bibtex :: Entry -> String
-bibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
+renderBibtex :: Entry -> String
+renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
     where
         (at,ex) | isJust $ e !? "paper" = (fromMaybe "inproceedings" $ e !? "@at", [])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
