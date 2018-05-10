@@ -39,7 +39,7 @@ projects =
     [(x, "https://github.com/ndmitchell/" ++ lower x)
     | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder"]
 
-names = ["Haskell","Uniplate","Hat","Windows","Pasta"]
+names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 
 months = ["January","February","March","April","May","June"
          ,"July","August","September","October","November","December"]
