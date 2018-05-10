@@ -79,7 +79,7 @@ renderMetadata :: Int -> Entry -> [String]
 renderMetadata unique e =
         [""
         ,"<h3>" ++ typ ++ ": " ++ e ! "title" ++ "</h3>"
-        ,"<p class=\"info\">" ++ intercalate ", " parts ++ (maybe "" (" from " ++) $ e !? "where") ++ ", " ++ e ! "date" ++ ".</p>"
+        ,"<p class=\"info\">" ++ intercalate ", " parts ++ location ++ ", " ++ coauthors ++ e ! "date" ++ ".</p>"
         ,"<p id=\"citation" ++ show unique ++ "\" class=\"citation\">" ++ renderBibtex e ++ "</p>"] ++
         ["<p id=\"abstract" ++ show unique ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
         ["<p class=\"text\">" ++ e ! "text" ++ "</p>"]
@@ -92,6 +92,12 @@ renderMetadata unique e =
                 [ "<a href=\"javascript:showCitation(" ++ show unique ++ ")\">citation</a>"] ++
                 [ "<a href=\"javascript:showAbstract(" ++ show unique ++ ")\">abstract</a>" | abstract /= ""]
         download x = if "http" `isPrefixOf` x then x else "downloads/" ++ x
+        location = maybe "" (" from " ++) $ e !? "where"
+        coauthors = case delete "Neil Mitchell" $ maybe [] (splitOn " and ") (e !? "author") of
+            [] -> ""
+            [x] -> "with " ++ x ++ ", "
+            [x,y] -> "with " ++ x ++ " and " ++ y ++ ", "
+            xs -> "with " ++ intercalate ", " (init xs) ++ " and " ++ last xs ++ ", "
 
         abstract = fromMaybe "" $ e !? "abstract"
 
