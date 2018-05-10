@@ -9,6 +9,7 @@ import Data.List.Extra
 import Data.Tuple.Extra
 import Data.Char
 
+type URL = String
 
 main :: IO ()
 main = do
@@ -25,7 +26,11 @@ main = do
     writeFile "index.html" res
     putStrLn "Generated to index.html"
 
-projects :: [(String, String)]
+
+---------------------------------------------------------------------
+-- INFORMATION TABLES
+
+projects :: [(String, URL)]
 projects =
     [("Shake","https://shakebuild.com/")
     ,("Hoogle","https://hoogle.haskell.org/")
@@ -34,10 +39,50 @@ projects =
     [(x, "https://github.com/ndmitchell/" ++ lower x)
     | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder"]
 
-replaces :: Eq a => [([a], [a])] -> [a] -> [a]
-replaces reps x = foldl (\x (from,to) -> replace from to x) x reps
+names = ["Haskell","Uniplate","Hat","Windows","Pasta"]
 
-renderMetadata :: Int -> [(String, String)] -> [String]
+months = ["January","February","March","April","May","June"
+         ,"July","August","September","October","November","December"]
+
+
+---------------------------------------------------------------------
+-- PARSING
+
+type Entry = [(String, String)]
+
+checkMetadata :: [Entry] -> [Entry]
+checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn date xs
+    where
+        checkFields xs | bad:_ <- xs \\ nub xs = error $ "Duplicate field, " ++ bad
+                       | bad:_ <- filter (not . isPrefixOf "@") xs \\ (required ++ optional) = error $ "Unknown field, " ++ bad
+                       | bad:_ <- required \\ xs = error $ "Missing field, " ++ bad
+                       | otherwise = True
+        date = parseDate . fromJust . lookup "date"
+
+        required = words "title date text key"
+        optional = words "paper slides video audio where author abstract"
+
+
+parseDate :: String -> (Int, Int, Int)
+parseDate x | [a,b,c] <- words x = (read c, 1 + fromMaybe (error $ "bad month, " ++ x) (elemIndex b months), read a)
+    where months = words "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
+
+
+parseMetadata :: String -> [Entry]
+parseMetadata = map (map f) . wordsBy null . rejoin . map trimEnd . lines . replace "\t" "    "
+    where
+        f = second (trim . drop 1) . breakOn ":"
+
+        rejoin (x:"":(' ':y):zs) = rejoin $ (x ++ "\n" ++ trim y) : zs
+        rejoin (x:(' ':y):zs) = rejoin $ (x ++ " " ++ trim y) : zs
+        rejoin (x:xs) = x : rejoin xs
+        rejoin [] = []
+
+
+---------------------------------------------------------------------
+-- RENDERING
+
+renderMetadata :: Int -> Entry -> [String]
 renderMetadata unique xs =
         [""
         ,"<h3>" ++ typ ++ ": " ++ at "title" ++ "</h3>"
@@ -60,37 +105,7 @@ renderMetadata unique xs =
         keys = map fst xs
 
 
-checkMetadata :: [[(String, String)]] -> [[(String, String)]]
-checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn date xs
-    where
-        checkFields xs | bad:_ <- xs \\ nub xs = error $ "Duplicate field, " ++ bad
-                       | bad:_ <- filter (not . isPrefixOf "@") xs \\ (required ++ optional) = error $ "Unknown field, " ++ bad
-                       | bad:_ <- required \\ xs = error $ "Missing field, " ++ bad
-                       | otherwise = True
-        date = parseDate . fromJust . lookup "date"
-
-        required = words "title date text key"
-        optional = words "paper slides video audio where author abstract"
-
-
-parseDate :: String -> (Int, Int, Int)
-parseDate x | [a,b,c] <- words x = (read c, 1 + fromMaybe (error $ "bad month, " ++ x) (elemIndex b months), read a)
-    where months = words "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
-
-
-parseMetadata :: String -> [[(String, String)]]
-parseMetadata = map (map f) . wordsBy null . rejoin . map trimEnd . lines . replace "\t" "    "
-    where
-        f = second (trim . drop 1) . breakOn ":"
-
-        rejoin (x:"":(' ':y):zs) = rejoin $ (x ++ "\n" ++ trim y) : zs
-        rejoin (x:(' ':y):zs) = rejoin $ (x ++ " " ++ trim y) : zs
-        rejoin (x:xs) = x : rejoin xs
-        rejoin [] = []
-
-
-
-bibtex :: [(String, String)] -> String
+bibtex :: Entry -> String
 bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
     where
         (at,ex) | "paper" `elem` map fst x = (fromMaybe "inproceedings" $ lookup "@at" x, [])
@@ -131,7 +146,6 @@ capitalise str = unwords (f True x : map (f False) xs)
                        || (not first && (x:xs) `elem` names) = "{" ++ x:xs ++ "}"
                        | otherwise = x:xs
 
-names = ["Haskell","Uniplate","Hat","Windows","Pasta"]
 
 (!#) :: [(String,a)] -> String -> a
 (!#) xs y = fromMaybe (error $ "!# failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $
@@ -141,5 +155,8 @@ names = ["Haskell","Uniplate","Hat","Windows","Pasta"]
 (!?) xs y = y `elem` map fst xs
 
 
-months = ["January","February","March","April","May","June"
-         ,"July","August","September","October","November","December"]
+---------------------------------------------------------------------
+-- UTILITIES
+
+replaces :: Eq a => [([a], [a])] -> [a] -> [a]
+replaces reps x = foldl (\x (from,to) -> replace from to x) x reps
