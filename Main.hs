@@ -47,6 +47,14 @@ data Month = January | February | March | April | May | June | July | August | S
 
 type Entry = [(String, String)]
 
+(!#) :: [(String,a)] -> String -> a
+(!#) xs y = fromMaybe (error $ "!# failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $
+            lookup y xs
+
+(!?) :: [(String,a)] -> String -> Bool
+(!?) xs y = y `elem` map fst xs
+
+
 checkMetadata :: [Entry] -> [Entry]
 checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn date xs
     where
@@ -124,10 +132,6 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
         key = (x !# "key") ++ "_" ++ replace " " "_" (lower $ x !# "date")
         whereText = maybe [] (\x -> " from " ++ stripTags x) $ lookup "where" x
 
-stripTags ('<':xs) = stripTags $ drop 1 $ dropWhile (/= '>') xs
-stripTags (x:xs) = x : stripTags xs
-stripTags [] = []
-
 showBibLine (a,b) = "    ," ++ a ++ replicate (14 - length a) ' ' ++ " = {" ++ (if a == "pages" then f b else b) ++ "}"
     where
         f (x:'-':y:xs) | isDigit x && isDigit y = x:'-':'-':y : f xs
@@ -146,16 +150,14 @@ capitalise str = unwords (f True x : map (f False) xs)
                        | otherwise = x:xs
 
 
-(!#) :: [(String,a)] -> String -> a
-(!#) xs y = fromMaybe (error $ "!# failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $
-            lookup y xs
-
-(!?) :: [(String,a)] -> String -> Bool
-(!?) xs y = y `elem` map fst xs
-
-
 ---------------------------------------------------------------------
 -- UTILITIES
 
+-- | Perform all the replacements
 replaces :: Eq a => [([a], [a])] -> [a] -> [a]
 replaces reps x = foldl (\x (from,to) -> replace from to x) x reps
+
+-- | Remove HTML tags <foo>
+stripTags ('<':xs) = stripTags $ drop 1 $ dropWhile (/= '>') xs
+stripTags (x:xs) = x : stripTags xs
+stripTags [] = []
