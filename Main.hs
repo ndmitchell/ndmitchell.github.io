@@ -38,17 +38,17 @@ projects =
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 
-data Month = January | February | March | April | May | June | July | August | September | October | November | December
-    deriving (Show,Eq,Ord,Enum,Bounded)
-
 
 ---------------------------------------------------------------------
 -- PARSING
 
 type Entry = [(String, String)]
 
-(!#) :: [(String,a)] -> String -> a
-(!#) xs y = fromMaybe (error $ "!# failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $
+entryRequired = words "title date text key"
+entryOptional = words "paper slides video audio where author abstract"
+
+(!) :: [(String,a)] -> String -> a
+(!) xs y = fromMaybe (error $ "! failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $
             lookup y xs
 
 (!?) :: [(String,a)] -> String -> Bool
@@ -59,20 +59,11 @@ checkMetadata :: [Entry] -> [Entry]
 checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn date xs
     where
         checkFields xs | bad:_ <- xs \\ nub xs = error $ "Duplicate field, " ++ bad
-                       | bad:_ <- filter (not . isPrefixOf "@") xs \\ (required ++ optional) = error $ "Unknown field, " ++ bad
-                       | bad:_ <- required \\ xs = error $ "Missing field, " ++ bad
+                       | bad:_ <- filter (not . isPrefixOf "@") xs \\ (entryRequired ++ entryOptional) = error $ "Unknown field, " ++ bad
+                       | bad:_ <- entryRequired \\ xs = error $ "Missing field, " ++ bad
                        | otherwise = True
         date = parseDate . fromJust . lookup "date"
 
-        required = words "title date text key"
-        optional = words "paper slides video audio where author abstract"
-
-
-parseDate :: String -> (Int, Month, Int)
-parseDate x
-    | [a,b,c] <- words x
-    , [month] <- filter (\x -> take 3 (show x) == b) [January .. December]
-    = (read c, month, read a)
 
 
 parseMetadata :: String -> [Entry]
@@ -118,7 +109,7 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
         (at,ex) | "paper" `elem` map fst x = (fromMaybe "inproceedings" $ lookup "@at" x, [])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
         items = filter (not . null . snd)
-                [("title", capitalise $ x !# "title")
+                [("title", capitalise $ x ! "title")
                 ,("author", fromMaybe "Neil Mitchell" $ lookup "author" x)
                 ,("year", show $ fst3 date)
                 ,("month", show (snd3 date))
@@ -126,10 +117,10 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- x, a /= "at"] ++
                 [("url", "\\verb'https://ndmitchell.com/downloads/" ++ url ++ "'")
-                    | url <- take 1 [x !# s | s <- ["paper", "slides"], x !? s]]
+                    | url <- take 1 [x ! s | s <- ["paper", "slides"], x !? s]]
 
-        date = parseDate $ x !# "date"
-        key = (x !# "key") ++ "_" ++ replace " " "_" (lower $ x !# "date")
+        date = parseDate $ x ! "date"
+        key = (x ! "key") ++ "_" ++ replace " " "_" (lower $ x ! "date")
         whereText = maybe [] (\x -> " from " ++ stripTags x) $ lookup "where" x
 
 showBibLine (a,b) = "    ," ++ a ++ replicate (14 - length a) ' ' ++ " = {" ++ (if a == "pages" then f b else b) ++ "}"
@@ -161,3 +152,12 @@ replaces reps x = foldl (\x (from,to) -> replace from to x) x reps
 stripTags ('<':xs) = stripTags $ drop 1 $ dropWhile (/= '>') xs
 stripTags (x:xs) = x : stripTags xs
 stripTags [] = []
+
+data Month = January | February | March | April | May | June | July | August | September | October | November | December
+    deriving (Show,Eq,Ord,Enum,Bounded)
+
+parseDate :: String -> (Int, Month, Int)
+parseDate x
+    | [a,b,c] <- words x
+    , [month] <- filter (\x -> take 3 (show x) == b) [January .. December]
+    = (read c, month, read a)
