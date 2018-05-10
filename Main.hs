@@ -76,45 +76,45 @@ parseMetadata = checkMetadata . map (Entry . map f) . wordsBy null . rejoin . ma
 -- RENDERING
 
 renderMetadata :: Int -> Entry -> [String]
-renderMetadata unique xs =
+renderMetadata unique e =
         [""
-        ,"<h3>" ++ typ ++ ": " ++ xs ! "title" ++ "</h3>"
-        ,"<p class=\"info\">" ++ intercalate ", " parts ++ (maybe "" (" from " ++) $ xs !? "where") ++ ", " ++ xs ! "date" ++ ".</p>"
-        ,"<p id=\"citation" ++ show unique ++ "\" class=\"citation\">" ++ bibtex xs ++ "</p>"] ++
+        ,"<h3>" ++ typ ++ ": " ++ e ! "title" ++ "</h3>"
+        ,"<p class=\"info\">" ++ intercalate ", " parts ++ (maybe "" (" from " ++) $ e !? "where") ++ ", " ++ e ! "date" ++ ".</p>"
+        ,"<p id=\"citation" ++ show unique ++ "\" class=\"citation\">" ++ bibtex e ++ "</p>"] ++
         ["<p id=\"abstract" ++ show unique ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
-        ["<p class=\"text\">" ++ xs ! "text" ++ "</p>"]
+        ["<p class=\"text\">" ++ e ! "text" ++ "</p>"]
     where
-        typ | xs !? "@at" == Just "phdthesis" = "Thesis"
-            | isJust $ xs !? "paper" = "Paper"
+        typ | e !? "@at" == Just "phdthesis" = "Thesis"
+            | isJust $ e !? "paper" = "Paper"
             | otherwise = "Talk"
         parts = [ "<a href=\"" ++ download v ++ "\">" ++ (if i == 0 then toUpper (head k) : tail k else k) ++ "</a>"
-                | (i,(k,v)) <- zipFrom 0 [(k, v) | k <- words "paper slides video audio", Just v <- [xs !? k]]] ++
+                | (i,(k,v)) <- zipFrom 0 [(k, v) | k <- words "paper slides video audio", Just v <- [e !? k]]] ++
                 [ "<a href=\"javascript:showCitation(" ++ show unique ++ ")\">citation</a>"] ++
                 [ "<a href=\"javascript:showAbstract(" ++ show unique ++ ")\">abstract</a>" | abstract /= ""]
         download x = if "http" `isPrefixOf` x then x else "downloads/" ++ x
 
-        abstract = fromMaybe "" $ xs !? "abstract"
+        abstract = fromMaybe "" $ e !? "abstract"
 
 
 bibtex :: Entry -> String
-bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
+bibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
     where
-        (at,ex) | isJust $ x !? "paper" = (fromMaybe "inproceedings" $ x !? "@at", [])
+        (at,ex) | isJust $ e !? "paper" = (fromMaybe "inproceedings" $ e !? "@at", [])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
         items = filter (not . null . snd)
-                [("title", capitalise $ x ! "title")
-                ,("author", fromMaybe "Neil Mitchell" $ x !? "author")
+                [("title", capitalise $ e ! "title")
+                ,("author", fromMaybe "Neil Mitchell" $ e !? "author")
                 ,("year", show $ fst3 date)
                 ,("month", show (snd3 date))
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
-                [(a,b) | ('@':a,b) <- fromEntry x, a /= "at"] ++
+                [(a,b) | ('@':a,b) <- fromEntry e, a /= "at"] ++
                 [("url", "\\verb'https://ndmitchell.com/downloads/" ++ url ++ "'")
-                    | url <- take 1 [x ! s | s <- ["paper", "slides"], isJust $ x !? s]]
+                    | url <- take 1 [e ! s | s <- ["paper", "slides"], isJust $ e !? s]]
 
-        date = parseDate $ x ! "date"
-        key = (x ! "key") ++ "_" ++ replace " " "_" (lower $ x ! "date")
-        whereText = maybe "" (\x -> " from " ++ stripTags x) $ x !? "where"
+        date = parseDate $ e ! "date"
+        key = (e ! "key") ++ "_" ++ replace " " "_" (lower $ e ! "date")
+        whereText = maybe "" (\x -> " from " ++ stripTags x) $ e !? "where"
 
 showBibLine (a,b) = "    ," ++ a ++ replicate (14 - length a) ' ' ++ " = {" ++ (if a == "pages" then f b else b) ++ "}"
     where
