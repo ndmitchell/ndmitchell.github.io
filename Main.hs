@@ -38,8 +38,8 @@ projects =
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 
-months = ["January","February","March","April","May","June"
-         ,"July","August","September","October","November","December"]
+data Month = January | February | March | April | May | June | July | August | September | October | November | December
+    deriving (Show,Eq,Ord,Enum,Bounded)
 
 
 ---------------------------------------------------------------------
@@ -60,9 +60,11 @@ checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn date xs
         optional = words "paper slides video audio where author abstract"
 
 
-parseDate :: String -> (Int, Int, Int)
-parseDate x | [a,b,c] <- words x = (read c, 1 + fromMaybe (error $ "bad month, " ++ x) (elemIndex b months), read a)
-    where months = words "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec"
+parseDate :: String -> (Int, Month, Int)
+parseDate x
+    | [a,b,c] <- words x
+    , [month] <- filter (\x -> take 3 (show x) == b) [January .. December]
+    = (read c, month, read a)
 
 
 parseMetadata :: String -> [Entry]
@@ -111,7 +113,7 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
                 [("title", capitalise $ x !# "title")
                 ,("author", fromMaybe "Neil Mitchell" $ lookup "author" x)
                 ,("year", show $ fst3 date)
-                ,("month", months !! (snd3 date - 1))
+                ,("month", show (snd3 date))
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- x, a /= "at"] ++
