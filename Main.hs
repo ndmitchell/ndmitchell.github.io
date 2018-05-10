@@ -35,6 +35,15 @@ projects =
     [(x, "https://github.com/ndmitchell/" ++ lower x)
     | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder"]
 
+authors :: [(String, URL)]
+authors =
+    [("Colin Runciman","https://www-users.cs.york.ac.uk/~colin/")
+    ,("Simon Peyton Jones","https://www.microsoft.com/en-us/research/people/simonpj/")
+    ,("Andrey Mokhov","https://www.ncl.ac.uk/engineering/staff/profile/andreymokhov.html")
+    ,("Simon Marlow","http://simonmar.github.io/")
+    ,("Dimitry Golubovsky","https://github.com/dmgolubovsky")
+    ,("Matthew Naylor","http://www.cl.cam.ac.uk/~mn416/")]
+
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 
 
@@ -93,11 +102,13 @@ renderMetadata unique e =
                 [ "<a href=\"javascript:showAbstract(" ++ show unique ++ ")\">abstract</a>" | abstract /= ""]
         download x = if "http" `isPrefixOf` x then x else "downloads/" ++ x
         location = maybe "" (" from " ++) $ e !? "where"
-        coauthors = case delete "Neil Mitchell" $ maybe [] (splitOn " and ") (e !? "author") of
+        coauthors = case map author $ delete "Neil Mitchell" $ maybe [] (splitOn " and ") (e !? "author") of
             [] -> ""
             [x] -> "with " ++ x ++ ", "
             [x,y] -> "with " ++ x ++ " and " ++ y ++ ", "
             xs -> "with " ++ intercalate ", " (init xs) ++ " and " ++ last xs ++ ", "
+        author x = "<a href=\"" ++ url ++ "\">" ++ x ++ "</a>"
+            where url = fromMaybe (error $ "No link for " ++ show x) $ lookup x authors
 
         abstract = fromMaybe "" $ e !? "abstract"
 
