@@ -101,11 +101,11 @@ renderMetadata unique xs =
 bibtex :: Entry -> String
 bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
     where
-        (at,ex) | "paper" `elem` map fst x = (fromMaybe "inproceedings" $ lookup "@at" x, [])
+        (at,ex) | "paper" `elem` map fst x = (fromMaybe "inproceedings" $ x !? "@at", [])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
         items = filter (not . null . snd)
                 [("title", capitalise $ x ! "title")
-                ,("author", fromMaybe "Neil Mitchell" $ lookup "author" x)
+                ,("author", fromMaybe "Neil Mitchell" $ x !? "author")
                 ,("year", show $ fst3 date)
                 ,("month", show (snd3 date))
                 ,("day", show $ thd3 date)
@@ -116,7 +116,7 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
 
         date = parseDate $ x ! "date"
         key = (x ! "key") ++ "_" ++ replace " " "_" (lower $ x ! "date")
-        whereText = maybe [] (\x -> " from " ++ stripTags x) $ lookup "where" x
+        whereText = maybe "" (\x -> " from " ++ stripTags x) $ x !? "where"
 
 showBibLine (a,b) = "    ," ++ a ++ replicate (14 - length a) ' ' ++ " = {" ++ (if a == "pages" then f b else b) ++ "}"
     where
