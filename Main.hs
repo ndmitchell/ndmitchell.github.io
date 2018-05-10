@@ -46,24 +46,20 @@ type Entry = [(String, String)]
 entryRequired = words "title date text key"
 entryOptional = words "paper slides video audio where author abstract"
 
-(!) :: [(String,a)] -> String -> a
-(!) xs y = fromMaybe (error $ "! failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $
-            lookup y xs
+(!) :: Entry -> String -> String
+(!) xs y = fromMaybe (error $ "! failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $ xs !? y
 
-(!?) :: [(String,a)] -> String -> Bool
-(!?) xs y = y `elem` map fst xs
+(!?) :: Entry -> String -> Maybe String
+(!?) xs y = lookup y xs
 
 
 checkMetadata :: [Entry] -> [Entry]
-checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn date xs
+checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn (\x -> parseDate $ x ! "date") xs
     where
         checkFields xs | bad:_ <- xs \\ nub xs = error $ "Duplicate field, " ++ bad
                        | bad:_ <- filter (not . isPrefixOf "@") xs \\ (entryRequired ++ entryOptional) = error $ "Unknown field, " ++ bad
                        | bad:_ <- entryRequired \\ xs = error $ "Missing field, " ++ bad
                        | otherwise = True
-        date = parseDate . fromJust . lookup "date"
-
-
 
 parseMetadata :: String -> [Entry]
 parseMetadata = checkMetadata . map (map f) . wordsBy null . rejoin . map trimEnd . lines . replace "\t" "    "
@@ -116,7 +112,7 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- x, a /= "at"] ++
                 [("url", "\\verb'https://ndmitchell.com/downloads/" ++ url ++ "'")
-                    | url <- take 1 [x ! s | s <- ["paper", "slides"], x !? s]]
+                    | url <- take 1 [x ! s | s <- ["paper", "slides"], isJust $ x !? s]]
 
         date = parseDate $ x ! "date"
         key = (x ! "key") ++ "_" ++ replace " " "_" (lower $ x ! "date")
