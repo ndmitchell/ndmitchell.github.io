@@ -15,13 +15,10 @@ main :: IO ()
 main = do
     template <- readFile' "template.html"
     metadata <- readFile' "metadata.txt"
-    let download = unlines $
-            ("<p>All papers and talks are listed below, most recent first. " ++
-             "Show all <a href=\"javascript:showAbstracts()\">abstracts</a> or " ++
-             "<a href=\"javascript:showCitations()\">citations</a>.</p>") :
+    let downloads = unlines $
             concat (reverse $ zipWith renderMetadata [1..] $ reverse $ checkMetadata $ parseMetadata metadata)
     let reps = [("#{" ++ lower proj ++ "}", "<a href=\"" ++ url ++ "\">" ++ proj ++ "</a>") | (proj,url) <- projects]
-    let res = replaces (("#{download}",download):reps) template
+    let res = replaces (("#{downloads}",downloads):reps) template
     when ("#{" `isInfixOf` res) $ error $ "Missed a replacement, " ++ take 20 (snd $ breakOn "#{" res) ++ "..."
     writeFile "index.html" res
     putStrLn "Generated to index.html"
