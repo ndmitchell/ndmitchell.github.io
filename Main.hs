@@ -1,4 +1,3 @@
-{-# LANGUAGE ViewPatterns #-}
 
 module Main(main) where
 
@@ -16,7 +15,7 @@ main = do
     template <- readFile' "template.html"
     metadata <- readFile' "metadata.txt"
     let downloads = unlines $
-            concat (reverse $ zipWith renderMetadata [1..] $ reverse $ checkMetadata $ parseMetadata metadata)
+            concat (reverse $ zipWithFrom renderMetadata 1 $ reverse $ parseMetadata metadata)
     let reps = [("#{" ++ lower proj ++ "}", "<a href=\"" ++ url ++ "\">" ++ proj ++ "</a>") | (proj,url) <- projects]
     let res = replaces (("#{downloads}",downloads):reps) template
     when ("#{" `isInfixOf` res) $ error $ "Missed a replacement, " ++ take 20 (snd $ breakOn "#{" res) ++ "..."
@@ -67,7 +66,7 @@ checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn date xs
 
 
 parseMetadata :: String -> [Entry]
-parseMetadata = map (map f) . wordsBy null . rejoin . map trimEnd . lines . replace "\t" "    "
+parseMetadata = checkMetadata . map (map f) . wordsBy null . rejoin . map trimEnd . lines . replace "\t" "    "
     where
         f = second (trim . drop 1) . breakOn ":"
 
@@ -89,9 +88,9 @@ renderMetadata unique xs =
         ["<p id=\"abstract" ++ show unique ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
         ["<p class=\"text\">" ++ at "text" ++ "</p>"]
     where
-        typ = if ("@at","phdthesis") `elem` xs then "Thesis"
-              else if "paper" `elem` keys then "Paper"
-              else "Talk"
+        typ | ("@at","phdthesis") `elem` xs = "Thesis"
+            | "paper" `elem` keys = "Paper"
+            | otherwise = "Talk"
         parts = [ "<a href=\"" ++ download v ++ "\">" ++ (if i == 0 then toUpper (head k) : tail k else k) ++ "</a>"
                 | (i,(k,v)) <- zip [0..] $ filter (not . null . snd) $ map (id &&& at) $ words "paper slides video audio"] ++
                 [ "<a href=\"javascript:showCitation(" ++ show unique ++ ")\">citation</a>"] ++
