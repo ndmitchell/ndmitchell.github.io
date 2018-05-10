@@ -41,20 +41,20 @@ names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 ---------------------------------------------------------------------
 -- PARSING
 
-type Entry = [(String, String)]
+newtype Entry = Entry {fromEntry :: [(String, String)]} deriving Show
 
 entryRequired = words "title date text key"
 entryOptional = words "paper slides video audio where author abstract"
 
 (!) :: Entry -> String -> String
-(!) xs y = fromMaybe (error $ "! failed, looking for " ++ show y ++ " in " ++ show (map fst xs)) $ xs !? y
+(!) xs y = fromMaybe (error $ "! failed, looking for " ++ show y ++ " in " ++ show xs) $ xs !? y
 
 (!?) :: Entry -> String -> Maybe String
-(!?) xs y = lookup y xs
+(!?) (Entry xs) y = lookup y xs
 
 
 checkMetadata :: [Entry] -> [Entry]
-checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn (\x -> parseDate $ x ! "date") xs
+checkMetadata xs | all (checkFields . map fst . fromEntry) xs = reverse $ sortOn (\x -> parseDate $ x ! "date") xs
     where
         checkFields xs | bad:_ <- xs \\ nub xs = error $ "Duplicate field, " ++ bad
                        | bad:_ <- filter (not . isPrefixOf "@") xs \\ (entryRequired ++ entryOptional) = error $ "Unknown field, " ++ bad
@@ -62,7 +62,7 @@ checkMetadata xs | all (checkFields . map fst) xs = reverse $ sortOn (\x -> pars
                        | otherwise = True
 
 parseMetadata :: String -> [Entry]
-parseMetadata = checkMetadata . map (map f) . wordsBy null . rejoin . map trimEnd . lines . replace "\t" "    "
+parseMetadata = checkMetadata . map (Entry . map f) . wordsBy null . rejoin . map trimEnd . lines . replace "\t" "    "
     where
         f = second (trim . drop 1) . breakOn ":"
 
@@ -78,30 +78,28 @@ parseMetadata = checkMetadata . map (map f) . wordsBy null . rejoin . map trimEn
 renderMetadata :: Int -> Entry -> [String]
 renderMetadata unique xs =
         [""
-        ,"<h3>" ++ typ ++ ": " ++ at "title" ++ "</h3>"
-        ,"<p class=\"info\">" ++ intercalate ", " parts ++ (if null $ at "where" then "" else " from " ++ at "where") ++ ", " ++ at "date" ++ ".</p>"
+        ,"<h3>" ++ typ ++ ": " ++ xs ! "title" ++ "</h3>"
+        ,"<p class=\"info\">" ++ intercalate ", " parts ++ (maybe "" (" from " ++) $ xs !? "where") ++ ", " ++ xs ! "date" ++ ".</p>"
         ,"<p id=\"citation" ++ show unique ++ "\" class=\"citation\">" ++ bibtex xs ++ "</p>"] ++
         ["<p id=\"abstract" ++ show unique ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
-        ["<p class=\"text\">" ++ at "text" ++ "</p>"]
+        ["<p class=\"text\">" ++ xs ! "text" ++ "</p>"]
     where
-        typ | ("@at","phdthesis") `elem` xs = "Thesis"
-            | "paper" `elem` keys = "Paper"
+        typ | xs !? "@at" == Just "phdthesis" = "Thesis"
+            | isJust $ xs !? "paper" = "Paper"
             | otherwise = "Talk"
         parts = [ "<a href=\"" ++ download v ++ "\">" ++ (if i == 0 then toUpper (head k) : tail k else k) ++ "</a>"
-                | (i,(k,v)) <- zip [0..] $ filter (not . null . snd) $ map (id &&& at) $ words "paper slides video audio"] ++
+                | (i,(k,v)) <- zipFrom 0 [(k, v) | k <- words "paper slides video audio", Just v <- [xs !? k]]] ++
                 [ "<a href=\"javascript:showCitation(" ++ show unique ++ ")\">citation</a>"] ++
                 [ "<a href=\"javascript:showAbstract(" ++ show unique ++ ")\">abstract</a>" | abstract /= ""]
         download x = if "http" `isPrefixOf` x then x else "downloads/" ++ x
 
-        at x = unwords $ map snd $ filter ((==) x . fst) xs
-        abstract = at "abstract"
-        keys = map fst xs
+        abstract = fromMaybe "" $ xs !? "abstract"
 
 
 bibtex :: Entry -> String
 bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
     where
-        (at,ex) | "paper" `elem` map fst x = (fromMaybe "inproceedings" $ x !? "@at", [])
+        (at,ex) | isJust $ x !? "paper" = (fromMaybe "inproceedings" $ x !? "@at", [])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
         items = filter (not . null . snd)
                 [("title", capitalise $ x ! "title")
@@ -110,7 +108,7 @@ bibtex x = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items 
                 ,("month", show (snd3 date))
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
-                [(a,b) | ('@':a,b) <- x, a /= "at"] ++
+                [(a,b) | ('@':a,b) <- fromEntry x, a /= "at"] ++
                 [("url", "\\verb'https://ndmitchell.com/downloads/" ++ url ++ "'")
                     | url <- take 1 [x ! s | s <- ["paper", "slides"], isJust $ x !? s]]
 
