@@ -1,3 +1,17 @@
+slides: slides-distributed_build_systems-18_may_2018.pdf
+title: Distributed Build Systems
+date: 18 May 2018
+where: <a href="https://www.tngtech.com/en/tng-about-us/bigtechday/big-techday-11.html">Big Techday 11</a>
+text: Build system comparisons and the engineering inside #{shake}.
+key: shake
+abstract:
+    Build systems are awesome - but unappreciated. A decade ago I started writing Shake, a Haskell library
+    for implementing build systems, an alternative to Make, but with much more powerful and accurate
+    dependencies. In this talk we trace the origins of Shake, from a small module to build a PhD thesis,
+    to a production quality build system, figuring out the key ideas along the way. By exploring these
+    ideas we see how build systems relate to each other, realise that Excel is really just a build
+    system, and see how Bazel/Buck keep shared caches in the cloud.
+
 slides: slides-deriving_generic_functions_by_example-17_nov_2017.pdf
 title: Deriving Generic Functions by Example (+10 years)
 video: https://www.youtube.com/watch?v=Jrmt4dIVp7s&t=3811
