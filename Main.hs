@@ -42,7 +42,10 @@ authors =
     ,("Andrey Mokhov","https://www.ncl.ac.uk/engineering/staff/profile/andreymokhov.html")
     ,("Simon Marlow","http://simonmar.github.io/")
     ,("Dimitry Golubovsky","https://github.com/dmgolubovsky")
-    ,("Matthew Naylor","http://www.cl.cam.ac.uk/~mn416/")]
+    ,("Matthew Naylor","http://www.cl.cam.ac.uk/~mn416/")
+    ,("Joachim Breitner","https://www.cis.upenn.edu/~joachim/")
+    ,("Brian Huffman","http://www21.in.tum.de/~huffman/")
+    ,("Christian Sternagel","http://cl-informatik.uibk.ac.at/users/griff/")]
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 

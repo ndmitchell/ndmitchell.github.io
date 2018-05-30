@@ -1,3 +1,30 @@
+paper: https://www.isa-afp.org/browser_info/current/AFP/HOLCF-Prelude/outline.pdf
+title: Isabelle/HOLCF-Prelude
+date: 11 Oct 2017
+key: hlint
+author: Joachim Breitner and Brian Huffman and Neil Mitchell and Christian Sternagel
+text: Definitions and proofs for HLint rules in Isabelle.
+abstract:
+    The Isabelle/HOLCF-Prelude is a formalization of a large part of
+    Haskell's standard prelude in Isabelle/HOLCF. We use it to:
+    prove the correctness of the Eratosthenes' Sieve, in its self-referential
+    implementation commonly used to showcase Haskell’s laziness;
+    prove correctness of GHC's “fold/build” rule and related rewrite
+    rules, and;
+    certify a number of hints suggested by HLint.
+
+paper: paper-certified_hlints_with_isabelle_holcf_prelude-27_jun_2013.pdf
+title: Certified HLints with Isabelle/HOLCF-Prelude
+date: 27 Jun 2013
+where: <a href="http://www.imn.htwk-leipzig.de/HART2013/">HART 2013</a>
+key: hlint
+author: Joachim Breitner and Brian Huffman and Neil Mitchell and Christian Sternagel
+text: Proving some HLint rules with Isabelle/HOLCF.
+abstract:
+    We present the HOLCF-Prelude, a formalization of a large part of Haskell's standard
+    prelude in Isabelle/HOLCF. Applying this formalization to the hints suggested by HLint
+    allows us to certify them formally.
+
 slides: slides-distributed_build_systems-18_may_2018.pdf
 title: Distributed Build Systems
 date: 18 May 2018
