@@ -30,6 +30,7 @@ title: Distributed Build Systems
 date: 18 May 2018
 where: <a href="https://www.tngtech.com/en/tng-about-us/bigtechday/big-techday-11.html">Big Techday 11</a>
 text: Build system comparisons and the engineering inside #{shake}.
+video: https://www.youtube.com/watch?v=at-dqYqg3kY
 key: shake
 abstract:
     Build systems are awesome - but unappreciated. A decade ago I started writing Shake, a Haskell library
