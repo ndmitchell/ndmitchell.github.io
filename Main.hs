@@ -121,7 +121,7 @@ renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine 
     where
         (at,ex) | isJust $ e !? "paper" = (fromMaybe "inproceedings" $ e !? "@at", [])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
-        items = filter (not . null . snd)
+        items = map (second htmlEscapeToLatex) $ filter (not . null . snd)
                 [("title", capitalise $ e ! "title")
                 ,("author", fromMaybe "Neil Mitchell" $ e !? "author")
                 ,("year", show $ fst3 date)
@@ -141,6 +141,9 @@ showBibLine (a,b) = "    ," ++ a ++ replicate (14 - length a) ' ' ++ " = {" ++ (
         f (x:'-':y:xs) | isDigit x && isDigit y = x:'-':'-':y : f xs
         f (x:xs) = x : f xs
         f [] = []
+
+htmlEscapeToLatex :: String -> String
+htmlEscapeToLatex = replace "&agrave;" "\\`a"
 
 -- capitalise the title in some way
 capitalise :: String -> String
