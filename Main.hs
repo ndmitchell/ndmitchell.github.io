@@ -129,7 +129,7 @@ renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine 
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- fromEntry e, a /= "at"] ++
-                [("url", "\\verb'https://ndmitchell.com/downloads/" ++ url ++ "'")
+                [("url", "\\verb'" ++ (if isUrlAbsolute url then "" else "https://ndmitchell.com/downloads/") ++ url ++ "'")
                     | url <- take 1 [e ! s | s <- ["paper", "slides"], isJust $ e !? s]]
 
         date = parseDate $ e ! "date"
@@ -156,6 +156,9 @@ capitalise str = unwords (f True x : map (f False) xs)
 
 ---------------------------------------------------------------------
 -- UTILITIES
+
+isUrlAbsolute :: String -> Bool
+isUrlAbsolute x = any (`isPrefixOf` x) ["http:","https:"]
 
 -- | Perform all the replacements
 replaces :: Eq a => [([a], [a])] -> [a] -> [a]
