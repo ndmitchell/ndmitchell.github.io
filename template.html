@@ -74,8 +74,8 @@ h3 {
 }
 </style>
 <script type="text/javascript">
-function showAbstract(i){showItem("abstract" + i);}
-function showCitation(i){showItem("citation" + i);}
+function showAbstract(i){showItem("abstract_" + i);}
+function showCitation(i){showItem("citation_" + i);}
 function showAbstracts(){showItems("abstract");}
 function showCitations(){showItems("citation");}
 
@@ -89,15 +89,9 @@ function showItems(x)
 {
     var items = [];
     var hidden = false;
-    for (var i = 0; i < 250; i++)
-    {
-        var e = document.getElementById(x + i);
-        if (e)
-        {
-            items.push(e);
-            hidden = hidden || e.style.display !== "block";
-        }
-    }
+    var items = document.getElementsByClassName(x);
+    for (var i = 0; i < items.length; i++)
+        hidden = hidden || items[i].style.display !== "block";
     for (var i = 0; i < items.length; i++)
         items[i].style.display = hidden ? "block" : "none";
 }

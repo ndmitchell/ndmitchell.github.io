@@ -14,8 +14,7 @@ main :: IO ()
 main = do
     template <- readFile' "template.html"
     metadata <- readFile' "metadata.txt"
-    let downloads = unlines $
-            concat (reverse $ zipWithFrom renderMetadata 1 $ reverse $ parseMetadata metadata)
+    let downloads = unlines $ concatMap renderMetadata $ parseMetadata metadata
     let reps = [("#{" ++ lower proj ++ "}", "<a href=\"" ++ url ++ "\">" ++ proj ++ "</a>") | (proj,url) <- projects]
     let res = replaces (("#{downloads}",downloads):reps) template
     when ("#{" `isInfixOf` res) $ error $ "Missed a replacement, " ++ take 20 (snd $ breakOn "#{" res) ++ "..."
@@ -87,22 +86,23 @@ parseMetadata = checkMetadata . map (Entry . map f) . wordsBy null . rejoin . ma
 ---------------------------------------------------------------------
 -- RENDERING
 
-renderMetadata :: Int -> Entry -> [String]
-renderMetadata unique e =
+renderMetadata :: Entry -> [String]
+renderMetadata e =
         [""
         ,"<h3>" ++ typ ++ ": " ++ e ! "title" ++ "</h3>"
         ,"<p class=\"info\">" ++ intercalate ", " parts ++ location ++ ", " ++ coauthors ++ e ! "date" ++ ".</p>"
-        ,"<p id=\"citation" ++ show unique ++ "\" class=\"citation\">" ++ renderBibtex e ++ "</p>"] ++
-        ["<p id=\"abstract" ++ show unique ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
+        ,"<p id=\"citation_" ++ key ++ "\" class=\"citation\">" ++ renderBibtex e ++ "</p>"] ++
+        ["<p id=\"abstract_" ++ key ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
         ["<p class=\"text\">" ++ e ! "text" ++ "</p>"]
     where
+        key = entryKey e
         typ | e !? "@at" == Just "phdthesis" = "Thesis"
             | isJust $ e !? "paper" = "Paper"
             | otherwise = "Talk"
         parts = [ "<a href=\"" ++ download v ++ "\">" ++ (if i == 0 then toUpper (head k) : tail k else k) ++ "</a>"
                 | (i,(k,v)) <- zipFrom 0 [(k, v) | k <- words "paper slides video audio", Just v <- [e !? k]]] ++
-                [ "<a href=\"javascript:showCitation(" ++ show unique ++ ")\">citation</a>"] ++
-                [ "<a href=\"javascript:showAbstract(" ++ show unique ++ ")\">abstract</a>" | abstract /= ""]
+                [ "<a href=\"javascript:showCitation(\'" ++ key ++ "\')\">citation</a>"] ++
+                [ "<a href=\"javascript:showAbstract(\'" ++ key ++ "\')\">abstract</a>" | abstract /= ""]
         download x = if "http" `isPrefixOf` x then x else "downloads/" ++ x
         location = maybe "" (" from " ++) $ e !? "where"
         coauthors = case map author $ delete "Neil Mitchell" $ maybe [] (splitOn " and ") (e !? "author") of
