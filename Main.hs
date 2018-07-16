@@ -117,7 +117,7 @@ renderMetadata unique e =
 
 
 renderBibtex :: Entry -> String
-renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine items ++ ["}"]
+renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ entryKey e) : map showBibLine items ++ ["}"]
     where
         (at,ex) | isJust $ e !? "paper" = (fromMaybe "inproceedings" $ e !? "@at", [])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
@@ -133,7 +133,6 @@ renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ key) : map showBibLine 
                     | url <- take 1 [e ! s | s <- ["paper", "slides"], isJust $ e !? s]]
 
         date = parseDate $ e ! "date"
-        key = (e ! "key") ++ "_" ++ replace " " "_" (lower $ e ! "date")
         whereText = maybe "" (\x -> " from " ++ stripTags x) $ e !? "where"
 
 showBibLine (a,b) = "    ," ++ a ++ replicate (14 - length a) ' ' ++ " = {" ++ (if a == "pages" then f b else b) ++ "}"
@@ -144,6 +143,9 @@ showBibLine (a,b) = "    ," ++ a ++ replicate (14 - length a) ' ' ++ " = {" ++ (
 
 htmlEscapeToLatex :: String -> String
 htmlEscapeToLatex = replace "&agrave;" "\\`a"
+
+entryKey :: Entry -> String
+entryKey e = takeWhile isAlpha (e ! "key") ++ "_" ++ replace " " "_" (lower $ e ! "date")
 
 -- capitalise the title in some way
 capitalise :: String -> String
