@@ -89,7 +89,7 @@ parseMetadata = checkMetadata . map (Entry . map f) . wordsBy null . rejoin . ma
 renderMetadata :: Entry -> [String]
 renderMetadata e =
         [""
-        ,"<h3>" ++ typ ++ ": " ++ e ! "title" ++ "</h3>"
+        ,"<h3 id=\"" ++ key ++ "\"><a href=\"#" ++ key ++ "\">" ++ typ ++ ": " ++ e ! "title" ++ "</a></h3>"
         ,"<p class=\"info\">" ++ intercalate ", " parts ++ location ++ ", " ++ coauthors ++ e ! "date" ++ ".</p>"
         ,"<p id=\"citation_" ++ key ++ "\" class=\"citation\">" ++ renderBibtex e ++ "</p>"] ++
         ["<p id=\"abstract_" ++ key ++ "\" class=\"abstract\"><b>Abstract:</b> " ++ replace "\n" "<br/><br/>" abstract ++ "</p>" | abstract /= ""] ++
