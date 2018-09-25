@@ -400,7 +400,7 @@ date:   01 May 2008
 where:  <a href="https://proglang.informatik.uni-freiburg.de/IFL2007/">IFL 2007</a> post proceedings
 author: Neil Mitchell and Colin Runciman
 key:    supero
-text: An early design of the #{supero} supercompiler. This paper won the <a href="http://www.ifl-workshops.org/">Peter Landin prize</a> for the best paper presented at the symposium that year, as selected by the programme committee.
+text: An early design of the #{supero} supercompiler. This paper won the <a href="https://doi.org/10.1007/s10990-010-9055-7">Peter Landin prize</a> for the best paper presented at the symposium that year, as selected by the programme committee.
 @pages:147-164
 @booktitle: IFL 2007
 @editor:Olaf Chitil et al.
