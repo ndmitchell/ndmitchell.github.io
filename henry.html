@@ -2,91 +2,71 @@
     <head>
         <title>Henry's recognisers</title>
 <script>
-var wordBox =
-    ["pen","pan","tip","ant","as","sit","nit","tin","sat","it","nip","pat"
-    ,"pit","is","pin","tap","pest"
-    ,"dip","ran","mat","pet","hip"
-    ,"ham","map","rat","his","rip"
-    ,"nap","tan","set","hill","hand"
-    ,"sand","men","elf","snip","ram"
-    ,"egg","end","imp","sack","den","fist","bin","fed","lock","hop"
-    ,"nut","fluff","lost","hog","tug","got","stuck","slug","slab","fill"
-    ,"can","hen","deck","met","pen","cat","camp","hat","kick","neck"
-    ,"kiss","mist","pram","hiss","test","get","pig","log","fat","bat"
-    ,"drip","miss","rock","back","duck","pot","gas","fit","stamp","bad"
-    ,"pub","gun","flip","land","fun","band","bun","loft","run","gift"
-    ];
-var colors = ["red","orange","yellow","green","blue","purple","black","gray","white","pink","silver","gold"];
-var animals = ["rhino","hippo","crocodile","armadillo","pangolin","person","tiger","lion","fish","tuna","hampster"];
-
-// From https://www.theguardian.com/education/2005/dec/09/research.highereducation
-var top100 =
-    ["a","about","after","all","am","an","and","are","as","at","away"
-    ,"back","be","because","big","but","by"
-    ,"call","came","can","come","could"
-    ,"did","do","down"
-    ,"for","from"
-    ,"get","go","got"
-    ,"had","has","have","he","her","here","him","his"
-    ,"in","into","is","it"
-    ,"last","like","little","live","look"
-    ,"made","make","me","my"
-    ,"new","next","not","now"
-    ,"of","off","old","on","once","one","other","our","out","over"
-    ,"put"
-    ,"saw","said","see","she","so","some"
-    ,"take","that","the","their","them","then","there","they","this","three","time","to","today","too","two"
-    ,"up","us"
-    ,"very"
-    ,"was","we","were","went","what","when","will","with"
-    ,"you"
-    ]
+// From http://www.world-english.org/english500.htm
+var top500 =
+    ["a","able","about","above","act","add","after","again","against","age","ago","air","all","also","always","am","among","an","and","animal","answer","any","appear","are","area","as","ask","at"
+    ,"back","base","be","beauty","bed","been","before","began","begin","behind","best","better","between","big","bird","black","blue","boat","body","book","both","box","boy","bring","brought","build","busy","but","by"
+    ,"call","came","can","car","care","carry","cause","centre","certain","change","check","children","city","class","clear","close","cold","colour","come","common","complete","contain","correct","could","country","course","cover","cross","cry","cut"
+    ,"dark","day","decide","deep","develop","did","differ","direct","do","does","dog","don't","done","door","down","draw","drive","dry","during"
+    ,"each","early","earth","ease","east","eat","end","enough","even","ever","every","example","eye"
+    ,"face","fact","fall","family","far","farm","fast","father","feel","feet","few","field","figure","fill","final","find","fine","fire","first","fish","five","fly","follow","food","foot","for","force","form","found","four","free","friend","from","front","full"
+    ,"game","gave","get","girl","give","go","gold","good","got","govern","great","green","ground","group","grow"
+    ,"had","half","hand","happen","hard","has","have","he","head","hear","heard","heat","help","her","here","high","him","his","hold","home","horse","hot","hot","hour","house","how","hundred"
+    ,"I","idea","if","in","inch","interest","is","island","it"
+    ,"just"
+    ,"keep","kind","king","knew","know"
+    ,"land","language","large","last","late","laugh","lay","lead","learn","leave","left","less","let","letter","life","light","like","line","list","listen","little","live","long","look","lot","love","low"
+    ,"machine","made","main","make","man","many","map","mark","may","me","mean","measure","men","might","mile","mind","minute","miss","money","moon","more","morning","most","mother","mountain","move","much","music","must","my"
+    ,"name","near","need","never","new","next","night","no","north","note","nothing","notice","noun","now","number","numeral"
+    ,"object","of","off","often","oh","old","on","once","one","only","open","or","order","other","our","out","over","own"
+    ,"page","paper","part","pass","pattern","people","perhaps","person","picture","piece","place","plain","plan","plane","plant","play","point","port","pose","possible","pound","power","press","problem","produce","product","pull","put"
+    ,"question","quick"
+    ,"rain","ran","reach","read","ready","real","record","red","remember","rest","right","river","road","rock","room","round","rule","run"
+    ,"said","same","saw","say","school","science","sea","second","see","seem","self","sentence","serve","set","several","shape","she","ship","short","should","show","side","simple","since","sing","sit","six","size","sleep","slow","small","snow","so","some","song","soon","sound","south","special","spell","stand","star","start","state","stay","step","still","stood","stop","story","street","strong","study","such","sun","sure","surface"
+    ,"table","tail","take","talk","teach","tell","ten","test","than","that","the","their","them","then","there","these","they","thing","think","this","those","though","thought","thousand","three","through","time","to","together","told","too","took","top","toward","town","travel","tree","true","try","turn","two"
+    ,"under","unit","until","up","us","use","usual"
+    ,"very","voice","vowel"
+    ,"wait","walk","want","war","warm","was","watch","water","way","we","week","weight","well","went","were","west","what","wheel","when","where","which","while","white","who","whole","why","will","wind","with","wonder","wood","word","work","world","would","write"
+    ,"year","yes","yet","you","young","your"]
 
 var recognisers =
-    [["words", wordBox]
-    ,["top100", top100]
-    ,["colors", colors]
-    ,["animals", animals]
-    ,["digits", enumFromTo(1,9)]
-    ,["tens", enumFromTo(1,10).map(function (x){return x * 10;})]
+    [["words", () => words(4)]
+    ,["maths", () => maths(3)]
+    // ,["maths", maths]
     ];
-
-var fonts = ["serif","sans-serif","cursive","monospace"];
 
 var currentRecogniser = -1;
 
+function getRandomInt(from, to)
+{
+    return Math.floor(Math.random() * (to-from+1)) + from;
+}
+
 function getRandomElem(xs)
 {
-    return xs[Math.floor(Math.random() * xs.length)];
+    return xs[getRandomInt(0, xs.length - 1)];
 }
 
-var lastRandom = null;
-function getRandomElemDifferent(xs)
+function words(n)
 {
-    if (xs.length === 1) return xs[0];
-    while (true)
-    {
-        var i = getRandomElem(xs);
-        if (i === lastRandom) continue;
-        lastRandom = i;
-        return i;
-    }
+    var s = "";
+    for (var i = 0; i < n; i++)
+        s += getRandomElem(top500) + "\n";
+    return s;
 }
 
-function enumFromTo(from, to)
+function maths(n)
 {
-    var xs = [];
-    for (var i = from; i <= to; i++)
-        xs.push(i);
-    return xs;
+    var s = "";
+    for (var i = 0; i < n; i++)
+        s += getRandomInt(0,9) + " + " + getRandomInt(0,9) + " = ?\n";
+    return s;
 }
 
 function next()
 {
     var content = document.getElementById("content");
-    content.innerText = getRandomElemDifferent(recognisers[currentRecogniser][1]);
-    content.style.fontFamily = getRandomElem(fonts);
-    content.style.fontSize = getRandomElem([200,225,250,275,300]);
+    content.innerText = recognisers[currentRecogniser][1]();
 }
 
 function setRecogniser(x)
@@ -108,6 +88,6 @@ function setRecogniser(x)
     <body onload="setRecogniser(0)">
         <div style="float:right;" id="recognisers"></div>
         <button style="font-size:40pt;font-weight:bold;padding:0 40 10 40" onclick="next()">&rarr;</button><br/>
-        <div id="content" style="font-size: 300pt; text-align: center;">Start</div>
+        <div id="content" style="font-size: 100pt; text-align: center;">Start</div>
     </body>
 </html>
