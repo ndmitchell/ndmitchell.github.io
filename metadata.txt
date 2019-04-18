@@ -5,6 +5,12 @@ where: <a href="https://icfp18.sigplan.org/">ICFP 2018</a>
 key: shake
 author: Andrey Mokhov and Neil Mitchell and Simon Peyton Jones
 text: Comparing build systems and finding underlying commonalities. This paper won a <a href="https://icfp18.sigplan.org/track/icfp-2018-papers#program">Distinguished Paper award</a>.
+@journal: Proceedings ACM Programing Languages
+@volume: 2
+@issn: 2475-1421
+@pages: 79:1-79:29
+@articleno: 79
+@doi: http://doi.acm.org/10.1145/3236774
 abstract:
     Build systems are awesome, terrifying - and unloved. They are used by every developer around the world, but
     are rarely the object of study. In this paper we offer a systematic, and executable, framework for developing
