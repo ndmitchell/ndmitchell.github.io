@@ -55,7 +55,7 @@ names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 newtype Entry = Entry {fromEntry :: [(String, String)]} deriving Show
 
 entryRequired = words "title date text key"
-entryOptional = words "paper slides video audio where author abstract"
+entryOptional = words "paper preprint slides video audio where author abstract"
 
 (!) :: Entry -> String -> String
 (!) xs y = fromMaybe (error $ "! failed, looking for " ++ show y ++ " in " ++ show xs) $ xs !? y
@@ -98,9 +98,10 @@ renderMetadata e =
         key = entryKey e
         typ | e !? "@at" == Just "phdthesis" = "Thesis"
             | isJust $ e !? "paper" = "Paper"
+            | isJust $ e !? "preprint" = "Preprint"
             | otherwise = "Talk"
         parts = [ "<a href=\"" ++ download v ++ "\">" ++ (if i == 0 then toUpper (head k) : tail k else k) ++ "</a>"
-                | (i,(k,v)) <- zipFrom 0 [(k, v) | k <- words "paper slides video audio", Just v <- [e !? k]]] ++
+                | (i,(k,v)) <- zipFrom 0 [(k, v) | k <- words "paper preprint slides video audio", Just v <- [e !? k]]] ++
                 [ "<a href=\"javascript:showCitation(\'" ++ key ++ "\')\">citation</a>"] ++
                 [ "<a href=\"javascript:showAbstract(\'" ++ key ++ "\')\">abstract</a>" | abstract /= ""]
         download x = if "http" `isPrefixOf` x then x else "downloads/" ++ x
@@ -120,6 +121,7 @@ renderBibtex :: Entry -> String
 renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ entryKey e) : map showBibLine items ++ ["}"]
     where
         (at,ex) | isJust $ e !? "paper" = (fromMaybe "inproceedings" $ e !? "@at", [])
+                | isJust $ e !? "preprint" = ("unpublished",[("note","Preprint")])
                 | otherwise = ("misc",[("note","Presentation" ++ whereText)])
         items = map (second htmlEscapeToLatex) $ filter (not . null . snd)
                 [("title", capitalise $ e ! "title")
