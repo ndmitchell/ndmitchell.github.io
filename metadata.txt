@@ -228,6 +228,22 @@ abstract:
 
     The Shake library provides powerful dependency features along with useful extras (profiling, debugging, command line handling). This tutorial aims to help you learn how to think about writing build systems, and how to make those thoughts concrete in Shake.
 
+paper: https://queue.acm.org/detail.cfm?id=2538488
+title: Leaking Space - Eliminating memory hogs
+date: 23 Oct 2013
+where: <a href="https://queue.acm.org/">ACM Queue</a>
+author: Neil Mitchell
+key: spaceleak
+text: Overview of what space leaks are and how to eliminate them.
+@volume:11
+@issue:9
+@journal:ACM Queue
+@at:article
+abstract:
+    A space leak occurs when a computer program uses more memory than necessary. In contrast to memory leaks,
+    where the leaked memory is never released, the memory consumed by a space leak is released, but later than
+    expected. This article presents example space leaks and how to spot and eliminate them.
+
 slides: slides-everyone_should_use_a_generics_library-09_oct_2013
 video:  https://skillsmatter.com/skillscasts/4250-uniplate
 title:  Everyone should use a generics library!
