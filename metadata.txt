@@ -1,3 +1,20 @@
+slides: slides-making_a_haskell_ide-07_sep_2019
+title: Making a Haskell IDE
+date: 7 Sep 2019
+key: hie-core
+where: <a href="https://munihac.de/2019.html">MuniHac 2019</a>
+author: Neil Mitchell
+text: Overview of a Haskell IDE, including how to use it and the design.
+abstract:
+    I've always wanted a Haskell IDE. The absence of a simple and robust solution led me to build Ghcid, which I've been using for many years. However, I have moved on, now using a real Haskell IDE based on technology we developed at Digital Asset for the DAML programming language. It turns out building an IDE is harder than I expected, so in this talk I'll cover three topics:
+
+    1. The theory behind building an IDE. We use an in-memory dependency graph, with some interesting tweaks.
+
+    2. What's there today and how you can use it. I'll also cover the relationship to haskell-ide-engine, DAML and other related projects.
+
+    3. What's missing and how you can help. I'll be hacking on the IDE at MuniHac, and everyone is welcome to join in.
+
+
 preprint: https://github.com/snowleopard/build/releases/download/jfp-submission/jpf-submission.pdf
 title: Build Systems &agrave; la Carte: Theory and Practice
 date: 5 May 2019
