@@ -1,4 +1,4 @@
-slides: slides-making_a_haskell_ide-07_sep_2019
+slides: slides-making_a_haskell_ide-07_sep_2019.pdf
 title: Making a Haskell IDE
 date: 7 Sep 2019
 key: hie-core
