@@ -1,3 +1,17 @@
+slides: slides-fixing_records_in_haskell-11_oct_2019.pdf
+title: Fixing Records in Haskell
+date: 11 Oct 2019
+key: records
+where: <a href="https://skillsmatter.com/conferences/11741-haskell-exchange-2019">Haskell eXchange 2019</a>
+author: Neil Mitchell
+text: How to improve Haskell records.
+abstract:
+    Sadly, Haskell records aren't very good - problems include that field names must be unique and that record updates are not very expressive. A variety of solutions have been proposed over many decades, but none has gained traction. The closest answer Haskell has is the lens library, which famously ups the bar on complexity.
+
+    This talk explains how to fix all the pain, and make records a strength of Haskell, without making them harder to use. We show how to encode records and fields in a type class, then use existing Haskell machinery to abstract over multiple field names. This type class has been added to GHC, and is automatically generated for standard Haskell records. Building on that, we provide a convenient syntax through a Haskell preprocessor.
+
+    We've validated our design with the DAML programming language (based on the GHC compiler) which uses these records as standard. We're happy to report that users experiences have been very positive.
+
 slides: slides-making_a_haskell_ide-07_sep_2019.pdf
 video: https://www.youtube.com/watch?v=cijsaeWNf2E&list=PLxxF72uPfQVRdAsvj7THoys-nVj-oc4Ss
 title: Making a Haskell IDE
