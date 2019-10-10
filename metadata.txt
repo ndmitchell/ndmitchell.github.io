@@ -59,8 +59,8 @@ abstract:
     The Isabelle/HOLCF-Prelude is a formalization of a large part of
     Haskell's standard prelude in Isabelle/HOLCF. We use it to:
     prove the correctness of the Eratosthenes' Sieve, in its self-referential
-    implementation commonly used to showcase Haskell’s laziness;
-    prove correctness of GHC's “fold/build” rule and related rewrite
+    implementation commonly used to showcase Haskell's laziness;
+    prove correctness of GHC's "fold/build" rule and related rewrite
     rules, and;
     certify a number of hints suggested by HLint.
 
