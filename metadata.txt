@@ -2,12 +2,12 @@ slides: slides-making_a_haskell_ide-07_sep_2019.pdf
 video: https://www.youtube.com/watch?v=cijsaeWNf2E&list=PLxxF72uPfQVRdAsvj7THoys-nVj-oc4Ss
 title: Making a Haskell IDE
 date: 7 Sep 2019
-key: hie-core
+key: ghcide
 where: <a href="https://munihac.de/2019.html">MuniHac 2019</a>
 author: Neil Mitchell
-text: Overview of a Haskell IDE, including how to use it and the design.
+text: Overview of the #{ghcide} Haskell IDE, including how to use it and the design.
 abstract:
-    I've always wanted a Haskell IDE. The absence of a simple and robust solution led me to build Ghcid, which I've been using for many years. However, I have moved on, now using a real Haskell IDE based on technology we developed at Digital Asset for the DAML programming language. It turns out building an IDE is harder than I expected, so in this talk I'll cover three topics:
+    I've always wanted a Haskell IDE. The absence of a simple and robust solution led me to build #{ghcid}, which I've been using for many years. However, I have moved on, now using a real Haskell IDE based on technology we developed at Digital Asset for the DAML programming language. It turns out building an IDE is harder than I expected, so in this talk I'll cover three topics:
 
     1. The theory behind building an IDE. We use an in-memory dependency graph, with some interesting tweaks.
 

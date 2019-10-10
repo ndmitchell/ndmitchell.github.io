@@ -30,9 +30,10 @@ projects =
     [("Shake","https://shakebuild.com/")
     ,("Hoogle","https://hoogle.haskell.org/")
     ,("Yhc","https://wiki.haskell.org/Yhc")
+    ,("Ghcide","https://github.com/digitalasset/ghcide")
     ,("Hat","https://archives.haskell.org/projects.haskell.org/hat/")] ++
     [(x, "https://github.com/ndmitchell/" ++ lower x)
-    | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder"]
+    | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder Ghcid"]
 
 authors :: [(String, URL)]
 authors =
