@@ -4,6 +4,7 @@ date: 11 Oct 2019
 key: records
 where: <a href="https://skillsmatter.com/conferences/11741-haskell-exchange-2019">Haskell eXchange 2019</a>
 author: Neil Mitchell
+video: https://skillsmatter.com/skillscasts/14353-fixing-haskell-records
 text: How to improve Haskell records.
 abstract:
     Sadly, Haskell records aren't very good - problems include that field names must be unique and that record updates are not very expressive. A variety of solutions have been proposed over many decades, but none has gained traction. The closest answer Haskell has is the lens library, which famously ups the bar on complexity.
