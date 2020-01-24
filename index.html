@@ -36,7 +36,9 @@ li {
 }
 
 h3 {
-    margin-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 2px;
 }
 h3 a {
     text-decoration: none;
@@ -46,7 +48,7 @@ h3 a {
     margin-left: 15px;
 }
 .info {
-    margin-top: 5px;
+    margin-top: 2px;
     margin-bottom: 8px;
 }
 .text {
@@ -68,6 +70,9 @@ h3 a {
     overflow-x: auto;
     white-space: pre;
     font-size: 90%;
+}
+.highlight {
+    background-color: #ff8;
 }
 
 #body {
@@ -99,9 +104,18 @@ function showItems(x)
     for (var i = 0; i < items.length; i++)
         items[i].style.display = hidden ? "block" : "none";
 }
+
+function highlightAnchor(){
+    var items = document.getElementsByClassName("highlight");
+    for (var i = 0; i < items.length; i++)
+        items[i].className = "";
+    var x = document.getElementById(window.location.hash.substr(1));
+    if (x)
+        x.className = "highlight";
+}
 </script>
     </head>
-    <body>
+    <body onload="highlightAnchor()" onhashchange="highlightAnchor()">
 
 <h1>Neil Mitchell's home page</h1>
 
