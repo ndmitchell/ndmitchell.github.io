@@ -1,3 +1,21 @@
+paper: paper-build_systems_a_la_carte_theory_and_practice-21_apr_2020.pdf
+title: Build systems &agrave; la carte: Theory and practice
+date: 21 Apr 2020
+key: shake
+author: Andrey Mokhov and Neil Mitchell and Simon Peyton Jones
+@journal: Journal of Functional Programming
+@publisher: Cambridge University Press
+@volume: 30
+@pages: 55
+@doi: https://doi.org/10.1017/S0956796820000088
+text: Comparing build systems and finding underlying commonalities, a revised version.
+abstract:
+    Build systems are awesome, terrifying – and unloved. They are used by every developer around the world,
+    but are rarely the object of study. In this paper, we offer a systematic, and executable, framework for
+    developing and comparing build systems, viewing them as related points in a landscape rather than as
+    isolated phenomena. By teasing apart existing build systems, we can recombine their components, allowing
+    us to prototype new build systems with desired properties.
+
 slides: slides-fixing_records_in_haskell-11_oct_2019.pdf
 title: Fixing Records in Haskell
 date: 11 Oct 2019
@@ -29,20 +47,6 @@ abstract:
     2. What's there today and how you can use it. I'll also cover the relationship to haskell-ide-engine, DAML and other related projects.
 
     3. What's missing and how you can help. I'll be hacking on the IDE at MuniHac, and everyone is welcome to join in.
-
-
-preprint: https://github.com/snowleopard/build/releases/download/jfp-submission/jpf-submission.pdf
-title: Build Systems &agrave; la Carte: Theory and Practice
-date: 5 May 2019
-key: shake
-author: Andrey Mokhov and Neil Mitchell and Simon Peyton Jones
-text: Comparing build systems and finding underlying commonalities, a revised version.
-abstract:
-    Build systems are awesome, terrifying - and unloved. They are used by every developer around the world, but
-    are rarely the object of study. In this paper we offer a systematic, and executable, framework for developing
-    and comparing build systems, viewing them as related points in landscape rather than as isolated phenomena.
-    By teasing apart existing build systems, we can recombine their components, allowing us to prototype new
-    build systems with desired properties.
 
 paper: https://github.com/snowleopard/build/releases/download/icfp-final/build-systems.pdf
 title: Build Systems &agrave; la Carte
