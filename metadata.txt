@@ -193,6 +193,7 @@ date: 22 Sep 2016
 where: <a href="https://www.haskell.org/haskell-symposium/2016/">Haskell Symposium 2016</a>
 author: Andrey Mokhov and Neil Mitchell and Simon Peyton Jones and Simon Marlow
 @booktitle: Haskell 2016: Proceedings of the ACM SIGPLAN symposium on Haskell
+@pages: 55-66
 key: shake-ghc
 text: How to define large build systems using #{shake}, particularly a new GHC build system.
 abstract:
