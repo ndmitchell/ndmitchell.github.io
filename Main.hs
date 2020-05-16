@@ -132,7 +132,7 @@ renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ entryKey e) : map showB
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- fromEntry e, a /= "at"] ++
-                [("url", "\\verb'" ++ (if isUrlAbsolute url then "" else "https://ndmitchell.com/downloads/") ++ url ++ "'")
+                [("url", "\\url{" ++ (if isUrlAbsolute url then "" else "https://ndmitchell.com/downloads/") ++ url ++ "}")
                     | url <- take 1 [e ! s | s <- ["paper", "slides"], isJust $ e !? s]]
 
         date = parseDate $ e ! "date"
