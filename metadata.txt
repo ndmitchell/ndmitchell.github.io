@@ -821,3 +821,18 @@ abstract:
     In this project the existing static analysis research is reviewed, along with implementations used both by normal programmers, and used in safety critical applications. A static analysis program is then designed and implemented for the experimental pointer based language Pasta.
 
     The resulting program checks for totality, proving that a particular procedure cannot crash and will terminate. Where a procedure does not satisfy this, the preconditions for the procedure are generated.
+
+paper: paper-total_pasta_static_analysis_for_unfailing_pointer_programs-05_may_2004.pdf
+title: Total Pasta: Static Analysis For Unfailing Pointer Programs
+date: 05 May 2004
+key: total
+text: An algorithm for automatically proving totality of a simple pointer-based programming language.
+@school: University of York
+@pages:  86
+@at:     mastersthesis
+abstract:
+    Most errors in computer programs are only found once they are run, which results in critical errors being missed due to inadequate testing. If additional static analysis is performed, then the possibility exists for detecting such errors, and correcting them. This helps to improve the quality of the resulting code, increasing reliability.
+
+    In this project the existing static analysis research is reviewed, along with implementations used both by normal programmers, and used in safety critical applications. A static analysis program is then designed and implemented for the experimental pointer based language Pasta.
+
+    The resulting program checks for totality, proving that a particular procedure cannot crash and will terminate. Where a procedure does not satisfy this, the preconditions for the procedure are generated.
