@@ -1,8 +1,30 @@
+paper: paper-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf
+slides: slides-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf
+title: Building an Integrated Development Environment (IDE) on top of a Build System
+date: 04 Sep 2020
+key: ghcide
+author: Neil Mitchell and Moritz Kiefer and Pepe Iborra and Luke Lau and Zubin Duggal and Hannes Siebenhandl and Matthew Pickering and Alan Zimmerman
+text: How to write an IDE (e.g. #{ghcide}) starting from a build system (e.g. #{shake}).
+where: <a href="https://www.cs.kent.ac.uk/events/2020/ifl20/">IFL 2020</a>
+@booktitle: Draft Proceedings of the 32nd International Symposium on Implementation and Application of Functional Languages (IFL 2020)
+@location:University of Kent, UK
+@editor:Olaf Chitil
+@pages:222-230
+abstract:
+    When developing a Haskell IDE we hit upon an idea - why
+    not base an IDE on an build system? In this paper we'll
+    explain how to go from that idea to a usable IDE, including
+    the difficulties imposed by reusing a build system, and those
+    imposed by technical details specific to Haskell. Our design
+    has been successful, and hopefully provides a blue-print for
+    others writing IDEs.
+
 paper: paper-build_systems_a_la_carte_theory_and_practice-21_apr_2020.pdf
 title: Build systems &agrave; la carte: Theory and practice
 date: 21 Apr 2020
 key: shake
 author: Andrey Mokhov and Neil Mitchell and Simon Peyton Jones
+where: <a href="https://www.cambridge.org/core/journals/journal-of-functional-programming">Journal of Functional Programing</a>
 @journal: Journal of Functional Programming
 @publisher: Cambridge University Press
 @volume: 30

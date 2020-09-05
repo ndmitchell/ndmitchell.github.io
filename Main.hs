@@ -46,6 +46,14 @@ authors =
     ,("Joachim Breitner","https://www.cis.upenn.edu/~joachim/")
     ,("Brian Huffman","")
     ,("Christian Sternagel","https://cl-informatik.uibk.ac.at/users/griff/")
+    ,("Moritz Kiefer","https://github.com/cocreature")
+    ,("Pepe Iborra","https://github.com/pepeiborra")
+    ,("Luke Lau","https://github.com/Bubba")
+    ,("Zubin Duggal","https://github.com/wz1000")
+    ,("Hannes Siebenhandl","") -- nothing ties his name to his profile pages, so don't start
+    ,("Matthew Pickering","https://mpickering.github.io/")
+    ,("Alan Zimmerman","https://github.com/alanz")
+    ]
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 
