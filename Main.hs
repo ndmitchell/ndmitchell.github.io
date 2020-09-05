@@ -40,12 +40,12 @@ authors =
     [("Colin Runciman","https://www-users.cs.york.ac.uk/~colin/")
     ,("Simon Peyton Jones","https://www.microsoft.com/en-us/research/people/simonpj/")
     ,("Andrey Mokhov","https://www.ncl.ac.uk/engineering/staff/profile/andreymokhov.html")
-    ,("Simon Marlow","http://simonmar.github.io/")
+    ,("Simon Marlow","https://simonmar.github.io/")
     ,("Dimitry Golubovsky","https://github.com/dmgolubovsky")
-    ,("Matthew Naylor","http://www.cl.cam.ac.uk/~mn416/")
+    ,("Matthew Naylor","")
     ,("Joachim Breitner","https://www.cis.upenn.edu/~joachim/")
-    ,("Brian Huffman","http://www21.in.tum.de/~huffman/")
-    ,("Christian Sternagel","http://cl-informatik.uibk.ac.at/users/griff/")]
+    ,("Brian Huffman","")
+    ,("Christian Sternagel","https://cl-informatik.uibk.ac.at/users/griff/")
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
 
@@ -112,7 +112,7 @@ renderMetadata e =
             [x] -> "with " ++ x ++ ", "
             [x,y] -> "with " ++ x ++ " and " ++ y ++ ", "
             xs -> "with " ++ intercalate ", " (init xs) ++ " and " ++ last xs ++ ", "
-        author x = "<a href=\"" ++ url ++ "\">" ++ x ++ "</a>"
+        author x = if url == "" then x else "<a class=\"author\" href=\"" ++ url ++ "\">" ++ x ++ "</a>"
             where url = fromMaybe (error $ "No link for " ++ show x) $ lookup x authors
 
         abstract = fromMaybe "" $ e !? "abstract"
@@ -132,7 +132,7 @@ renderBibtex e = unlines $ ("@" ++ at ++ "{mitchell:" ++ entryKey e) : map showB
                 ,("day", show $ thd3 date)
                 ] ++ ex ++
                 [(a,b) | ('@':a,b) <- fromEntry e, a /= "at"] ++
-                [("url", "\\url{" ++ (if isUrlAbsolute url then "" else "https://ndmitchell.com/downloads/") ++ url ++ "}")
+                [("url", (if isUrlAbsolute url then "" else "https://ndmitchell.com/downloads/") ++ url)
                     | url <- take 1 [e ! s | s <- ["paper", "slides"], isJust $ e !? s]]
 
         date = parseDate $ e ! "date"
