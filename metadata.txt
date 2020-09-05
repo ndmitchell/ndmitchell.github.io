@@ -1,7 +1,7 @@
 paper: paper-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf
 slides: slides-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf
 title: Building an Integrated Development Environment (IDE) on top of a Build System
-date: 04 Sep 2020
+date: 4 Sep 2020
 key: ghcide
 author: Neil Mitchell and Moritz Kiefer and Pepe Iborra and Luke Lau and Zubin Duggal and Hannes Siebenhandl and Matthew Pickering and Alan Zimmerman
 text: How to write an IDE (e.g. #{ghcide}) starting from a build system (e.g. #{shake}).
