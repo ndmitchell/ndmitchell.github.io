@@ -192,4 +192,5 @@ parseDate :: String -> (Int, Month, Int)
 parseDate x
     | [a,b,c] <- words x
     , [month] <- filter (\x -> take 3 (show x) == b) [January .. December]
-    = (read c, month, read a)
+    = if length a /= 2 then error $ "Dates should have a 2 digit day: " ++ show x
+      else (read c, month, read a)
