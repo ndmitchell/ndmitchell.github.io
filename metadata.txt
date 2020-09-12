@@ -1,5 +1,5 @@
 slides: slides-migrating_hlint_to_the_ghc_api-11_sep_2020.pdf
-video: https://www.youtube.com/watch?v=lDXyqzcM580
+video: https://www.youtube.com/watch?v=lDXyqzcM580&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 key: hlint
 author: Neil Mitchell
 date: 11 Sep 2020
@@ -65,7 +65,7 @@ abstract:
     We've validated our design with the DAML programming language (based on the GHC compiler) which uses these records as standard. We're happy to report that users experiences have been very positive.
 
 slides: slides-making_a_haskell_ide-07_sep_2019.pdf
-video: https://www.youtube.com/watch?v=cijsaeWNf2E&list=PLxxF72uPfQVRdAsvj7THoys-nVj-oc4Ss
+video: https://www.youtube.com/watch?v=cijsaeWNf2E&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 title: Making a Haskell IDE
 date: 07 Sep 2019
 key: ghcide
@@ -133,7 +133,7 @@ title: Distributed Build Systems
 date: 18 May 2018
 where: <a href="https://www.tngtech.com/en/tng-about-us/bigtechday/big-techday-11.html">Big Techday 11</a>
 text: Build system comparisons and the engineering inside #{shake}.
-video: https://www.youtube.com/watch?v=at-dqYqg3kY
+video: https://www.youtube.com/watch?v=at-dqYqg3kY&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 key: shake
 abstract:
     Build systems are awesome - but unappreciated. A decade ago I started writing Shake, a Haskell library
@@ -145,7 +145,6 @@ abstract:
 
 slides: slides-deriving_generic_functions_by_example-17_nov_2017.pdf
 title: Deriving Generic Functions by Example (+10 years)
-video: https://www.youtube.com/watch?v=Jrmt4dIVp7s&t=3811
 date: 17 Nov 2017
 where: <a href="https://www.cs.york.ac.uk/yds/yds2017/">York Doctoral Symposium 2017</a>
 key: derive, shake
@@ -179,7 +178,7 @@ abstract:
 
 slides: slides-drive-by_haskell_contributions-09_jun_2017.pdf
 title: Drive-by Haskell Contributions
-video: https://www.youtube.com/watch?v=6kGLHXsUQD4
+video: https://www.youtube.com/watch?v=6kGLHXsUQD4&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 date: 09 Jun 2017
 where: <a href="https://zurihac.info/">ZuriHac 2017</a>
 key: zurihac
@@ -264,7 +263,7 @@ abstract:
     Bake is a Haskell continuous integration system, an alternative to Travis/Jenkins, but designed for large semi-trusted teams. Bake guarantees that all code arriving in your master branch passes all tests on all platforms, while using as few resources as possible, allowing you to have hours of tests, 100's of commits a day and one a few lonely test servers. Bake is held together with duct tape.
 
 slides: slides-gluing_things_together_with_haskell-5_nov_2014.pdf
-video: https://www.youtube.com/watch?v=iFZQyLMrkn4
+video: https://www.youtube.com/watch?v=iFZQyLMrkn4&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 title: Gluing things together with Haskell
 date: 05 Nov 2014
 where: <a href="https://www.codemesh.io/codemesh2014">Code Mesh 2014</a>
@@ -328,7 +327,7 @@ abstract:
 
 paper:   paper-shake_before_building-10_sep_2012.pdf
 slides:  slides-shake_before_building-10_sep_2012.pdf
-video:   https://www.youtube.com/watch?v=xYCPpXVlqFM
+video:   https://www.youtube.com/watch?v=xYCPpXVlqFM&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 title:   Shake Before Building - Replacing Make with Haskell
 date:    10 Sep 2012
 where:   <a href="https://www.icfpconference.org/icfp2012/">ICFP 2012</a>
@@ -455,7 +454,7 @@ abstract:
 
 paper:   paper-not_all_patterns_but_enough-25_sep_2008.pdf
 slides:    slides-not_all_patterns_but_enough-25_sep_2008.pdf
-video:    https://www.youtube.com/watch?v=DFVIzwg1rvs
+video:    https://www.youtube.com/watch?v=DFVIzwg1rvs&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 title:   Not All Patterns, But Enough - an automatic verifier for partial but sufficient pattern matching
 text:    A static analysis for automatically proving a program will not raise an error at runtime, implemented as #{catch}. The analysis was able to detect 3 bugs in the <a href="https://hackage.haskell.org/package/hscolour">HsColour</a> program.
 date:    25 Sep 2008
