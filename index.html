@@ -148,6 +148,21 @@ function highlightAnchor(){
 </p>
 
 
+<h3 id="hlint_11_sep_2020"><a href="#hlint_11_sep_2020">Talk: Migrating HLint to the GHC API</a></h3>
+<p class="info"><a href="downloads/slides-migrating_hlint_to_the_ghc_api-11_sep_2020.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=lDXyqzcM580">video</a>, <a href="javascript:showCitation('hlint_11_sep_2020')">citation</a>, <a href="javascript:showAbstract('hlint_11_sep_2020')">abstract</a> from <a href="https://munihac.de/2020.html">MuniHac 2020</a>, 11 Sep 2020.</p>
+<p id="citation_hlint_11_sep_2020" class="citation">@misc{mitchell:hlint_11_sep_2020
+    ,title          = {Migrating {HLint} to the {GHC} {API}}
+    ,author         = {Neil Mitchell}
+    ,year           = {2020}
+    ,month          = {September}
+    ,day            = {11}
+    ,note           = {Presentation from MuniHac 2020}
+    ,url            = {https://ndmitchell.com/downloads/slides-migrating_hlint_to_the_ghc_api-11_sep_2020.pdf}
+}
+</p>
+<p id="abstract_hlint_11_sep_2020" class="abstract"><b>Abstract:</b> HLint is over 14 years old. Over the last 14 years we've changed license, project name, source control, configuration and much more besides. But until recently, HLint had always used the haskell-src-exts library for parsing Haskell. That parser was forked from the GHC parser 16 years ago, and as GHC has accumulated 16 years worth of bug fixes and features, the amount of Haskell code that could be parsed by GHC but not HLint increased. The obvious solution was to use the GHC API for parsing. In this talk I'll describe why we were so reluctant to move to the GHC API, how we decoupled HLint from GHC versions with ghc-lib, and how to change almost every line in a large project, without breaking anything or stopping ongoing development.</p>
+<p class="text">How and why we changed <a href="https://github.com/ndmitchell/hlint">HLint</a> to the GHC API parser.</p>
+
 <h3 id="ghcide_04_sep_2020"><a href="#ghcide_04_sep_2020">Paper: Building an Integrated Development Environment (IDE) on top of a Build System</a></h3>
 <p class="info"><a href="downloads/paper-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf">Paper</a>, <a href="downloads/slides-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf">slides</a>, <a href="javascript:showCitation('ghcide_04_sep_2020')">citation</a>, <a href="javascript:showAbstract('ghcide_04_sep_2020')">abstract</a> from <a href="https://www.cs.kent.ac.uk/events/2020/ifl20/">IFL 2020</a>, with <a class="author" href="https://github.com/cocreature">Moritz Kiefer</a>, <a class="author" href="https://github.com/pepeiborra">Pepe Iborra</a>, <a class="author" href="https://github.com/Bubba">Luke Lau</a>, <a class="author" href="https://github.com/wz1000">Zubin Duggal</a>, Hannes Siebenhandl, <a class="author" href="https://mpickering.github.io/">Matthew Pickering</a> and <a class="author" href="https://github.com/alanz">Alan Zimmerman</a>, 04 Sep 2020.</p>
 <p id="citation_ghcide_04_sep_2020" class="citation">@inproceedings{mitchell:ghcide_04_sep_2020

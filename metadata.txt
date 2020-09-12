@@ -1,3 +1,14 @@
+slides: slides-migrating_hlint_to_the_ghc_api-11_sep_2020.pdf
+video: https://www.youtube.com/watch?v=lDXyqzcM580
+key: hlint
+author: Neil Mitchell
+date: 11 Sep 2020
+title: Migrating HLint to the GHC API
+where: <a href="https://munihac.de/2020.html">MuniHac 2020</a>
+text: How and why we changed #{hlint} to the GHC API parser.
+abstract:
+    HLint is over 14 years old. Over the last 14 years we've changed license, project name, source control, configuration and much more besides. But until recently, HLint had always used the haskell-src-exts library for parsing Haskell. That parser was forked from the GHC parser 16 years ago, and as GHC has accumulated 16 years worth of bug fixes and features, the amount of Haskell code that could be parsed by GHC but not HLint increased. The obvious solution was to use the GHC API for parsing. In this talk I'll describe why we were so reluctant to move to the GHC API, how we decoupled HLint from GHC versions with ghc-lib, and how to change almost every line in a large project, without breaking anything or stopping ongoing development.
+
 paper: paper-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf
 slides: slides-building_an_ide_on_top_of_a_build_system-04_sep_2020.pdf
 title: Building an Integrated Development Environment (IDE) on top of a Build System
