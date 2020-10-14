@@ -18,9 +18,9 @@ author: Neil Mitchell and Moritz Kiefer and Pepe Iborra and Luke Lau and Zubin D
 text: How to write an IDE (e.g. #{ghcide}) starting from a build system (e.g. #{shake}).
 where: <a href="https://www.cs.kent.ac.uk/events/2020/ifl20/">IFL 2020</a>
 @booktitle: Draft Proceedings of the 32nd International Symposium on Implementation and Application of Functional Languages (IFL 2020)
-@location:University of Kent, UK
-@editor:Olaf Chitil
-@pages:222-230
+@location: University of Kent, UK
+@editor: Olaf Chitil
+@pages: 222-230
 abstract:
     When developing a Haskell IDE we hit upon an idea - why
     not base an IDE on an build system? In this paper we'll
