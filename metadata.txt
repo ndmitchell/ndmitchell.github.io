@@ -1,3 +1,21 @@
+paper: paper-build_scripts_with_perfect_dependencies-18_nov_2020.pdf
+title: Build Systems with Perfect Dependencies
+date: 18 Nov 2020
+key: rattle
+author: Sarah Spall and Neil Mitchell and Sam Tobin-Hochstadt
+text: A forward build-system that infers dependencies with tracing.
+where: <a href="https://2020.splashcon.org/track/splash-2020-oopsla">OOPSLA 2020</a>
+@booktitle: Proceedings of the ACM Programming Languages 4, OOPSLA
+@articleno: 169
+@pages: 28
+@doi: https://doi.org/10.1145/3428237
+abstract:
+    Build scripts for most build systems describe the actions to run, and the dependencies between those actions - but often build scripts get those dependencies wrong.
+    Most build scripts have both too few dependencies (leading to incorrect build outputs) and too many dependencies (leading to excessive rebuilds and reduced parallelism). Any programmer who has wondered why a small change led to excess compilation, or who resorted to a clean step, has suffered the ill effects of incorrect dependency specification.
+    We outline a build system where dependencies are not specified, but instead captured by tracing execution.
+    The consequence is that dependencies are always correct by construction and build scripts are easier to write.
+    The simplest implementation of our approach would lose parallelism, but we are able to recover parallelism using speculation.
+
 slides: slides-migrating_hlint_to_the_ghc_api-11_sep_2020.pdf
 video: https://www.youtube.com/watch?v=lDXyqzcM580&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 key: hlint

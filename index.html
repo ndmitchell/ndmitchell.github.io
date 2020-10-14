@@ -148,6 +148,24 @@ function highlightAnchor(){
 </p>
 
 
+<h3 id="rattle_18_nov_2020"><a href="#rattle_18_nov_2020">Paper: Build Systems with Perfect Dependencies</a></h3>
+<p class="info"><a href="downloads/paper-build_scripts_with_perfect_dependencies-18_nov_2020.pdf">Paper</a>, <a href="javascript:showCitation('rattle_18_nov_2020')">citation</a>, <a href="javascript:showAbstract('rattle_18_nov_2020')">abstract</a> from <a href="https://2020.splashcon.org/track/splash-2020-oopsla">OOPSLA 2020</a>, with <a class="author" href="https://github.com/spall">Sarah Spall</a> and <a class="author" href="https://samth.github.io/">Sam Tobin-Hochstadt</a>, 18 Nov 2020.</p>
+<p id="citation_rattle_18_nov_2020" class="citation">@inproceedings{mitchell:rattle_18_nov_2020
+    ,title          = {Build Systems with Perfect Dependencies}
+    ,author         = {Sarah Spall and Neil Mitchell and Sam Tobin-Hochstadt}
+    ,year           = {2020}
+    ,month          = {November}
+    ,day            = {18}
+    ,booktitle      = {Proceedings of the ACM Programming Languages 4, OOPSLA}
+    ,articleno      = {169}
+    ,pages          = {28}
+    ,doi            = {https://doi.org/10.1145/3428237}
+    ,url            = {https://ndmitchell.com/downloads/paper-build_scripts_with_perfect_dependencies-18_nov_2020.pdf}
+}
+</p>
+<p id="abstract_rattle_18_nov_2020" class="abstract"><b>Abstract:</b> Build scripts for most build systems describe the actions to run, and the dependencies between those actions - but often build scripts get those dependencies wrong. Most build scripts have both too few dependencies (leading to incorrect build outputs) and too many dependencies (leading to excessive rebuilds and reduced parallelism). Any programmer who has wondered why a small change led to excess compilation, or who resorted to a clean step, has suffered the ill effects of incorrect dependency specification. We outline a build system where dependencies are not specified, but instead captured by tracing execution. The consequence is that dependencies are always correct by construction and build scripts are easier to write. The simplest implementation of our approach would lose parallelism, but we are able to recover parallelism using speculation.</p>
+<p class="text">A forward build-system that infers dependencies with tracing.</p>
+
 <h3 id="hlint_11_sep_2020"><a href="#hlint_11_sep_2020">Talk: Migrating HLint to the GHC API</a></h3>
 <p class="info"><a href="downloads/slides-migrating_hlint_to_the_ghc_api-11_sep_2020.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=lDXyqzcM580&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV">video</a>, <a href="javascript:showCitation('hlint_11_sep_2020')">citation</a>, <a href="javascript:showAbstract('hlint_11_sep_2020')">abstract</a> from <a href="https://munihac.de/2020.html">MuniHac 2020</a>, 11 Sep 2020.</p>
 <p id="citation_hlint_11_sep_2020" class="citation">@misc{mitchell:hlint_11_sep_2020

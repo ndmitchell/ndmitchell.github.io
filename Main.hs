@@ -53,6 +53,8 @@ authors =
     ,("Hannes Siebenhandl","") -- nothing ties his name to his profile pages, so don't start
     ,("Matthew Pickering","https://mpickering.github.io/")
     ,("Alan Zimmerman","https://github.com/alanz")
+    ,("Sarah Spall", "https://github.com/spall")
+    ,("Sam Tobin-Hochstadt", "https://samth.github.io/")
     ]
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
