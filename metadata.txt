@@ -5,6 +5,7 @@ key: rattle
 author: Sarah Spall and Neil Mitchell and Sam Tobin-Hochstadt
 text: A forward build-system that infers dependencies with tracing.
 where: <a href="https://2020.splashcon.org/track/splash-2020-oopsla">OOPSLA 2020</a>
+video: https://www.youtube.com/watch?v=WRLfQo-IJTg
 @booktitle: Proceedings of the ACM Programming Languages 4, OOPSLA
 @articleno: 169
 @pages: 28
