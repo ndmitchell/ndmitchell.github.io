@@ -1,3 +1,13 @@
+slides: slides-cheaply_writing_a_fast_interpreter-23_feb_2021.pdf
+title: Cheaply writing a fast interpreter
+date: 23 Feb 2021
+key: interpreter
+text: Writing a fast programming language interpreter without generating assembly code.
+where: <a href="https://performancesummitlondonedition.splashthat.com/">Performance Summit London Edition II</a>
+video: https://www.youtube.com/watch?v=V8dnIw3amLA&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
+abstract:
+    For dynamic languages, there are well known approaches to achieve maximum performance, e.g. JIT. But such approaches are often very expensive to implement and maintain. In this talk we'll look at ways of implementing interpreters for less frequently used languages, which necessarily trade off performance vs implementation effort. As an example, we will consider the Starlark configuration language, a deterministic subset of Python used by the build systems Buck and Bazel. We'll cover techniques such direct AST interpretation, bytecode, closure generation - comparing the effort and performance of each approach.
+
 paper: paper-build_scripts_with_perfect_dependencies-18_nov_2020.pdf
 title: Build Systems with Perfect Dependencies
 date: 18 Nov 2020
