@@ -152,6 +152,7 @@ where: <a href="http://www.imn.htwk-leipzig.de/HART2013/">HART 2013</a>
 key: hlint
 author: Joachim Breitner and Brian Huffman and Neil Mitchell and Christian Sternagel
 text: Proving some HLint rules with Isabelle/HOLCF.
+@booktitle: Haskell And Rewriting Techniques (HART)
 abstract:
     We present the HOLCF-Prelude, a formalization of a large part of Haskell's standard
     prelude in Isabelle/HOLCF. Applying this formalization to the hints suggested by HLint
