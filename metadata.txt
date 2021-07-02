@@ -1,3 +1,15 @@
+slides: slides-rattle_simpler_builds_for_smaller_use_cases-25_jun_2021.pdf
+title: Rattle - simpler builds for smaller use cases
+date: 25 Jun 2021
+key: rattle
+where: <a href="https://meetup.build/">Build Meetup 2021</a>
+text: Introduction to the Rattle build system
+abstract:
+    When writing a build system using a tool such as Bazel/Buck, much of the developers time is spent specifying dependencies between targets.
+    The Rattle build system takes a different approach, omitting dependencies entirely, just requiring the build steps to be presented in a valid order.
+    Rattle then uses file system tracing to infer the dependencies between commands, and (unlike previous systems such as Fabricate or Memoize) automatically infer parallelism.
+    While Rattle isn't suitable at large scale, it can be used on projects as large as Node.js successfully, even rebuilding faster than the existing Make based build system.
+
 slides: slides-cheaply_writing_a_fast_interpreter-23_feb_2021.pdf
 title: Cheaply writing a fast interpreter
 date: 23 Feb 2021
