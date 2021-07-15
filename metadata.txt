@@ -3,6 +3,7 @@ title: Rattle - simpler builds for smaller use cases
 date: 25 Jun 2021
 key: rattle
 where: <a href="https://meetup.build/">Build Meetup 2021</a>
+video: https://www.youtube.com/watch?v=tKi8t4LVY_0&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
 text: Introduction to the Rattle build system
 abstract:
     When writing a build system using a tool such as Bazel/Buck, much of the developers time is spent specifying dependencies between targets.
