@@ -31,6 +31,7 @@ projects =
     ,("Hoogle","https://hoogle.haskell.org/")
     ,("Yhc","https://wiki.haskell.org/Yhc")
     ,("Ghcide","https://github.com/haskell/ghcide")
+    ,("HLS","https://github.com/haskell/haskell-language-server")
     ,("Hat","https://archives.haskell.org/projects.haskell.org/hat/")] ++
     [(x, "https://github.com/ndmitchell/" ++ lower x)
     | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder Ghcid"]
@@ -55,6 +56,7 @@ authors =
     ,("Alan Zimmerman","https://github.com/alanz")
     ,("Sarah Spall", "https://github.com/spall")
     ,("Sam Tobin-Hochstadt", "https://samth.github.io/")
+    ,("Javier Neira Sanchez", "https://github.com/jneira")
     ]
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
