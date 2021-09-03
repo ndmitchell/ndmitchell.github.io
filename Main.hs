@@ -6,6 +6,7 @@ import System.IO.Extra
 import Data.Maybe
 import Data.List.Extra
 import Data.Tuple.Extra
+import Data.Ord
 import Data.Char
 
 type URL = String
@@ -78,7 +79,7 @@ entryOptional = words "paper preprint slides video audio where author abstract"
 
 
 checkMetadata :: [Entry] -> [Entry]
-checkMetadata xs | all (checkFields . map fst . fromEntry) xs = reverse $ sortOn (\x -> parseDate $ x ! "date") xs
+checkMetadata xs | all (checkFields . map fst . fromEntry) xs = sortOn (\x -> Down $ parseDate $ x ! "date") xs
     where
         checkFields xs | bad:_ <- xs \\ nub xs = error $ "Duplicate field, " ++ bad
                        | bad:_ <- filter (not . isPrefixOf "@") xs \\ (entryRequired ++ entryOptional) = error $ "Unknown field, " ++ bad
