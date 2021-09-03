@@ -161,7 +161,7 @@ function highlightAnchor(){
 }
 </p>
 <p id="abstract_rattle_25_jun_2021" class="abstract"><b>Abstract:</b> When writing a build system using a tool such as Bazel/Buck, much of the developers time is spent specifying dependencies between targets. The Rattle build system takes a different approach, omitting dependencies entirely, just requiring the build steps to be presented in a valid order. Rattle then uses file system tracing to infer the dependencies between commands, and (unlike previous systems such as Fabricate or Memoize) automatically infer parallelism. While Rattle isn't suitable at large scale, it can be used on projects as large as Node.js successfully, even rebuilding faster than the existing Make based build system.</p>
-<p class="text">Introduction to the Rattle build system</p>
+<p class="text">Introduction to the <a href="https://github.com/ndmitchell/rattle">Rattle</a> build system</p>
 
 <h3 id="interpreter_23_feb_2021"><a href="#interpreter_23_feb_2021">Talk: Cheaply writing a fast interpreter</a></h3>
 <p class="info"><a href="downloads/slides-cheaply_writing_a_fast_interpreter-23_feb_2021.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=V8dnIw3amLA&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV">video</a>, <a href="javascript:showCitation('interpreter_23_feb_2021')">citation</a>, <a href="javascript:showAbstract('interpreter_23_feb_2021')">abstract</a> from <a href="https://performancesummitlondonedition.splashthat.com/">Performance Summit London Edition II</a>, 23 Feb 2021.</p>
@@ -194,7 +194,7 @@ function highlightAnchor(){
 }
 </p>
 <p id="abstract_rattle_18_nov_2020" class="abstract"><b>Abstract:</b> Build scripts for most build systems describe the actions to run, and the dependencies between those actions - but often build scripts get those dependencies wrong. Most build scripts have both too few dependencies (leading to incorrect build outputs) and too many dependencies (leading to excessive rebuilds and reduced parallelism). Any programmer who has wondered why a small change led to excess compilation, or who resorted to a clean step, has suffered the ill effects of incorrect dependency specification. We outline a build system where dependencies are not specified, but instead captured by tracing execution. The consequence is that dependencies are always correct by construction and build scripts are easier to write. The simplest implementation of our approach would lose parallelism, but we are able to recover parallelism using speculation.</p>
-<p class="text">A forward build-system that infers dependencies with tracing.</p>
+<p class="text">A forward build-system called <a href="https://github.com/ndmitchell/rattle">Rattle</a> that infers dependencies with tracing.</p>
 
 <h3 id="hlint_11_sep_2020"><a href="#hlint_11_sep_2020">Talk: Migrating HLint to the GHC API</a></h3>
 <p class="info"><a href="downloads/slides-migrating_hlint_to_the_ghc_api-11_sep_2020.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=lDXyqzcM580&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV">video</a>, <a href="javascript:showCitation('hlint_11_sep_2020')">citation</a>, <a href="javascript:showAbstract('hlint_11_sep_2020')">abstract</a> from <a href="https://munihac.de/2020.html">MuniHac 2020</a>, 11 Sep 2020.</p>

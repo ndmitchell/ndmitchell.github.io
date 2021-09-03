@@ -24,7 +24,7 @@ date: 25 Jun 2021
 key: rattle
 where: <a href="https://meetup.build/">Build Meetup 2021</a>
 video: https://www.youtube.com/watch?v=tKi8t4LVY_0&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
-text: Introduction to the Rattle build system
+text: Introduction to the #{rattle} build system
 abstract:
     When writing a build system using a tool such as Bazel/Buck, much of the developers time is spent specifying dependencies between targets.
     The Rattle build system takes a different approach, omitting dependencies entirely, just requiring the build steps to be presented in a valid order.
@@ -46,7 +46,7 @@ title: Build Scripts with Perfect Dependencies
 date: 18 Nov 2020
 key: rattle
 author: Sarah Spall and Neil Mitchell and Sam Tobin-Hochstadt
-text: A forward build-system that infers dependencies with tracing.
+text: A forward build-system called #{rattle} that infers dependencies with tracing.
 where: <a href="https://2020.splashcon.org/track/splash-2020-oopsla">OOPSLA 2020</a>
 video: https://www.youtube.com/watch?v=WRLfQo-IJTg
 @booktitle: Proceedings of the ACM Programming Languages 4, OOPSLA

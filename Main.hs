@@ -35,7 +35,7 @@ projects =
     ,("HLS","https://github.com/haskell/haskell-language-server")
     ,("Hat","https://archives.haskell.org/projects.haskell.org/hat/")] ++
     [(x, "https://github.com/ndmitchell/" ++ lower x)
-    | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder Ghcid"]
+    | x <- words "HLint Supero Derive Firstify Catch Uniplate NSIS Bake Hexml Weeder Ghcid Rattle"]
 
 authors :: [(String, URL)]
 authors =
