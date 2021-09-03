@@ -1,3 +1,23 @@
+paper: paper-building_an_ide_on_top_of_a_build_system_revised-04_sep_2020.pdf
+title: Building an Integrated Development Environment (IDE) on top of a Build System (Revised)
+date: 04 Sep 2020
+key: hls
+author: Neil Mitchell and Moritz Kiefer and Pepe Iborra and Luke Lau and Zubin Duggal and Hannes Siebenhandl and Javier Neira Sanchez and Matthew Pickering and Alan Zimmerman
+text: How to write an IDE (e.g. #{ghcide}/#{hls}) starting from a build system (e.g. #{shake}).
+where: <a href="https://www.cs.kent.ac.uk/events/2020/ifl20/">IFL 2020</a>
+@booktitle: Proceedings of the 32nd International Symposium on Implementation and Application of Functional Languages (IFL 2020)
+@location: University of Kent, UK
+@editor: Olaf Chitil
+@pages: 1-10
+abstract:
+    When developing a Haskell IDE we hit upon an idea - why
+    not base an IDE on an build system? In this paper we'll
+    explain how to go from that idea to a usable IDE, including
+    the difficulties imposed by reusing a build system, and those
+    imposed by technical details specific to Haskell. Our design
+    has been successful, and hopefully provides a blue-print for
+    others writing IDEs.
+
 slides: slides-rattle_simpler_builds_for_smaller_use_cases-25_jun_2021.pdf
 title: Rattle - simpler builds for smaller use cases
 date: 25 Jun 2021
