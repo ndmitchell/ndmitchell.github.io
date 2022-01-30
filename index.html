@@ -148,6 +148,20 @@ function highlightAnchor(){
 </p>
 
 
+<h3 id="build_01_jan_2022"><a href="#build_01_jan_2022">Paper: Implementing Applicative Build Systems Monadically</a></h3>
+<p class="info"><a href="downloads/paper-implementing_applicative_build_systems_monadically-01_jan_2022.pdf">Paper</a>, <a href="javascript:showCitation('build_01_jan_2022')">citation</a>, <a href="javascript:showAbstract('build_01_jan_2022')">abstract</a> from Submitted to a conference that got cancelled due to COVID-19, with <a class="author" href="https://github.com/bobyangyf">Bob Yang</a>, 01 Jan 2022.</p>
+<p id="citation_build_01_jan_2022" class="citation">@inproceedings{mitchell:build_01_jan_2022
+    ,title          = {Implementing Applicative Build Systems Monadically}
+    ,author         = {Bob Yang and Neil Mitchell}
+    ,year           = {2022}
+    ,month          = {January}
+    ,day            = {1}
+    ,url            = {https://ndmitchell.com/downloads/paper-implementing_applicative_build_systems_monadically-01_jan_2022.pdf}
+}
+</p>
+<p id="abstract_build_01_jan_2022" class="abstract"><b>Abstract:</b> Build systems are typically driven by a user script, e.g. the build system Buck is driven by BUCK fles. Mokhov et. al.classied build systems as either applicative or monadic, based on whether the build system required static dependencies, or allowed dynamic dependencies, respectively. Buck does not allow dynamic dependencies, so is classified as applicative.<br/><br/>In this paper we show that applicative build systems are only applicative from the perspective of the user, and are internally actually monadic. In particular, the actions executed are entirely dependent on the values in the user script. Following this observation, we rewrote Buck, an "applicative build system", using a monadic incremental computation engine, and saw improvements in both code complexity and performance.</p>
+<p class="text">How otherwise applicative build systems often need a monadic dependency graph</p>
+
 <h3 id="rattle_25_jun_2021"><a href="#rattle_25_jun_2021">Talk: Rattle - simpler builds for smaller use cases</a></h3>
 <p class="info"><a href="downloads/slides-rattle_simpler_builds_for_smaller_use_cases-25_jun_2021.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=tKi8t4LVY_0&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV">video</a>, <a href="javascript:showCitation('rattle_25_jun_2021')">citation</a>, <a href="javascript:showAbstract('rattle_25_jun_2021')">abstract</a> from <a href="https://meetup.build/">Build Meetup 2021</a>, 25 Jun 2021.</p>
 <p id="citation_rattle_25_jun_2021" class="citation">@misc{mitchell:rattle_25_jun_2021

@@ -1,3 +1,23 @@
+paper: paper-implementing_applicative_build_systems_monadically-01_jan_2022.pdf
+title: Implementing Applicative Build Systems Monadically
+date: 01 Jan 2022
+key: build
+author: Bob Yang and Neil Mitchell
+text: How otherwise applicative build systems often need a monadic dependency graph
+where: Submitted to a conference that got cancelled due to COVID-19
+abstract:
+    Build systems are typically driven by a user script, e.g. the build
+    system Buck is driven by BUCK fles. Mokhov et. al.classied
+    build systems as either applicative or monadic, based on whether
+    the build system required static dependencies, or allowed dynamic
+    dependencies, respectively. Buck does not allow dynamic dependencies, so is classified as applicative.
+
+    In this paper we show that applicative build systems are only applicative from the perspective of the user, and are internally actually
+    monadic. In particular, the actions executed are entirely dependent
+    on the values in the user script. Following this observation, we
+    rewrote Buck, an "applicative build system", using a monadic incremental computation engine, and saw improvements in both code
+    complexity and performance.
+
 paper: paper-building_an_ide_on_top_of_a_build_system_revised-04_sep_2020.pdf
 title: Building an Integrated Development Environment (IDE) on top of a Build System (Revised)
 date: 04 Sep 2020

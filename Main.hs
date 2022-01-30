@@ -58,6 +58,7 @@ authors =
     ,("Sarah Spall", "https://github.com/spall")
     ,("Sam Tobin-Hochstadt", "https://samth.github.io/")
     ,("Javier Neira Sanchez", "https://github.com/jneira")
+    ,("Bob Yang", "https://github.com/bobyangyf")
     ]
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
