@@ -4,7 +4,7 @@ module Main(main) where
 import Control.Monad
 import System.IO.Extra
 import Data.Maybe
-import Data.List.Extra
+import Data.List.Extra hiding ((!?))
 import Data.Tuple.Extra
 import Data.Ord
 import Data.Char
