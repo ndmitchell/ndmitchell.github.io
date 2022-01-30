@@ -148,6 +148,23 @@ function highlightAnchor(){
 </p>
 
 
+<h3 id="rattle_17_jan_2022"><a href="#rattle_17_jan_2022">Paper: Forward Build Systems, Formally</a></h3>
+<p class="info"><a href="downloads/paper-forward_build_systems_formally-17_jan_2022.pdf">Paper</a>, <a href="javascript:showCitation('rattle_17_jan_2022')">citation</a>, <a href="javascript:showAbstract('rattle_17_jan_2022')">abstract</a> from <a href="https://popl22.sigplan.org/home/CPP-2022">CPP 2022</a>, with <a class="author" href="https://github.com/spall">Sarah Spall</a> and <a class="author" href="https://samth.github.io/">Sam Tobin-Hochstadt</a>, 17 Jan 2022.</p>
+<p id="citation_rattle_17_jan_2022" class="citation">@inproceedings{mitchell:rattle_17_jan_2022
+    ,title          = {Forward Build Systems, Formally}
+    ,author         = {Sarah Spall and Neil Mitchell and Sam Tobin-Hochstadt}
+    ,year           = {2022}
+    ,month          = {January}
+    ,day            = {17}
+    ,booktitle      = {Proceedings of the 11th ACM SIGPLAN International Conference on Certified Programs and Proofs}
+    ,pages          = {130–142}
+    ,doi            = {https://doi.org/10.1145/3497775.3503687}
+    ,url            = {https://ndmitchell.com/downloads/paper-forward_build_systems_formally-17_jan_2022.pdf}
+}
+</p>
+<p id="abstract_rattle_17_jan_2022" class="abstract"><b>Abstract:</b> Build systems are a fundamental part of software construction, but their correctness has received comparatively little attention, relative to more prominent parts of the toolchain. In this paper, we address the correctness of forward build systems, which automatically determine the dependency structure of the build, rather than having it specified by the programmer.<br/><br/>We first define what it means for a forward build system to be correct - it must behave identically to simply executing the programmer-specified commands in order. Of course, realistic build systems avoid repeated work, stop early when possible, and run commands in parallel, and we prove that these optimizations, as embodied in the recent forward build system Rattle, preserve our definition of correctness. Along the way, we show that other forward build systems, such as Fabricate and Memoize, are also correct.<br/><br/>We carry out all of our work in Agda, and describe in detail the assumptions underlying both Rattle itself and our modeling of it.</p>
+<p class="text">A proof that <a href="https://github.com/ndmitchell/rattle">Rattle</a> is correct.</p>
+
 <h3 id="build_01_jan_2022"><a href="#build_01_jan_2022">Paper: Implementing Applicative Build Systems Monadically</a></h3>
 <p class="info"><a href="downloads/paper-implementing_applicative_build_systems_monadically-01_jan_2022.pdf">Paper</a>, <a href="javascript:showCitation('build_01_jan_2022')">citation</a>, <a href="javascript:showAbstract('build_01_jan_2022')">abstract</a> from Submitted to a conference that got cancelled due to COVID-19, with <a class="author" href="https://github.com/bobyangyf">Bob Yang</a>, 01 Jan 2022.</p>
 <p id="citation_build_01_jan_2022" class="citation">@inproceedings{mitchell:build_01_jan_2022

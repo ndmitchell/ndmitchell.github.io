@@ -1,3 +1,34 @@
+paper: paper-forward_build_systems_formally-17_jan_2022.pdf
+title: Forward Build Systems, Formally
+date: 17 Jan 2022
+key: rattle
+author: Sarah Spall and Neil Mitchell and Sam Tobin-Hochstadt
+text: A proof that #{rattle} is correct.
+where: <a href="https://popl22.sigplan.org/home/CPP-2022">CPP 2022</a>
+@booktitle: Proceedings of the 11th ACM SIGPLAN International Conference on Certified Programs and Proofs
+@pages: 130–142
+@doi: https://doi.org/10.1145/3497775.3503687
+abstract:
+    Build systems are a fundamental part of software construction, but
+    their correctness has received comparatively little attention,
+    relative to more prominent parts of the toolchain. In this paper, we
+    address the correctness of forward build systems, which
+    automatically determine the dependency structure of the build, rather
+    than having it specified by the programmer.
+
+    We first define what it means for a forward build system to be
+    correct - it must behave identically to simply executing the
+    programmer-specified commands in order. Of course, realistic build
+    systems avoid repeated work, stop early when possible, and run
+    commands in parallel, and we prove that these optimizations, as
+    embodied in the recent forward build system Rattle, preserve
+    our definition of correctness. Along the way, we show that other
+    forward build systems, such as Fabricate and Memoize,
+    are also correct.
+
+    We carry out all of our work in Agda, and describe in detail the
+    assumptions underlying both Rattle itself and our modeling of it.
+
 paper: paper-implementing_applicative_build_systems_monadically-01_jan_2022.pdf
 title: Implementing Applicative Build Systems Monadically
 date: 01 Jan 2022
