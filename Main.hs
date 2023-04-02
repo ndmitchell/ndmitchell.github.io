@@ -13,13 +13,13 @@ type URL = String
 
 main :: IO ()
 main = do
-    template <- readFile' "template.html"
-    metadata <- readFile' "metadata.txt"
+    template <- readFileUTF8' "template.html"
+    metadata <- readFileUTF8' "metadata.txt"
     let downloads = unlines $ concatMap renderMetadata $ parseMetadata metadata
     let reps = [("#{" ++ lower proj ++ "}", "<a href=\"" ++ url ++ "\">" ++ proj ++ "</a>") | (proj,url) <- projects]
     let res = replaces (("#{downloads}",downloads):reps) template
     when ("#{" `isInfixOf` res) $ error $ "Missed a replacement, " ++ take 20 (snd $ breakOn "#{" res) ++ "..."
-    writeFile "index.html" res
+    writeFileUTF8 "index.html" res
     putStrLn "Generated to index.html"
 
 
