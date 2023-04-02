@@ -1,3 +1,16 @@
+paper: https://arxiv.org/pdf/2303.03749.pdf
+title: Daml: A Smart Contract Language for Securely Automating Real-World Multi-Party Business Workflows
+date: 07 Mar 2023
+key: daml
+author: Alexander Bernauer and Sofia Faro and Rémy Hämmerle and Martin Huschenbett and Moritz Kiefer and Andreas Lochbihler and Jussi Mäki and Francesco Mazzoli and Simon Meier and Neil Mitchell and Ratko G. Veprek
+text: Introduction to DAML programming language and ledger.
+abstract:
+    Distributed ledger technologies, also known as blockchains for enterprises, promise to significantly reduce the high cost of automating multi-party business workflows. We argue that a programming language for writing such on-ledger logic should satisfy three desiderata: (1) Provide concepts to capture the legal rules that govern real-world business workflows. (2) Include simple means for specifying policies for access and authorization. (3) Support the composition of simple workflows into complex ones, even when the simple workflows have already been deployed.
+
+    We present the open-source smart contract language Daml based on Haskell with strict evaluation. Daml achieves these desiderata by offering novel primitives for representing, accessing, and modifying data on the ledger, which are mimicking the primitives of today's legal systems. Robust access and authorization policies are specified as part of these primitives, and Daml's built-in authorization rules enable delegation, which is key for workflow composability. These properties make Daml well-suited for orchestrating business workflows across multiple, otherwise heterogeneous parties.
+
+    Daml contracts run (1) on centralized ledgers backed by a database, (2) on distributed deployments with Byzantine fault tolerant consensus, and (3) on top of conventional blockchains, as a second layer via an atomic commit protocol. 
+
 paper: paper-forward_build_systems_formally-17_jan_2022.pdf
 title: Forward Build Systems, Formally
 date: 17 Jan 2022

@@ -59,6 +59,15 @@ authors =
     ,("Sam Tobin-Hochstadt", "https://samth.github.io/")
     ,("Javier Neira Sanchez", "https://github.com/jneira")
     ,("Bob Yang", "https://github.com/bobyangyf")
+    ,("Alexander Bernauer", "https://www.linkedin.com/in/alexander-bernauer/")
+    ,("Sofia Faro", "") -- no idea who this is
+    ,("Rémy Hämmerle", "https://www.linkedin.com/in/remyhaemmerle/")
+    ,("Martin Huschenbett", "https://github.com/hurryabit")
+    ,("Andreas Lochbihler", "http://www.andreas-lochbihler.de/")
+    ,("Jussi Mäki", "https://github.com/joamaki")
+    ,("Francesco Mazzoli", "https://mazzo.li/")
+    ,("Simon Meier", "https://www.haskellers.com/user/meiersi")
+    ,("Ratko G. Veprek", "") -- can't find anything good
     ]
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
