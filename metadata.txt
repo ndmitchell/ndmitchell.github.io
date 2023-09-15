@@ -1,3 +1,13 @@
+slides: slides-buck2_for_ocaml_users_and_developers-09_sep_2023.pdf
+title: Buck2 for OCaml Users and Developers
+date: 09 Sep 2023
+key: buck2
+author: Neil Mitchell and Shayne Fletcher
+text: Using OCaml in Buck2
+where: <a href="https://icfp23.sigplan.org/home/ocaml-2023">OCaml Users and Developers Workshop 2023</a>
+abstract:
+    Buck2 is an open-source large scale build system used by thousands of developers at Meta every day. Buck2 can be used to build OCaml with some useful advantages over alternatives (e.g. Dune or Bazel). In this talk we’ll discuss what those advantages are, why they arise, and how to use Buck2 for your OCaml development.
+
 paper: https://arxiv.org/pdf/2303.03749.pdf
 title: Daml: A Smart Contract Language for Securely Automating Real-World Multi-Party Business Workflows
 date: 07 Mar 2023
