@@ -1,3 +1,12 @@
+slides: slides-buck2_optimizations_and_bxl-23_oct_2023.pdf
+title: Buck2: optimizations and Bxl
+date: 23 Oct 2023
+video: https://www.youtube.com/watch?v=EQfVu42KwDs&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV
+key: buck2
+author: Neil Mitchell and Chris Hopman
+where: <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9kzK0yryGVhw2CjakT2fNh2YVim5H7ZvqRpdTSETcwUQ8ag/viewform">Bazel Community Day 2023</a>
+text: Introduction to Buck2 and Bxl extension language.
+
 slides: slides-buck2_for_ocaml_users_and_developers-09_sep_2023.pdf
 title: Buck2 for OCaml Users and Developers
 date: 09 Sep 2023

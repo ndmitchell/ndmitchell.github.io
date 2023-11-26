@@ -69,6 +69,7 @@ authors =
     ,("Simon Meier", "https://www.haskellers.com/user/meiersi")
     ,("Ratko G. Veprek", "") -- can't find anything good
     ,("Shayne Fletcher", "https://blog.shaynefletcher.org/")
+    ,("Chris Hopman", "https://github.com/cjhopman")
     ]
 
 names = map fst projects ++ ["Haskell","Hat","Windows","Pasta"]
