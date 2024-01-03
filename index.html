@@ -162,6 +162,21 @@ function highlightAnchor(){
 </p>
 <p class="text">Introduction to Buck2 and Bxl extension language.</p>
 
+<h3 id="buck_21_sep_2023"><a href="#buck_21_sep_2023">Talk: Accelerating builds with Buck2</a></h3>
+<p class="info"><a href="downloads/slides-accelerating_builds_with_buck2-21_sep_2023.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=oMIzKVxUNAE&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV&index=12">video</a>, <a href="javascript:showCitation('buck_21_sep_2023')">citation</a>, <a href="javascript:showAbstract('buck_21_sep_2023')">abstract</a> from <a href="https://dpesummit.com/sessions">Developer Productivity Engineering (DPE) Summit</a> 2023, 21 Sep 2023.</p>
+<p id="citation_buck_21_sep_2023" class="citation">@misc{mitchell:buck_21_sep_2023
+    ,title          = {Accelerating builds with Buck2}
+    ,author         = {Neil Mitchell}
+    ,year           = {2023}
+    ,month          = {September}
+    ,day            = {21}
+    ,note           = {Presentation from Developer Productivity Engineering (DPE) Summit 2023}
+    ,url            = {https://ndmitchell.com/downloads/slides-accelerating_builds_with_buck2-21_sep_2023.pdf}
+}
+</p>
+<p id="abstract_buck_21_sep_2023" class="abstract"><b>Abstract:</b> Buck2 is an open-source build system written in Rust and designed to make your build experience faster and more efficient. Buck2 is extensible, allowing new languages to be added, but already has support for most popular languages (Python, C++, Rust, Go etc.). Thousands of developers at Meta already use Buck2, where we observed that Buck2 completed builds 2x as fast as Buck1, and developers using Buck2 ended up producing meaningfully more code.<br/><br/>In this talk we’ll discuss what makes Buck2 fast, what it shares with similar build systems (like Buck1 and Bazel), and what sets it apart. In order to give maximum performance Buck2 has a focus on parallelism, minimal invalidation on changes, integration with remote execution (running steps of the build on servers) and integration with virtual file systems. In order to have the flexibility to keep making improvements, we have a strong separation between the core build system (written in Rust, no knowledge of any language) and the language-specific rules (written in Starlark).<br/><br/>Buck2 is open source, and this talk will also cover what it looks like to get started with Buck2 in your project. More details about Buck2 can be found at <a href="https://buck2.build/">https://buck2.build/</a>.</p>
+<p class="text">Why Buck2 is fast</p>
+
 <h3 id="buck_09_sep_2023"><a href="#buck_09_sep_2023">Talk: Buck2 for OCaml Users and Developers</a></h3>
 <p class="info"><a href="downloads/slides-buck2_for_ocaml_users_and_developers-09_sep_2023.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=l4X4BxEEe-w&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV&index=11">video</a>, <a href="javascript:showCitation('buck_09_sep_2023')">citation</a>, <a href="javascript:showAbstract('buck_09_sep_2023')">abstract</a> from <a href="https://icfp23.sigplan.org/home/ocaml-2023">OCaml Users and Developers Workshop 2023</a>, with <a class="author" href="https://blog.shaynefletcher.org/">Shayne Fletcher</a>, 09 Sep 2023.</p>
 <p id="citation_buck_09_sep_2023" class="citation">@misc{mitchell:buck_09_sep_2023
