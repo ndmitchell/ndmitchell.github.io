@@ -11,6 +11,7 @@ slides: slides-buck2_for_ocaml_users_and_developers-09_sep_2023.pdf
 title: Buck2 for OCaml Users and Developers
 date: 09 Sep 2023
 key: buck2
+video: https://www.youtube.com/watch?v=l4X4BxEEe-w&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV&index=11
 author: Neil Mitchell and Shayne Fletcher
 text: Using OCaml in Buck2
 where: <a href="https://icfp23.sigplan.org/home/ocaml-2023">OCaml Users and Developers Workshop 2023</a>
