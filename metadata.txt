@@ -1,3 +1,15 @@
+slides: slides-somewhat_dynamic_build_systems-07_mar_2024.pdf
+title: Somewhat dynamic build systems
+date: 07 Mar 2024
+key: buck2
+author: Neil Mitchell
+where: <a href="https://www.cl.cam.ac.uk/events/s-repls14/">S-REPLS 14</a>
+text: Build systems like Buck2 have two dependency graphs.
+abstract:
+    The classic model of a build system, as presented in <a href="https://www.cambridge.org/core/journals/journal-of-functional-programming/article/build-systems-a-la-carte-theory-and-practice/097CE52C750E69BD16B78C318754C7A4">Build Systems a la Carte</a>, is a single dependency graph. But in practice, large-scale build systems such as Bazel and <a href="https://buck2.build/">Buck2</a> have two main dependency graphs - a target graph, and an action graph which refines the target graph. Both graphs can vary on the static vs dynamic spectrum (or alternatively, applicative vs monadic), giving either increased analysability or increased expressiveness.
+
+    In this talk we'll show the analysability requirements necessary to implement an efficient system to test the modified subset of a project. We'll also show the expressiveness requirements necessary to implement various language rules including Python, OCaml and Haskell. We then show how making the graphs dynamic in just the right ways gives us both, and have implemented these features in the Buck2 build system.
+
 slides: slides-buck2_optimizations_and_bxl-23_oct_2023.pdf
 title: Buck2: optimizations and Bxl
 date: 23 Oct 2023

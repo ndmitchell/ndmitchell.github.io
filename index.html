@@ -148,6 +148,21 @@ function highlightAnchor(){
 </p>
 
 
+<h3 id="buck_07_mar_2024"><a href="#buck_07_mar_2024">Talk: Somewhat dynamic build systems</a></h3>
+<p class="info"><a href="downloads/slides-somewhat_dynamic_build_systems-07_mar_2024.pdf">Slides</a>, <a href="javascript:showCitation('buck_07_mar_2024')">citation</a>, <a href="javascript:showAbstract('buck_07_mar_2024')">abstract</a> from <a href="https://www.cl.cam.ac.uk/events/s-repls14/">S-REPLS 14</a>, 07 Mar 2024.</p>
+<p id="citation_buck_07_mar_2024" class="citation">@misc{mitchell:buck_07_mar_2024
+    ,title          = {Somewhat dynamic build systems}
+    ,author         = {Neil Mitchell}
+    ,year           = {2024}
+    ,month          = {March}
+    ,day            = {7}
+    ,note           = {Presentation from S-REPLS 14}
+    ,url            = {https://ndmitchell.com/downloads/slides-somewhat_dynamic_build_systems-07_mar_2024.pdf}
+}
+</p>
+<p id="abstract_buck_07_mar_2024" class="abstract"><b>Abstract:</b> The classic model of a build system, as presented in <a href="https://www.cambridge.org/core/journals/journal-of-functional-programming/article/build-systems-a-la-carte-theory-and-practice/097CE52C750E69BD16B78C318754C7A4">Build Systems a la Carte</a>, is a single dependency graph. But in practice, large-scale build systems such as Bazel and <a href="https://buck2.build/">Buck2</a> have two main dependency graphs - a target graph, and an action graph which refines the target graph. Both graphs can vary on the static vs dynamic spectrum (or alternatively, applicative vs monadic), giving either increased analysability or increased expressiveness.<br/><br/>In this talk we'll show the analysability requirements necessary to implement an efficient system to test the modified subset of a project. We'll also show the expressiveness requirements necessary to implement various language rules including Python, OCaml and Haskell. We then show how making the graphs dynamic in just the right ways gives us both, and have implemented these features in the Buck2 build system.</p>
+<p class="text">Build systems like Buck2 have two dependency graphs.</p>
+
 <h3 id="buck_23_oct_2023"><a href="#buck_23_oct_2023">Talk: Buck2: optimizations and Bxl</a></h3>
 <p class="info"><a href="downloads/slides-buck2_optimizations_and_bxl-23_oct_2023.pdf">Slides</a>, <a href="https://www.youtube.com/watch?v=EQfVu42KwDs&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV">video</a>, <a href="javascript:showCitation('buck_23_oct_2023')">citation</a> from <a href="https://docs.google.com/forms/d/e/1FAIpQLSe9kzK0yryGVhw2CjakT2fNh2YVim5H7ZvqRpdTSETcwUQ8ag/viewform">Bazel Community Day 2023</a>, with <a class="author" href="https://github.com/cjhopman">Chris Hopman</a>, 23 Oct 2023.</p>
 <p id="citation_buck_23_oct_2023" class="citation">@misc{mitchell:buck_23_oct_2023
