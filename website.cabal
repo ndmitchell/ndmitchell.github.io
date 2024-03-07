@@ -1,0 +1,9 @@
+cabal-version:      1.18
+build-type:         Simple
+name:               website
+version:            0.1
+
+executable website
+    default-language:   Haskell2010
+    main-is:            Main.hs
+    build-depends:      base == 4.*, extra >= 0.5
