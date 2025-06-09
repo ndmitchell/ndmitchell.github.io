@@ -1,3 +1,25 @@
+slides: slides-what_makes_buck2_special-22_may_2025.pdf
+title: What makes Buck2 special
+date: 22 May 2025
+key: buck2
+author: Neil Mitchell
+where: <a href="https://meetup.build/">Build Meetup</a>
+text: The conceptual power of Buck2 build graphs.
+
+slides: slides-faster_type_checking_with_pyrefly-15_may_2025.pdf
+title: Faster type checking with Pyrefly
+date: 15 May 2025
+key: pyrefly
+author: Neil Mitchell
+where: <a href="https://us.pycon.org/2025/schedule/presentation/118/">PyConUS 2025</a>
+text: Introducing Pyrefly, a scalable type checker powering an IDE.
+video: https://www.youtube.com/watch?v=ZTSZ1OCUaeQ&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV&t=1403s
+abstract:
+    We're excited to introduce Pyrefly, a new type checker designed with scalability in mind.
+    Built from the ground up using Rust, Pyrefly provides a faster and more efficient type checking experience,
+    enabling developers to write better code with confidence.
+    With Pyrefly, we aim to deliver a unified IDE experience power type hints and code navigation on a new type checking engine.
+
 slides: slides-somewhat_dynamic_build_systems-07_mar_2024.pdf
 title: Somewhat dynamic build systems
 date: 07 Mar 2024
