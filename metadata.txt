@@ -1,3 +1,11 @@
+slides: slides-pyrefly-07_oct_2025.pdf
+title: Pyrefly
+date: 07 Oct 2025
+key: pyrefly
+author: Neil Mitchell
+where: <a href="https://www.janestreet.com/tech-talks/index.html">Jane Street Tech Talks</a>
+text: Overview of Python typing and the Pyrefly type checker.
+
 slides: slides-what_makes_buck2_special-22_may_2025.pdf
 title: What makes Buck2 special
 date: 22 May 2025
