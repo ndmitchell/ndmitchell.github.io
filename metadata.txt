@@ -3,8 +3,16 @@ title: Pyrefly
 date: 07 Oct 2025
 key: pyrefly
 author: Neil Mitchell
-where: <a href="https://www.janestreet.com/tech-talks/index.html">Jane Street Tech Talks</a>
+where: <a href="https://www.janestreet.com/tech-talks/pyrefly/">Jane Street Tech Talks</a>
+video: https://www.youtube.com/watch?v=Q8YTLHwowcM&list=PLFTr8ChfQg9t9quFJNSoRwVHQhLFfTYnV&index=14
 text: Overview of Python typing and the Pyrefly type checker.
+abstract:
+    Pyrefly is a new Python type checker and code navigation system designed with scalability in mind, available at
+    https://pyrefly.org. Despite starting as an untyped language, Python gained type annotations in 2014, and now has an optional type system,
+    with generics, subtyping, flow types, inference and field refinement/narrowing. In this talk we'll explain how Pyrefly models
+    and validates that type system, which choices it makes, and how those build into a complete type checker. We'll also look at how Pyrefly is
+    designed for performance, and how it manages to check 1.8 million lines of Python per second.
+
 
 slides: slides-what_makes_buck2_special-22_may_2025.pdf
 title: What makes Buck2 special
